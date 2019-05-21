@@ -10,7 +10,13 @@ function loadDoc() {
         github.forEach(repo => {
             console.log(repo.name)
             document.getElementById("name" + i).innerHTML = repo.name;
-            document.getElementById("lang" + i).innerHTML = repo.language;
+            if (repo.language === null){
+              document.getElementById("lang" + i).innerHTML = "None Yet!";
+
+            } else {
+              document.getElementById("lang" + i).innerHTML = repo.language;
+
+            }
             
             var repoLang = repo.languages_url;
             i++;

@@ -69,6 +69,10 @@ img {
   color: var(--light);
 }
 
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+
 .top-container {
   display: grid;
   grid-gap: 20px;
