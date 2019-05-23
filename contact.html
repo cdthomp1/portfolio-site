@@ -4,7 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cameron Thompson: Contact</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
 
@@ -40,14 +40,14 @@
 
 
       <div>
-          <?=$thankYou ?>
+        <?=$thankYou ?>
         <form method="post">
-          <input type="text" name="Name" id="Name" placeholder="Full Name" />
+          <input type="text" name="first_name" placeholder="First name">
+          <input type="text" name="last_name" placeholder="Last name">
+          <input type="text" name="email" id="Email" placeholder="Email" />
 
-          <input type="text" name="Email" id="Email" placeholder="Email" />
 
-
-          <textarea name="Message" rows="20" cols="20" id="Message" placeholder="Message"></textarea>
+          <textarea name="message" rows="20" cols="20" id="Message" placeholder="Message"></textarea>
 
           <input type="submit" name="submit" value="Submit" class="submit-button" />
         </form>

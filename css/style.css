@@ -84,7 +84,7 @@ th, td {
 .showcase {
   grid-area: showcase;
   min-height: 400px;
-  background: url(./images/home.jpeg);
+  background: url(../images/home.jpeg);
   background-size: cover;
   background-position: center;
   padding: 3rem;

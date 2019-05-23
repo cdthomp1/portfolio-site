@@ -40,41 +40,39 @@
         <!-- Top Container -->
         <section class="top-container">
             <header class="showcase">
-                <h1>Im Cameron Thompson</h1>
-                <p style="padding-right: 33px">An inspiring Software Engineer with a passion to learn!
+                <h1 style="padding-right: 5px">I'm Cameron Thompson</h1>
+                <p style="padding-right: 76px">An inspiring Software Engineer with a passion to learn!
                 </p>
             </header>
             <div class="top-box top-box-a">
-                <h4>Weather</h4>
-                <p>Current Home Weather</p>
+                    <h2 style="
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                ">Weather</h2>
+                <p style="
+                margin-top: 0px;
+                margin-bottom: 0px;
+            ">Current Home Weather</p>
                 <table>
                     <tr>
-                        <td style="padding-left: 10px">Day</td>
+                        <td>Temp</td>
                         <td style="padding-left: 10px">Condition</td>
                         <td></td>
                     </tr>
+          
                     <tr>
-                        <td style="padding-left: 10px">Mon</td>
-                        <td style="padding-left: 10px">Night Sleet</td>
-                        <td style="padding-left: 10px"><i class="wi wi-night-sleet"></i></td>
+                        <td style="padding-left: 10px"><span id="temp"></span></td>
+                        <td style="padding-left: 10px" ><span id="condition"></span></td>
+                        <td style="padding-left: 10px"><span id="icon"></span></td>
                     </tr>
-                    <tr>
-                        <td style="padding-left: 10px">Tues</td>
-                        <td style="padding-left: 10px">Night Sleet</td>
-                        <td style="padding-left: 10px"><i class="wi wi-night-sleet"></i></td>
-                    </tr>
-                    <tr>
-                        <td style="padding-left: 10px">Wed</td>
-                        <td style="padding-left: 10px">Night Sleet</td>
-                        <td style="padding-left: 10px"><i class="wi wi-night-sleet"></i></td>
-                    </tr>
+
                 </table>
 
             </div>
             <div class="top-box top-box-b">
-                <h4>What am I doing?</h4>
+                <h3>What am I doing?</h3>
                 <p>Click the Link to see my latest</p>
-                <a href="https://gitstalk.netlify.com/cdthomp1" target="_blank" class="btn">Action</a>
+                <a href="https://gitstalk.netlify.com/cdthomp1" target="_blank" class="btn">Current Action</a>
             </div>
         </section>
 
@@ -111,7 +109,6 @@
             </div>
 
             <div class="box">
-                <i class="fas fa-cog fa-4x"></i>
                 <h3 style="margin-bottom: 3">Current Development</h3>
                 <table class="center">
                     <tr>
@@ -169,7 +166,7 @@
 
         <!-- Portfolio -->
         <!-- THIS WILL BE A THUMBNAIL GALLERY OF PROJECTS WITH LINKS-->
-        <section class="portfolio">
+        <!-- <section class="portfolio">
             <img src="https://source.unsplash.com/random/200x200" alt="">
             <img src="https://source.unsplash.com/random/201x200" alt="">
             <img src="https://source.unsplash.com/random/202x200" alt="">
@@ -179,7 +176,7 @@
             <img src="https://source.unsplash.com/random/206x200" alt="">
             <img src="https://source.unsplash.com/random/207x200" alt="">
             <img src="https://source.unsplash.com/random/208x200" alt="">
-        </section>
+        </section> -->
 
         <!-- Footer -->
         <footer>
@@ -189,8 +186,9 @@
     </div>
     <!-- Wrapper Ends -->
 
-
-    <script src="./scripts.js"></script>
+    
+    <script src="./scripts.js" onload="getWeather()"></script>
+    <script src="./scripts.js" onload="homeGitHub()"></script>
 
 </body>
 
