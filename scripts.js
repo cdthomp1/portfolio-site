@@ -14,7 +14,7 @@ function homeGitHub() {
           }
         })
 
-        for (var i = 1; i <= 3; i++){
+        for (var i = 0; i <= 3; i++){
      
 
           document.getElementById(`name${i}`).innerHTML = githubs[i].name;
@@ -46,7 +46,7 @@ function projectGitHub(){
             }
           })
 
-          for (var i = 1; i <= 5; i++){
+          for (var i = 0; i <= 5; i++){
            
             document.getElementById(`name${i}`).innerHTML = githubs[i].name;
             if (githubs[i].language === null){
