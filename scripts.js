@@ -14,7 +14,7 @@ function homeGitHub() {
           }
         })
 
-        for (var i = 0; i <= 3; i++){
+        for (var i = 1; i <= 3; i++){
      
 
           document.getElementById(`name${i}`).innerHTML = githubs[i].name;
@@ -42,17 +42,19 @@ function projectGitHub(){
           var githubs = github.map(repo => {
             return {
               name: repo.name,
-              language: repo.language
+              language: repo.language,
+              description: repo.description
             }
           })
 
-          for (var i = 0; i <= 5; i++){
+          for (var i = 1; i <= 5; i++){
            
-            document.getElementById(`name${i}`).innerHTML = githubs[i].name;
+            document.getElementById(`name${i}`).innerHTML = githubs[i - 1].name;
+            document.getElementById(`des${i}`).innerHTML = githubs[i - 1].description;
             if (githubs[i].language === null){
               document.getElementById(`lang${i}`).innerHTML = "None Yet!";
             } else {
-              document.getElementById(`lang${i}`).innerHTML = githubs[i].language;
+              document.getElementById(`lang${i}`).innerHTML = githubs[i - 1].language;
             }
 
           }
