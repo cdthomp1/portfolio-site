@@ -34,15 +34,12 @@ img {
   grid-gap: 20px;
 }
 
-
-
 #logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
-
 
 .main-nav ul {
   display: grid;
@@ -61,7 +58,13 @@ img {
   color: var(--dark);
   text-transform: uppercase;
   font-size: 1.1rem;
+  border-radius: 3px;
   box-shadow: var(--shadow);
+}
+
+.main-nav .active {
+  color: var(--light);
+  background-color: #808080;
 }
 
 .main-nav a:hover {

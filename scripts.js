@@ -17,16 +17,14 @@ function homeGitHub() {
       for (var i = 1; i <= 3; i++) {
 
 
-        document.getElementById(`name${i}`).innerHTML = githubs[i].name;
+        document.getElementById(`name${i}`).innerHTML = githubs[i-1].name;
         if (githubs[i].language === null) {
           document.getElementById(`lang${i}`).innerHTML = "None Yet!";
         } else {
-          document.getElementById(`lang${i}`).innerHTML = githubs[i].language;
+          document.getElementById(`lang${i}`).innerHTML = githubs[i-1].language;
         }
 
       }
-
-
     }
   };
   xhttp.open("GET", url, true);
