@@ -3,67 +3,76 @@ var url = 'https://api.github.com/users/cdthomp1/repos?sort=updated'
 
 function homeGitHub() {
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+  xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       var github = JSON.parse(this.responseText)
 
-        var githubs = github.map(repo => {
-          return {
-            name: repo.name,
-            language: repo.language
-          }
-        })
-
-        for (var i = 1; i <= 3; i++){
-     
-
-          document.getElementById(`name${i}`).innerHTML = githubs[i].name;
-          if (githubs[i].language === null){
-            document.getElementById(`lang${i}`).innerHTML = "None Yet!";
-          } else {
-            document.getElementById(`lang${i}`).innerHTML = githubs[i].language;
-          }
-
+      var githubs = github.map(repo => {
+        return {
+          name: repo.name,
+          language: repo.language
         }
-       
-  
+      })
+
+      for (var i = 1; i <= 3; i++) {
+
+
+        document.getElementById(`name${i}`).innerHTML = githubs[i].name;
+        if (githubs[i].language === null) {
+          document.getElementById(`lang${i}`).innerHTML = "None Yet!";
+        } else {
+          document.getElementById(`lang${i}`).innerHTML = githubs[i].language;
+        }
+
+      }
+
+
     }
   };
   xhttp.open("GET", url, true);
   xhttp.send();
 }
 
-function projectGitHub(){
+function projectGitHub() {
   var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var github = JSON.parse(this.responseText)
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var github = JSON.parse(this.responseText)
 
-          var githubs = github.map(repo => {
-            return {
-              name: repo.name,
-              language: repo.language,
-              description: repo.description
-            }
-          })
+      var githubs = github.map(repo => {
+        return {
+          name: repo.name,
+          language: repo.language,
+          description: repo.description,
+          url: repo.html_url
+        }
+      })
 
-          for (var i = 1; i <= 5; i++){
-           
-            document.getElementById(`name${i}`).innerHTML = githubs[i - 1].name;
-            document.getElementById(`des${i}`).innerHTML = githubs[i - 1].description;
-            if (githubs[i].language === null){
-              document.getElementById(`lang${i}`).innerHTML = "None Yet!";
-            } else {
-              document.getElementById(`lang${i}`).innerHTML = githubs[i - 1].language;
-            }
+      for (var i = 1; i <= 5; i++) {
 
-          }
-         
+        var a = document.createElement('a');
+        var linkText = document.createTextNode(githubs[i-1].name);
+        a.appendChild(linkText);
+        a.title = "my title text";
+        a.href = githubs[i-1].url;
+        a.setAttribute("target", "_blank");
     
+        document.getElementById(`name${i}`).appendChild(a);
+
+        document.getElementById(`des${i}`).innerHTML = githubs[i - 1].description;
+        if (githubs[i].language === null) {
+          document.getElementById(`lang${i}`).innerHTML = "None Yet!";
+        } else {
+          document.getElementById(`lang${i}`).innerHTML = githubs[i - 1].language;
+        }
+
       }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.send(); 
+
+
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
 }
 
 
@@ -436,51 +445,51 @@ var weatherIcons = {
   }
 }
 
-function getWeather(){
+function getWeather() {
 
 
   var urls = "https://api.openweathermap.org/data/2.5/weather?id=5605242&units=imperial&appid=485b77ddff78cfeb086fe4bbbc45daed";
   var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var weather = JSON.parse(this.responseText)
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var weather = JSON.parse(this.responseText)
 
-        console.log(weather)
+      console.log(weather)
 
-          function makeWeather(w){
-            return {
-              temp: w.main.temp,
-              condition: w.weather[0].main
-            }
-          }
-
-          let weathers = makeWeather(weather)
-
-          var prefix = 'wi wi-';
-          var code = weather.weather[0].id;
-          var icon = weatherIcons[code].icon;
-        
-          // If we are not in the ranges mentioned above, add a day/night prefix.
-          if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
-            icon = 'day-' + icon;
-          }
-        
-          // Finally tack on the prefix.
-          icon = prefix + icon;
-
-          console.log(weathers)
-
-          var realTemp = Math.round(weathers.temp)
-
-          document.getElementById('temp').innerHTML = realTemp          
-          document.getElementById('condition').innerHTML = weathers.condition
-          document.getElementById('icon').innerHTML = `<i class="${icon}"></i>`
-         
-    
+      function makeWeather(w) {
+        return {
+          temp: w.main.temp,
+          condition: w.weather[0].main
+        }
       }
-    };
-    xhttp.open("GET", urls, true);
-    xhttp.send(); 
+
+      let weathers = makeWeather(weather)
+
+      var prefix = 'wi wi-';
+      var code = weather.weather[0].id;
+      var icon = weatherIcons[code].icon;
+
+      // If we are not in the ranges mentioned above, add a day/night prefix.
+      if (!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
+        icon = 'day-' + icon;
+      }
+
+      // Finally tack on the prefix.
+      icon = prefix + icon;
+
+      console.log(weathers)
+
+      var realTemp = Math.round(weathers.temp)
+
+      document.getElementById('temp').innerHTML = realTemp
+      document.getElementById('condition').innerHTML = weathers.condition
+      document.getElementById('icon').innerHTML = `<i class="${icon}"></i>`
+
+
+    }
+  };
+  xhttp.open("GET", urls, true);
+  xhttp.send();
 
 }
 var start = Date.now()
