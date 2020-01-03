@@ -7,7 +7,7 @@
 
 html {
   box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
+font-family: Arial, Helvetica, sans-serif;
   color: var(--dark);
 }
 
@@ -64,7 +64,7 @@ img {
 
 .main-nav .active {
   color: var(--light);
-  background-color: #808080;
+  background-color: #2e2d2d;
 }
 
 .main-nav a:hover {
@@ -103,9 +103,7 @@ th, td {
   margin-bottom: 0;
   padding-left: 5px;
   color: var(--light);
-  background-color: rgba(0, 0, 0, .7);
-
-
+  background-color: rgba(0, 0, 0, .74);
 }
 
 .showcase p {
@@ -114,9 +112,9 @@ th, td {
   padding-left: 15px;
   padding-bottom: 3px;
   color: var(--light);
-  background-color: rgba(0, 0, 0, .7);
-
+  background-color: rgba(0, 0, 0, 0.74);
 }
+
 
 
 .top-box {
@@ -152,8 +150,43 @@ th, td {
   text-align: center;
   padding: 1.5rem 2rem;
   box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-evenly;
 }
 
+.card {
+  background: var(--primary);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 3px;
+}
+
+#cardHead {
+  display: flex;
+  flex-direction: row
+}
+
+#projName {
+  margin: 3px;
+}
+
+#projLang {
+  margin: 3px;
+  font-size: small;
+}
+
+#cardBody {
+  display: flex;
+  flex-direction: column;
+}
+
+#projStats {
+  display: flex;
+  flex-direction: row;
+}
 .info {
   background: var(--primary);
   box-shadow: var(--shadow);

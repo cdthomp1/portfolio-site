@@ -10,9 +10,9 @@
 
 <body>
     <div class="wrapper">
-        <div class="header">
+        <!--  <div class="header">
             <img id="logo" src="./images/header.jpg" width="100%">
-        </div>
+        </div> -->
         <nav class="main-nav">
             <ul>
                 <li>
@@ -30,88 +30,44 @@
             </ul>
         </nav>
         <!-- Info Section -->
-        <section class="boxes">
-            <div class="box">
-                <table style="width: 100%">
-                    <tr>
-                        <td>
-                            Name
-                        </td>
-                        <td>
-                            Description
-                        </td>
-                        <td>
-                            Language
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span id="name1"></span>
-                        </td>
-                        <td>
-                            <span id="des1"></span>
-                        </td>
-                        <td>
-                            <span id="lang1"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span id="name2"></span>
 
-                        </td>
-                        <td>
-                            <span id="des2"></span>
-                        </td>
-                        <td>
-                            <span id="lang2"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span id="name3"></span>
-
-                        </td>
-                        <td>
-                            <span id="des3"></span>
-                        </td>
-                        <td>
-                            <span id="lang3"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span id="name4"></span>
-
-                        </td>
-                        <td>
-                            <span id="des4"></span>
-                        </td>
-                        <td>
-                            <span id="lang4"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span id="name5"></span>
-
-                        </td>
-                        <td >
-                            <span id="des5"></span>
-                        </td>
-                        <td>
-                            <span id="lang5"></span>
-                        </td>
-                    </tr>
-                </table>
+        <div class="box">
+            <div class="title">TITLE</div>
+            <div class="desc">DESCRIPTION</div>
+            <div class="lang">LANGUAGE</div>
+        </div>
+        <div class="card">
+            <div id="cardHead">
+                <div id="projName">what-can-I-make</div>
+                <div id="projLang">HTML</div>
             </div>
-        </section>
+            <div id="cardBody">
+                <div id="projDesc">An app that can store what food is in your pantry and get recipes based on your food inventory.</div>
+                <div id="projStats">
+                    <div id="projForks">1 Forks</div>
+                    <div id="projStars">0 Stars</div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div id="cardHead">
+                <div id="projName"></div>
+                <div id="projLang"></div>
+            </div>
+            <div id="cardBody">
+                <div id="projDesc"></div>
+                <div id="projStats">
+                    <div id="projForks"></div>
+                    <div id="projStars"></div>
+                </div>
+            </div>
+        </div>
+
 
 
 
         <!-- Footer -->
         <footer>
-            <p>Cameron Thompson &copy; 2018</p>
         </footer>
 
     </div>
@@ -120,5 +76,6 @@
 
 </body>
 <script src="./scripts.js" onload="projectGitHub()"></script>
+<script src="./scripts.js" onload="copyright()"></script>
 
 </html>

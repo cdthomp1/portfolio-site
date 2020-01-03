@@ -17,11 +17,11 @@ function homeGitHub() {
       for (var i = 1; i <= 3; i++) {
 
 
-        document.getElementById(`name${i}`).innerHTML = githubs[i-1].name;
+        document.getElementById(`name${i}`).innerText = githubs[i-1].name;
         if (githubs[i].language === null) {
-          document.getElementById(`lang${i}`).innerHTML = "None Yet!";
+          document.getElementById(`lang${i}`).innerText = "None Yet!";
         } else {
-          document.getElementById(`lang${i}`).innerHTML = githubs[i-1].language;
+          document.getElementById(`lang${i}`).innerText = githubs[i-1].language;
         }
 
       }
@@ -46,22 +46,22 @@ function projectGitHub() {
         }
       })
 
-      for (var i = 1; i <= 5; i++) {
+      for (var i = 0; i <= 4; i++) {
 
         var a = document.createElement('a');
-        var linkText = document.createTextNode(githubs[i-1].name);
+        var linkText = document.createTextNode(githubs[i].name);
         a.appendChild(linkText);
         a.title = "my title text";
-        a.href = githubs[i-1].url;
+        a.href = githubs[i].url;
         a.setAttribute("target", "_blank");
-    
+        console.log(document.getElementById(`name${i}`))
         document.getElementById(`name${i}`).appendChild(a);
 
-        document.getElementById(`des${i}`).innerHTML = githubs[i - 1].description;
+        document.getElementById(`des${i}`).innerText = githubs[i].description;
         if (githubs[i].language === null) {
-          document.getElementById(`lang${i}`).innerHTML = "None Yet!";
+          document.getElementById(`lang${i}`).innerText = "None Yet!";
         } else {
-          document.getElementById(`lang${i}`).innerHTML = githubs[i - 1].language;
+          document.getElementById(`lang${i}`).innerText = githubs[i].language;
         }
 
       }
@@ -71,6 +71,15 @@ function projectGitHub() {
   };
   xhttp.open("GET", url, true);
   xhttp.send();
+}
+
+
+function copyright() {
+  var page = document.getElementsByTagName("footer")
+  console.log(page)
+  /* don't add one if it already exists */
+  var copy = document.createTextNode("Cameron Thompson " +  "© " + new Date().getFullYear())
+          page[0].appendChild(copy)
 }
 
 
