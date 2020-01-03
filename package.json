@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cdthomp1/portfolio-site#readme",
   "dependencies": {
+    "mysql": "^2.17.1",
     "request": "^2.88.0"
   }
 }

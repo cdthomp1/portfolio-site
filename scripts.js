@@ -73,6 +73,16 @@ function projectGitHub() {
   xhttp.send();
 }
 
+function promiseOne() {
+  return new Promise((resolve, reject) => {
+    console.log("ONE")
+    resolve("Two")
+  })
+}
+
+promiseOne.then((yes)=> {
+  console.log(yes)
+})
 
 function copyright() {
   var page = document.getElementsByTagName("footer")
