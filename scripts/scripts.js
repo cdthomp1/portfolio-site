@@ -109,6 +109,21 @@ particlesJS("particles-js", {
     "retina_detect": true
   });
    
-  
-  
-  
+var url = 'https://api.github.com/users/cdthomp1/repos?sort=updated'
+
+
+async function getGithub() {
+  return await fetch(url).then(res => {
+    return res.json();
+  })
+}
+
+
+function displayResults(res) {
+  console.log(res)
+}
+console.log("1")
+getGithub().then(res => {
+  displayResults(res)
+})
+console.log(false)

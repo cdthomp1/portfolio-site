@@ -18,6 +18,7 @@ body {
   header h1 {
     font-size: 40px;
     color: white;
+    font-family: Varela Round,sans-serif;
     margin-top: 0px;
     margin-bottom: 10px;
     padding: 0;
@@ -27,6 +28,7 @@ body {
     color: white;
     font-size: 30px;
     font-weight: bold;
+    font-family: Varela Round,sans-serif;
     margin: 0;
     padding: 0;
   }
@@ -90,6 +92,7 @@ canvas {
   position: fixed;
   top: 0
 }
+
 footer {
   display: flex;
   flex-direction: column;
