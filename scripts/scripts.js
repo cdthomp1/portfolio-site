@@ -1,4 +1,4 @@
-particlesJS("particles-js", {
+/* particlesJS("particles-js", {
     "particles": {
       "number": {
         "value": 33,
@@ -107,7 +107,7 @@ particlesJS("particles-js", {
       }
     },
     "retina_detect": true
-  });
+  }); */
    
 var githubURL = 'https://api.github.com/users/cdthomp1/repos?sort=updated'
 
