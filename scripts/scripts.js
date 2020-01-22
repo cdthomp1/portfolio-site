@@ -1,4 +1,4 @@
-/* particlesJS("particles-js", {
+particlesJS("particles-js", {
     "particles": {
       "number": {
         "value": 33,
@@ -107,7 +107,7 @@
       }
     },
     "retina_detect": true
-  }); */
+  });
    
 var githubURL = 'https://api.github.com/users/cdthomp1/repos?sort=updated'
 
@@ -121,13 +121,48 @@ async function getGithub() {
 }
 
 
-function displayResults(res) {
-  console.log(res)
+function displayResults(repo) {
+
+    var div = document.createElement("div");
+    div.classList.add("githubProject");
+    var repoHeader = repo.name;
+   
+    if (repo.language === null) {
+      var repoLanguage = "None Yet!"
+    } else {
+      var repoLanguage = repo.language;
+    }
+
+    if (repo.description === null) {
+      var repoDescription = "No Description Yet!"
+    } else {
+      var repoDescription = repo.description;
+    }
+
+
+    var projectHeader = document.createElement("h3");
+    projectHeader.innerText = repoHeader;
+    div.appendChild(projectHeader)
+    var p = document.createElement("p");
+    var languageTextnode = document.createTextNode("Language: " + repoLanguage);
+    p.appendChild(languageTextnode);
+    div.appendChild(p);
+
+    var pD = document.createElement("p");
+    var descriptionTextnode = document.createTextNode(repoDescription);
+    pD.appendChild(descriptionTextnode);
+    div.appendChild(pD);
+
+    document.getElementById("githubProjects").appendChild(div)
+
+
 }
-console.log("1")
+
 getGithub().then(res => {
-  displayResults(res)
+  var repos = res.slice(0,3)
+  repos.forEach(repo => {
+    displayResults(repo);
+  })
 }).catch((e)=>{
   console.error(e)
 })
-console.log(false)
