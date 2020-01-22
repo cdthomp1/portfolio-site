@@ -1,4 +1,4 @@
-/* particlesJS("particles-js", {
+particlesJS("particles-js", {
     "particles": {
       "number": {
         "value": 33,
@@ -107,7 +107,7 @@
       }
     },
     "retina_detect": true
-  }); */
+  });
    
 var githubURL = 'https://api.github.com/users/cdthomp1/repos?sort=updated'
 
@@ -134,7 +134,7 @@ function displayResults(repo) {
     }
 
     if (repo.description === null) {
-      var repoDescription = "None Yet!"
+      var repoDescription = "No Description Yet!"
     } else {
       var repoDescription = repo.description;
     }
