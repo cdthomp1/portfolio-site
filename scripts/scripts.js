@@ -1,4 +1,4 @@
-particlesJS("particles-js", {
+/* particlesJS("particles-js", {
     "particles": {
       "number": {
         "value": 33,
@@ -107,14 +107,16 @@ particlesJS("particles-js", {
       }
     },
     "retina_detect": true
-  });
+  }); */
    
-var url = 'https://api.github.com/users/cdthomp1/repos?sort=updated'
+var githubURL = 'https://api.github.com/users/cdthomp1/repos?sort=updated'
 
 
 async function getGithub() {
-  return await fetch(url).then(res => {
+  return await fetch(githubURL).then(res => {
     return res.json();
+  }).catch((e)=>{
+    console.error(e)
   })
 }
 
@@ -125,5 +127,7 @@ function displayResults(res) {
 console.log("1")
 getGithub().then(res => {
   displayResults(res)
+}).catch((e)=>{
+  console.error(e)
 })
 console.log(false)

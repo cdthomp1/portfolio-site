@@ -3,6 +3,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: 'Varela Round', sans-serif;
     height: 100%;
+    color: white;
   }
 
   #content{
@@ -32,7 +33,7 @@ body {
     margin: 0;
     padding: 0;
   }
-header img {
+#logo {
   width: 9%;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -50,7 +51,7 @@ header img {
   }
   
   a:hover {
-    color: #fc3565;
+    color: #555555;
   }
 
   p {
@@ -121,4 +122,48 @@ li a {
   text-align: center;
   padding: 16px;
   text-decoration: none;
+}
+
+#projects h2 {
+  margin-bottom: 0;
+  font-size: 30px;
+}
+
+#githubProjects {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.githubProject {
+
+  height: 200px;
+  width: 300px;
+  margin: 10px 0px 10px 0;
+}
+
+
+
+@media screen and (max-width: 700px){
+  #logo{
+    width: 15%;
+  }
+}
+
+
+@media screen and (max-width: 600px){
+  #logo{
+    width: 25%;
+  }
+
+  #githubProjects {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .githubProject{
+    margin-left: 0;
+    width: 355px;
+  }
 }
