@@ -141,8 +141,13 @@ function displayResults(repo) {
 
 
     var projectHeader = document.createElement("h3");
-    projectHeader.innerText = repoHeader;
-    div.appendChild(projectHeader)
+    projectHeader.setAttribute("class", "projectHeader")
+    var projectLink = document.createElement("a");
+    projectLink.innerText = repoHeader;
+    projectLink.setAttribute("href", repo.html_url);
+    projectLink.setAttribute("target", "_blank");
+    projectHeader.appendChild(projectLink);
+    div.appendChild(projectHeader);
     var p = document.createElement("p");
     var languageTextnode = document.createTextNode("Language: " + repoLanguage);
     p.appendChild(languageTextnode);
@@ -153,13 +158,21 @@ function displayResults(repo) {
     pD.appendChild(descriptionTextnode);
     div.appendChild(pD);
 
-    document.getElementById("githubProjects").appendChild(div)
-
+    
+    if (document.getElementById("githubProjectsHome") !== null) {
+      document.getElementById("githubProjectsHome").appendChild(div)
+    } else {
+      document.getElementById("githubProjects").appendChild(div)
+    }
 
 }
 
 getGithub().then(res => {
-  var repos = res.slice(0,3)
+  if (document.getElementById("githubProjectsHome") !== null) {
+    var repos = res.slice(0,3)
+  } else {
+    var repos = res
+  }
   repos.forEach(repo => {
     displayResults(repo);
   })
