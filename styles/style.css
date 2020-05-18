@@ -129,18 +129,34 @@ li a {
   font-size: 30px;
 }
 
-#githubProjects {
+#githubProjectsHome {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.githubProject {
+#githubProjects {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
+.projectHeader a{
+  color: white;
+}
+
+.githubProject {
   height: 200px;
   width: 300px;
   margin: 10px 0px 10px 0;
+  word-wrap: break-word;
+}
+
+.githubProject a {
+  color: white;
 }
 
 
