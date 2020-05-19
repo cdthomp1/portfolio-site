@@ -159,12 +159,20 @@ li a {
   color: white;
 }
 
+#more {
+  margin-top: 10px;
+}
 
 
 @media screen and (max-width: 700px){
   #logo{
     width: 15%;
   }
+  #githubProjectsHome {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
 
 
@@ -177,13 +185,20 @@ li a {
     width: 25%;
   }
 
-  #githubProjects {
-    display: flex;
+  #githubProjectsHome {
     flex-direction: column;
   }
 
   .githubProject{
     margin-left: 0;
     width: 355px;
+  }
+
+  
+}
+
+@media screen and (max-width: 400px) {
+  #githubProjectsHome {
+    flex-direction: column;
   }
 }
