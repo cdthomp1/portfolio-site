@@ -23,7 +23,22 @@
         </header>
         <article>
             <section>
-                <p>Hey I haven't been made yet!</p>
+                <form action="POST" deta-netlify="true">
+                    <div class="row">
+                        <div class="six columns">
+                            <label for="email">Your email</label>
+                            <input class="u-full-width" name="email" type="email" placeholder="Your email..."
+                                id="email">
+                        </div>
+                        <div class="six columns">
+                            <label for="name">Your Name</label>
+                            <input class="u-full-width" name="name" type="text" placeholder="Your name..." id="name">
+                        </div>
+                    </div>
+                    <label for="message">Message</label>
+                    <textarea class="u-full-width" name="message" placeholder="Hi Joseph..." id="message"></textarea>
+                    <button type="submit" name="submit" class="button">Submit</button>
+                </form>
             </section>
         </article>
         <footer>
