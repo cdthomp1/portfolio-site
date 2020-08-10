@@ -191,6 +191,7 @@ function displayResults(repo) {
 
 getGithub().then(res => {
   if (document.getElementById("githubProjectsHome") !== null) {
+    document.getElementsByClassName("loader")[0].setAttribute('id', "hidden");
     var repos = res.slice(0, 3)
   } else {
     var repos = res
