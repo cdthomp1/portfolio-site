@@ -13,90 +13,7 @@
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>Cameron Thompson</title>
     <style>
-        .project-card {
-            -webkit-box-flex: 1;
-            -ms-flex: 1 1 300px;
-            flex: 1 1 300px;
-            margin: 11px auto;
-            background: #137186;
-            border-radius: 5px;
-            max-width: 300px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            position: relative;
-            padding: -95px 0 0 0;
-            border: 1px solid var(--clr-white);
-        }
-
-        .colorband {
-            height: 2px;
-            background-image: -o-linear-gradient(left, #43e97b 0%, #38f9d7 100%);
-            background-image: -webkit-gradient(linear, left top, right top, from(#43e97b), to(#38f9d7));
-            background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
-        }
-
-
-        .project-card h2 {
-            margin: 0;
-            padding: 1rem;
-            text-align: center;
-            font-size: 1.2rem;
-
-        }
-
-        .project-card .title {
-            padding: 0 1rem 1rem;
-            font-size: 0.75em;
-            text-align: center;
-
-        }
-
-        .project-card .desc {
-            padding: 1rem 2rem;
-            font-size: 0.9em;
-
-        }
-
-        .project-card .actions {
-            background-color: #fafafa;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
-
-        .actions button {
-            width: 50%;
-            float: left;
-            background: transparent;
-            border: none;
-            padding: 1rem;
-            font-size: 1em;
-            outline: none;
-            font-family: Lato, sans-serif;
-            cursor: pointer;
-        }
-
-        .actions button a {
-            color: var(--clr-primary);
-        }
-
-
-        .actions button>span {
-            display: block;
-        }
-
-        .actions button:hover {
-            background-color: #137186;
-            color: #fff;
-            border: none;
-            z-index: 100;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-        }
+        
     </style>
 </head>
 
@@ -123,11 +40,32 @@
             <section id="projects">
                 <h2>My Most Up to Date Projects</h2>
                 <div class="container">
+                    <div class="project-card">
+                        <img class="project-img" src="./images/men-template.png" />
+                        <div class="header">
+                            <h2>Mongo Express Node Template</h2>
+                        </div>
+                        <div class="colorband"></div>
+                        <div class="desc">This template is designed to help kick start Node.js applications that would use MongoDB as a database and Passport.js as an authentication middleware.</div>
+                        <div class="actions">
+                            <a href="https://github.com/cdthomp1/mongo-express-node-template" target="_blank" rel="noopener noreferrer">
+                                <button>
+                                    <span>
+                                        <i class="fab fa-github-alt"></i>
+                                        <span>
+                                            Repo Link
+                                        </span>
+                                    </span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
 
                     <div class="project-card">
-                        <img src="https://via.placeholder.com/304x171.png"/>
+                        <img src="https://via.placeholder.com/304x171.png" />
                         <div class="header">
-                            <h2>creative-profile-readme</h2>
+                            <h2>Social Food</h2>
                         </div>
                         <div class="colorband"></div>
                         <div class="desc"></div>
@@ -155,10 +93,37 @@
                         </div>
                     </div>
 
-                </div>
-                <div id="githubProjectsHome">
-                    <span class="loader"></span>
 
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/304x171.png" />
+                        <div class="header">
+                            <h2>React Expense Tracker</h2>
+                        </div>
+                        <div class="colorband"></div>
+                        <div class="desc"></div>
+                        <div class="actions">
+                            <a href="" target="_blank" rel="noopener noreferrer">
+                                <button>
+                                    <span>
+                                        <i class="far fa-window-restore"></i>
+                                        <span>
+                                            Live Site
+                                        </span>
+                                    </span>
+                                </button>
+                            </a>
+                            <a href="" target="_blank" rel="noopener noreferrer">
+                                <button>
+                                    <span>
+                                        <i class="fab fa-github-alt"></i>
+                                        <span>
+                                            Repo Link
+                                        </span>
+                                    </span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <a class="button" id="more" href="./projects.html">See More</a>
             </section>
