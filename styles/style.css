@@ -132,7 +132,7 @@ li a {
 }
 
 #projects h2 {
-  margin-bottom: 0;
+  margin: 0;
   font-size: 30px;
 }
 
@@ -152,6 +152,7 @@ li a {
   background: #137186;
   border-radius: 5px;
   max-width: 300px;
+  min-height: 443px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -167,6 +168,7 @@ li a {
 .project-img {
   max-width: 304px;
   max-height: 171px;
+  min-height: 171px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
