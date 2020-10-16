@@ -103,9 +103,11 @@
                             <h2>React Github Finder</h2>
                         </div>
                         <div class="colorband"></div>
-                        <div class="desc">A simple react app that uses the github api to search for users. Each user gets a card and clicking on the card opens a details page for that user.</div>
+                        <div class="desc">A simple react app that uses the github api to search for users. Each user
+                            gets a card and clicking on the card opens a details page for that user.</div>
                         <div class="actions">
-                            <a href="https://github-finder.cameronthompson.io/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github-finder.cameronthompson.io/" target="_blank"
+                                rel="noopener noreferrer">
                                 <button>
                                     <span>
                                         <i class="far fa-window-restore"></i>
@@ -115,7 +117,8 @@
                                     </span>
                                 </button>
                             </a>
-                            <a href="https://github.com/cdthomp1/react-github-finder" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/cdthomp1/react-github-finder" target="_blank"
+                                rel="noopener noreferrer">
                                 <button>
                                     <span>
                                         <i class="fab fa-github-alt"></i>
@@ -176,6 +179,13 @@
     <script src="./scripts/particles.js"></script>
 
     <script src="./scripts/scripts.js"></script>
+    <script>
+        fetch('./api/app')
+            .then(res => {
+                res.json()
+            })
+            .then(data => console.log(data));
+    </script>
 </body>
 
 </html>
