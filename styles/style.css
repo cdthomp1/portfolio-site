@@ -131,6 +131,10 @@ li a {
   text-decoration: none;
 }
 
+#projects {
+  margin-bottom: 12px;
+}
+
 #projects h2 {
   margin: 0;
   font-size: 30px;
