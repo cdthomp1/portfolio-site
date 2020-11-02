@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cameron Thompson</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="default.css">
+    <link id="theme-style" rel="stylesheet" type="text/css" href="">
+
+
+    <style type="text/css">
+        body {
+            background-color: var(--mainColor);
+
+        }
+
+        .s1 {
+            border-bottom: none;
+        }
+
+        #success {
+            text-align: center;
+            padding: 5px;
+        }
+
+        .window-card {
+            background-color: var(--secondaryColor);
+            border: 1px solid var(--borderColor);
+            border-radius: 5px 5px 0 0;
+
+
+            -webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+            box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 46px 1fr;
+            grid-template-areas:
+                'nav-wrapper nav-wrapper'
+                'whole-span whole-span'
+            ;
+        }
+
+        .whole-span { grid-area: whole-span; }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="greeting-wrapper">
+            <h1>Message Sent!</h1>
+        </div>
+
+
+        <div class="contact window-card">
+            <div class="nav-wrapper">
+                <a href="index.html">
+                    <div class="dots-wrapper">
+                        <div id="dot-1" class="browser-dot"></div>
+                        <div id="dot-2" class="browser-dot"></div>
+                        <div id="dot-3" class="browser-dot"></div>
+                    </div>
+                </a>
+                <ul id="navigation">
+                    <li><a href="index.html">Back</a></li>
+                </ul>
+            </div>
+
+            <div id="success" class="whole-span">
+                <h3>Thanks for your message, I will get back with you soon! <span id="emoji">😃</span></h3>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
