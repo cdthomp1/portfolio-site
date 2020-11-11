@@ -395,6 +395,46 @@ h6 { font-size: 16px;}
 }
 
 
+
+footer {
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: var(--mainColor);
+  }
+  
+  #footerImg {
+	width: 40px;
+	margin: auto;
+  }
+  
+  .footerLinks {
+	display: flex;
+	justify-content: center;
+  }
+  
+  .footerLinks ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+  }
+  
+  .footerLinks li {
+	float: left;
+  }
+  
+  .footerLinks li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+  }
+  
+
+
 @media screen and (max-width: 1200px){
 	.main-container{
 		width: 95%;
