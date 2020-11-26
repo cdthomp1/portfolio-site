@@ -532,7 +532,16 @@ footer {
 	#preview {
 		max-width: 280px;
 	}
+
+	
 }
+
+@media screen and (max-width: 500px) {
+	#skills ul{
+		padding-left: 30px;
+	}
+}
+
 
 @media screen and (max-width: 400px) {
 	#preview-shadow {
@@ -546,5 +555,7 @@ footer {
 		width: 280px;
 
 	}
+
+	
 
 }
