@@ -1,19 +1,19 @@
-:root{
-	--mainColor:#15202B;
-	--secondaryColor:#192734;
+:root {
+	--mainColor: #15202B;
+	--secondaryColor: #192734;
 
-	--borderColor:#164D56;
+	--borderColor: #164D56;
 
-	--mainText:#fff;
-	--secondaryText:#eeeeee;
+	--mainText: #fff;
+	--secondaryText: #eeeeee;
 
-	--themeDotBorder:#FFF;
+	--themeDotBorder: #FFF;
 
-	--previewBg:rgb(25, 39, 52, 0.8);
-	--previewShadow:#111921;
+	--previewBg: rgb(25, 39, 52, 0.8);
+	--previewShadow: #111921;
 
 
-	--buttonColor:#17a2b8;
+	--buttonColor: #17a2b8;
 
 
 }
@@ -48,7 +48,8 @@ li,
 span,
 label,
 input,
-textarea {
+textarea,
+small {
 	color: var(--secondaryText);
 	font-family: 'Roboto Mono', monospace;
 }
@@ -406,6 +407,19 @@ h6 {
 	justify-content: space-evenly;
 }
 
+.copy-notice {
+	text-align: center;
+	font-size: small;
+}
+
+.npm-card {
+	max-width: 630px;
+	margin: 0 auto;
+	cursor: pointer;
+	text-align: center;
+}
+
+
 #contact-form {
 	display: block;
 	max-width: 600px;
@@ -508,6 +522,16 @@ footer {
 		justify-content: center;
 	}
 
+	#preview-shadow {
+		max-width: 280px;
+		height: 180px;
+		padding-left: 15px;
+		padding-top: 15px;
+	}
+
+	#preview {
+		max-width: 280px;
+	}
 }
 
 @media screen and (max-width: 400px) {
