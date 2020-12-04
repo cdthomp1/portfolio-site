@@ -19,11 +19,13 @@ const connectDB = async () => {
 exports.handler = async event => {
   try {
     connectDB();
-    const project = event.body
+    const {title, des, image, repoLink, liveLink} = event.body
 
-    console.log(project)
+    const project = {
+        title, des, image, repoLink, liveLink
+    }
     
-    // const createdProject = await Project.create(project)
+    const createdProject = await Project.create(project)
     return {
       statusCode: 200,
       body: JSON.stringify({ message: 'Project Added :)' }),
