@@ -187,7 +187,7 @@
 
             console.log(des, title, image, repoLink, liveLink)
 
-            fetch(`https://new-react-dev--cameronthompson.netlify.app/.netlify/functions/addproject`, {
+            fetch(`/addProject`, {
                     method: 'POST',
                     body: JSON.stringify({
                         title: title,
@@ -304,7 +304,7 @@
         }]
 
         async function displayProjects() {
-            const projects = await fetch('https://new-react-dev--cameronthompson.netlify.app/.netlify/functions/getProjects')
+            const projects = await fetch('/getProjects')
                 .then(response => response.json())
                 .then(json => {
                     return json
