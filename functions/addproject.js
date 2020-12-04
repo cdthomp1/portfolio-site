@@ -19,7 +19,7 @@ const connectDB = async () => {
 exports.handler = async event => {
     try {
         // connectDB();
-        const { title, description, image, repoLink, liveLink } = event.body
+        const { title, description, image, repoLink, liveLink } = JSON.parse(event.body)
 
         console.log(event.body)
 
