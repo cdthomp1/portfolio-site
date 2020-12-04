@@ -29,7 +29,9 @@ exports.handler = async event => {
             liveLink: liveLink
         });
 
-        const createdProject = await Project.create(project)
+        console.log(project)
+
+        // const createdProject = await Project.create(project)
         return {
             statusCode: 200,
             body: JSON.stringify({ message: 'Project Added :)' }),
