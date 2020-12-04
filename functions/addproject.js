@@ -18,8 +18,10 @@ const connectDB = async () => {
 
 exports.handler = async event => {
     try {
-        connectDB();
+        // connectDB();
         const { title, description, image, repoLink, liveLink } = event.body
+
+        console.log(event.body)
 
         const project = new Project({
             title: title, 
