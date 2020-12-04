@@ -18,7 +18,7 @@ const connectDB = async () => {
 
 exports.handler = async event => {
   try {
-    // connectDB();
+    connectDB();
     const project = event.body
 
     console.log(project)
