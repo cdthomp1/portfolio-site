@@ -21,13 +21,13 @@ exports.handler = async event => {
         connectDB();
         const { title, description, image, repoLink, liveLink } = event.body
 
-        const project = {
+        const project = new Project({
             title: title, 
             description: description, 
             image: image, 
             repoLink: repoLink, 
             liveLink: liveLink
-        }
+        });
 
         const createdProject = await Project.create(project)
         return {
