@@ -102,7 +102,7 @@
 
     <script>
         function addProject() {
-            fetch('/add')
+            fetch('https://new-react-dev--cameronthompson.netlify.app/.netlify/functions/addproject')
                 .then(response => response.json())
                 .then(data => console.log(data));
         }
