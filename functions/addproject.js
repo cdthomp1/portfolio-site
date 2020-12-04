@@ -1,7 +1,35 @@
-exports.handler = async function (event, context) {
-    console.log("hello");
+const mongoose = require('mongoose');
+const Project = require('../../models/Project.js')
+
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useCreateIndex: true
+    })
+    console.log(`MongoDB Connect: ${conn.connection.host}`)
+
+  } catch (err) {
+    console.error(`Error: ${err.message}`);
+    process.exit(1);
+  }
+}
+
+exports.handler = async event => {
+  try {
+    connectDB();
+    const project = event.body
+    
+    const createdProject = await Project.create(project)
     return {
-        statusCode: 200,
-        body: JSON.stringify({ event: event, context: context })
-    };
+      statusCode: 200,
+      body: JSON.stringify({ message: 'Project Added :)' }),
+      // // more keys you can return:
+      // headers: { "headerName": "headerValue", ... },
+      // isBase64Encoded: true,
+    }
+  } catch (error) {
+    return { statusCode: 500, body: error.toString() }
+  }
 }

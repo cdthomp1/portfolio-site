@@ -15,6 +15,11 @@
     <link rel="stylesheet" type="text/css" href="default.css">
     <link id="theme-style" rel="stylesheet" type="text/css" href="">
     <link href="prism.css" rel="stylesheet" />
+    <style>
+        input {
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,10 +58,15 @@
                                 <div id="dot-1" class="browser-dot"></div>
                                 <div id="dot-2" class="browser-dot"></div>
                                 <div id="dot-3" class="browser-dot"></div>
+
                             </div>
                             <div class="post">
                                 <label>Title</label> <input type="text" name="title" id="title"><br />
                                 <label>Description</label> <input type="text" name="description" id="description"><br />
+                                <label>Image</label><input type="text" name="image" id="image"><br />
+                                <label>Repo Link</label><input type="text" name="repo-link" id="repo-link"><br />
+                                <label>Live Link</label><input type="text" name="live-link" id="live-link"><br />
+
                                 <button onclick="addProject()">Add</button>
                             </div>
                         </div>
@@ -82,14 +92,20 @@
         function addProject() {
             var title = document.getElementById('title').value;
             var des = document.getElementById('description').value;
+            var image = document.getElementById('image').value;
+            var repoLink = document.getElementById('repo-link').value;
+            var liveLink = document.getElementById('live-link').value;
 
-            console.log(des, title)
+            console.log(des, title, image, repoLink, liveLink)
 
             fetch(`https://new-react-dev--cameronthompson.netlify.app/.netlify/functions/addproject`, {
                     method: 'POST',
                     body: JSON.stringify({
                         title: title,
-                        description: des
+                        description: des,
+                        image: image,
+                        repoLink: repoLink,
+                        liveLink: liveLink
                     })
                 })
                 .then(response => response.json())

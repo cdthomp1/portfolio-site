@@ -1,2 +1,5 @@
 .DS_Store
 design.drawio
+node_modules
+.DS_Store
+.env
