@@ -304,7 +304,7 @@
         }]
 
         async function displayProjects() {
-            const projects = await fetch('/getProjects')
+            const projects = await fetch('./getProjects')
                 .then(response => response.json())
                 .then(json => {
                     return json

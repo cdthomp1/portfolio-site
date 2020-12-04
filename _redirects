@@ -1,2 +1,2 @@
-/addProject /.netlify/functions/addproject.js 200
 /getProjects /.netlify/functions/getProjects.js 200
+/addProject /.netlify/functions/addproject.js 200
