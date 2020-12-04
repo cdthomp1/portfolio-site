@@ -15,57 +15,156 @@
     <link rel="stylesheet" type="text/css" href="default.css">
     <link id="theme-style" rel="stylesheet" type="text/css" href="">
     <link href="prism.css" rel="stylesheet" />
+    <style>
+        input,
+        textarea {
+            color: black;
+        }
+
+        .post {
+            display: block;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .post label {
+            line-height: 2.7em;
+        }
+
+        .post textarea {
+            min-height: 100px;
+            font-size: 14px;
+        }
+
+
+        .input-field {
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: var(--secondaryColor);
+            border-radius: 5px;
+            border: 1px solid var(--borderColor);
+            font-size: 14px;
+        }
+
+
+        #add-btn {
+            margin-top: 10px;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: #fff;
+            background-color: var(--buttonColor);
+            border: none;
+        }
+
+        .projectTable {
+            display: block;
+            margin: 0 auto;
+            padding: 5px;
+            min-height: 550px;
+            max-height: 550px;
+            overflow-y: scroll;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .projectTable::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .projectTable {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        table {
+            color: white;
+            padding: 0 15px 0 15px;
+        }
+
+        table a {
+            font-size: small;
+        }
+
+        .main-container {
+            width: 1400px;
+            margin: 0 auto;
+        }
+
+        .left-column {
+            max-width: 600px;
+        }
+
+        .right-column {
+            width: 750px;
+            max-width: 750px;
+        }
+    </style>
 </head>
 
 <body>
-
     <section class="s1">
         <div class="main-container">
+            <h1>Admin Panel</h1>
             <div class="intro-wrapper">
-                <div class="nav-wrapper">
-                    <!-- Link around dots-wrapper added after tutorial video -->
-                    <a href="/">
-                        <div class="dots-wrapper">
-                            <div id="dot-1" class="browser-dot"></div>
-                            <div id="dot-2" class="browser-dot"></div>
-                            <div id="dot-3" class="browser-dot"></div>
-                        </div>
-                    </a>
-
-
-                    <ul id="navigation">
-                        <li><a href="/contact.html">Contact</a></li>
-
-                    </ul>
-                </div>
-
                 <div class="left-column">
-
-                </div>
-
-                <div class="right-column">
-
-                </div>
-                <div>
-                    <div class="left-column">
-                        <div class="wrapper">
-                            <div class="dots-wrapper card-header">
+                    <div class="wrapper">
+                        <div class="nav-wrapper">
+                            <div class="dots-wrapper">
                                 <div id="dot-1" class="browser-dot"></div>
                                 <div id="dot-2" class="browser-dot"></div>
                                 <div id="dot-3" class="browser-dot"></div>
                             </div>
-                            <div class="post">
-                                <label>Title</label> <input type="text" name="title" id="title"><br />
-                                <label>Description</label> <input type="text" name="description" id="description"><br />
-                                <button onclick="addProject()">Add</button>
-                            </div>
+
+                            <ul id="navigation">
+                                <li>Add Project</li>
+                            </ul>
+                        </div>
+
+                        <div class="post">
+
+                            <label>Title</label> <input class="input-field" type="text" name="title" id="title"><br />
+                            <label>Image</label><input class="input-field" type="text" name="image" id="image"><br />
+                            <label>Repo Link</label><input class="input-field" type="text" name="repo-link"
+                                id="repo-link"><br />
+                            <label>Live Link</label><input class="input-field" type="text" name="live-link"
+                                id="live-link"><br />
+                            <label>Description</label> <textarea class="input-field" type="text" name="description"
+                                id="description"></textarea><br />
+
+                            <button id="add-btn" onclick="addProject()">Add</button>
                         </div>
                     </div>
                 </div>
+                <div class="right-column">
+                    <div class="wrapper">
+                        <div class="nav-wrapper">
+                            <div class="dots-wrapper">
+                                <div id="dot-1" class="browser-dot"></div>
+                                <div id="dot-2" class="browser-dot"></div>
+                                <div id="dot-3" class="browser-dot"></div>
+                            </div>
 
-                <div>
-                    <div class="right-column">
+                            <ul id="navigation">
+                                <li>Projects</li>
+                            </ul>
+                        </div>
 
+                        <div class="projectTable">
+                            <table id='projects'>
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Repo Link</th>
+                                        <th>Live Link</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="projectTableBody"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,14 +181,20 @@
         function addProject() {
             var title = document.getElementById('title').value;
             var des = document.getElementById('description').value;
+            var image = document.getElementById('image').value;
+            var repoLink = document.getElementById('repo-link').value;
+            var liveLink = document.getElementById('live-link').value;
 
-            console.log(des, title)
+            console.log(des, title, image, repoLink, liveLink)
 
-            fetch(`https://new-react-dev--cameronthompson.netlify.app/.netlify/functions/addproject`, {
+            fetch(`/addProject`, {
                     method: 'POST',
                     body: JSON.stringify({
                         title: title,
-                        description: des
+                        description: des,
+                        image: image,
+                        repoLink: repoLink,
+                        liveLink: liveLink
                     })
                 })
                 .then(response => response.json())
@@ -97,6 +202,127 @@
                     console.log(json)
                 });
         }
+
+        const testData = [{
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }, {
+            image: 'https://github.com/cdthomp1/portfolio-site/blob/master/images/coming-soon.png?raw=true',
+            liveLink: 'https://cameronthompson.io',
+            _id: "5fc9ecca102ad300089725d7",
+            title: 'Test Project Live',
+            description: 'This is a test project. The description is going to be longer.',
+            repoLink: 'https://github.com/cdthomp1/portfolio-site'
+        }]
+
+        async function displayProjects() {
+            const projects = await fetch('/getProjects')
+                .then(response => response.json())
+                .then(json => {
+                    return json
+                });
+
+            const table = document.getElementById("projectTableBody");
+            projects.forEach(item => {
+                let row = table.insertRow();
+                let title = row.insertCell(0);
+                title.innerHTML = item.title;
+                let repo = row.insertCell(1);
+                repo.innerHTML = `<a href="${item.repoLink}" target="_blank">${item.repoLink}</a>`;
+                let live = row.insertCell(2);
+                live.innerHTML = `<a href="${item.liveLink}" target="_blank">${item.liveLink}</a>`;
+            });
+        }
+
+        displayProjects();
     </script>
 </body>
 
