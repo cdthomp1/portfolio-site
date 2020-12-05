@@ -20,6 +20,8 @@ exports.handler = async (event, context) => {
 
     const {identity, user} = context.clientContext;
 
+    console.log(user)
+
     try {
         //connectDB();
         
