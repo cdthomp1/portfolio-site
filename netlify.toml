@@ -1,12 +1,9 @@
 [build]
     functions="functions"
-    base="/src/"
 [[redirects]]
     from = "/api/*"
     to = "/.netlify/functions/:splat"
     status = 200
-[dev]
-    base="src/"
 [build.processing.js]
   bundle = false
   minify = true
