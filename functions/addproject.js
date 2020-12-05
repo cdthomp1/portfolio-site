@@ -23,11 +23,15 @@ exports.handler = async (event, context) => {
     const isAdmin = user.app_metadata.roles.includes('Admin');
     if(isAdmin) {
         try {
-            //connectDB();
+            connectDB();
             
-            const { title, description, image, repoLink, liveLink } = JSON.parse(event.body)
+            var { title, description, image, repoLink, liveLink } = JSON.parse(event.body)
     
-            console.log(event.body)
+            console.log(image === '')
+
+            if(image === '') {
+                image = 'https://raw.githubusercontent.com/cdthomp1/portfolio-site/master/images/coming-soon.png'
+            }
     
             const project = new Project({
                 title: title, 
@@ -39,7 +43,7 @@ exports.handler = async (event, context) => {
     
             console.log(project)
     
-            // const createdProject = await Project.create(project)
+            const createdProject = await Project.create(project)
             return {
                 statusCode: 200,
                 body: JSON.stringify({ message: event, context: {user, identity} }),
