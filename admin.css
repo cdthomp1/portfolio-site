@@ -74,10 +74,11 @@ table {
     width: 100%;
 }
 
-th, td {
+th,
+td {
     padding: 15px;
     text-align: left;
-  }
+}
 
 table a {
     font-size: small;
@@ -110,4 +111,11 @@ table a {
 .netlify-identity-menu li {
     display: inline;
     padding: 5px;
+}
+
+
+#easterEgg {
+    position: absolute;
+    left: 35%;
+    visibility: hidden;
 }

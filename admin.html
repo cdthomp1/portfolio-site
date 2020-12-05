@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <div id="easterEgg"><img src="https://media.giphy.com/media/Ihz5w0ugweeFod06di/giphy.gif"></div>
     <div id="login" data-netlify-identity-menu></div>
     <section class="s1">
         <div class="main-container">
@@ -129,6 +130,9 @@
                     .then(response => response.json())
                     .then(json => {
                         console.log(json)
+                        displayProjects();
+                        clearAddForm();
+                        showEasterEgg();
                     });
             } else {
                 alert('Please Log In')
@@ -136,7 +140,18 @@
 
         }
 
+        function clearAddForm() {
+            document.getElementById('title').value = '';
+            document.getElementById('description').value = '';
+            document.getElementById('image').value = '';
+            document.getElementById('repo-link').value = '';
+            document.getElementById('live-link').value = '';
+        }
 
+        function showEasterEgg() {
+            document.getElementById('easterEgg').style.visibility = 'visible';
+            setTimeout(function(){ document.getElementById('easterEgg').style.visibility = 'hidden'; }, 5000);
+        }
 
         async function displayProjects() {
             const projects = await fetch('/api/getProjects')
@@ -146,6 +161,7 @@
                 });
 
             const table = document.getElementById("projectTableBody");
+            table.innerHTML = '';
             projects.forEach(item => {
                 let row = table.insertRow();
                 let title = row.insertCell(0);

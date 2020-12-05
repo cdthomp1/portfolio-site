@@ -25,8 +25,9 @@ exports.handler = async (event, context) => {
         try {
             connectDB();
             
-            var { title, description, image, repoLink, liveLink } = JSON.parse(event.body)
-    
+            const { title, description, repoLink, liveLink } = JSON.parse(event.body);
+            var { image } = JSON.parse(event.body);
+            
             console.log(image === '')
 
             if(image === '') {

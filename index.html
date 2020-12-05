@@ -103,75 +103,13 @@
 	<section class="s1">
 		<div class="main-container">
 			<h3 style="text-align: center;">Some of my past projects</h3>
-			<div class="post-wrapper">
-
-				<div class="wrapper">
-					<div class="dots-wrapper card-header">
-						<div id="dot-1" class="browser-dot"></div>
-						<div id="dot-2" class="browser-dot"></div>
-						<div id="dot-3" class="browser-dot"></div>
-					</div>
-					<div class="post">
-						<img class="thumbnail" src="images/men-template.png">
-						<div class="post-preview">
-							<h6 class="post-title">MongoDb Express Node Template</h6>
-							<p class="post-intro">A helpful template to help kickstart either MERN or MEAN stack projects.</p>
-							<div class="link-container">
-								<a class="read-more" href="https://github.com/cdthomp1/mongo-express-node-template">Repo
-									Link</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="wrapper">
-					<div class="dots-wrapper card-header">
-						<div id="dot-1" class="browser-dot"></div>
-						<div id="dot-2" class="browser-dot"></div>
-						<div id="dot-3" class="browser-dot"></div>
-					</div>
-					<div class="post">
-						<img class="thumbnail" src="images/react-github.png">
-						<div class="post-preview">
-							<h6 class="post-title">React Github Finder</h6>
-							<p class="post-intro">A small React project that has users search for profiles using the
-								Github API.</p>
-							<div class="link-container">
-								<a class="read-more" target="_blank"
-									href="https://github.com/cdthomp1/mongo-express-node-template">Repo
-									Link</a>
-								<a class="read-more" target="_blank"
-									href="https://github-finder.cameronthompson.io/">Live Site</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="wrapper">
-					<div class="dots-wrapper card-header">
-						<div id="dot-1" class="browser-dot"></div>
-						<div id="dot-2" class="browser-dot"></div>
-						<div id="dot-3" class="browser-dot"></div>
-					</div>
-					<div class="post">
-						<img class="thumbnail" src="images/npm-card.png" alt="image of NPM card">
-						<div class="post-preview">
-							<h6 class="post-title">Personal NPM Card</h6>
-							<p class="post-intro">By typing <code class="language-powershell">npx cameronthompson</code> in the terminal, you can see my personal npm card!</p>
-							<div class="link-container">
-								<a class="read-more" target="_blank"
-									href="https://github.com/cdthomp1/cameronthompson">Repo
-									Link</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
+			<div class="post-wrapper" id="projects">
 
 			</div>
 		</div>
 	</section>
 
+	<div id="temp"></div>
 
 
 	<footer>
@@ -187,8 +125,54 @@
 
 	<script type="text/javascript" src="script.js"></script>
 	<script src="prism.js"></script>
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	<script>
+		async function displayProjects() {
+			const projects = await fetch('/api/getProjects')
+				.then(response => response.json())
+				.then(json => {
+					return json
+				});
 
+			var tempDiv = document.getElementById('projects');
+
+			projects.forEach(project => {
+				console.log(project)
+				var htmlStuff = `
+				<div class="wrapper">
+					<div class="dots-wrapper card-header">
+						<div id="dot-1" class="browser-dot"></div>
+						<div id="dot-2" class="browser-dot"></div>
+						<div id="dot-3" class="browser-dot"></div>
+					</div>
+					<div class="post">
+						<img class="thumbnail" src="${project.image}" alt="image of NPM card">
+						<div class="post-preview">
+							<h6 class="post-title">${project.title}</h6>
+							<p class="post-intro">${project.description}</p>
+							<div class="link-container">
+								<a class="read-more" target="_blank"
+									href="${project.repoLink}">Repo
+									Link</a>`
+				if (project.liveLink) {
+					htmlStuff += `
+											<a class="read-more" target="_blank"
+											href="${project.liveLink}">Live Site</a>
+													</div>
+												</div>
+											</div>
+										</div>`
+				}
+
+
+
+				tempDiv.insertAdjacentHTML('beforeend', htmlStuff);;
+
+			})
+		}
+
+		displayProjects();
+	</script>
 </body>
 
 </html>
