@@ -20,34 +20,37 @@ exports.handler = async (event, context) => {
 
     const {identity, user} = context.clientContext;
 
-    console.log(user)
-
-    try {
-        //connectDB();
-        
-        const { title, description, image, repoLink, liveLink } = JSON.parse(event.body)
-
-        console.log(event.body)
-
-        const project = new Project({
-            title: title, 
-            description: description, 
-            image: image, 
-            repoLink: repoLink, 
-            liveLink: liveLink
-        });
-
-        console.log(project)
-
-        // const createdProject = await Project.create(project)
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ message: event, context: {user, identity} }),
-            // // more keys you can return:
-            // headers: { "headerName": "headerValue", ... },
-            // isBase64Encoded: true,
+    const isAdmin = user.app_metadata.roles.includes('Admin');
+    if(isAdmin) {
+        try {
+            //connectDB();
+            
+            const { title, description, image, repoLink, liveLink } = JSON.parse(event.body)
+    
+            console.log(event.body)
+    
+            const project = new Project({
+                title: title, 
+                description: description, 
+                image: image, 
+                repoLink: repoLink, 
+                liveLink: liveLink
+            });
+    
+            console.log(project)
+    
+            // const createdProject = await Project.create(project)
+            return {
+                statusCode: 200,
+                body: JSON.stringify({ message: event, context: {user, identity} }),
+                // // more keys you can return:
+                // headers: { "headerName": "headerValue", ... },
+                // isBase64Encoded: true,
+            }
+        } catch (error) {
+            return { statusCode: 500, body: error.toString() }
         }
-    } catch (error) {
-        return { statusCode: 500, body: error.toString() }
+    } else {
+        return { statusCode: 401, body: error.toString() }
     }
 }
