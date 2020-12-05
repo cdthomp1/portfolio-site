@@ -11,47 +11,10 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="default.css">
-	<link id="theme-style" rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 
-	<link href="prism.css" rel="stylesheet" />
-	<style type="text/css">
-		body {
-			background-color: var(--mainColor);
-		}
-
-		.s1 {
-			border-bottom: none;
-		}
-
-		#success {
-			text-align: center;
-			padding: 5px;
-		}
-
-		.window-card {
-			background-color: var(--secondaryColor);
-			border: 1px solid var(--borderColor);
-			border-radius: 5px 5px 0 0;
-
-
-			-webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
-			-moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
-			box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
-
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 46px 1fr;
-			grid-template-areas:
-				'nav-wrapper nav-wrapper'
-				'whole-span whole-span'
-			;
-		}
-
-		.whole-span {
-			grid-area: whole-span;
-		}
-	</style>
+	<link href="./styles/prism.css" rel="stylesheet" />
+	<link rel="stylesheet" href="./styles/contact.css">
 
 </head>
 
@@ -103,10 +66,19 @@
 			</form>
 		</div>
 	</section>
+	<footer>
+		<img id="footerImg" src="./assets/images/Dev.png" />
+		<ul class="footerLinks">
+			<li><a href="https://www.linkedin.com/in/cameron-thompson96/" target="_blank"
+					rel="noopener noreferrer">Linkedin</a></li>
+			<li><a href="https://github.com/cdthomp1" target="_blank" rel="noopener noreferrer">Github</a></li>
 
+			<li><a href="/contact.html">Contact</a></li>
+		</ul>
+	</footer>
 
-	<script type="text/javascript" src="script.js"></script>
-	<script src="prism.js"></script>
+	<script type="text/javascript" src="./scripts/script.js"></script>
+	<script src="./scripts/prism.js"></script>
 </body>
 
 </html>
