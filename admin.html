@@ -180,6 +180,8 @@
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <script>
+        netlifyIdentity.on('login', user => console.log('login', user));
+        
         function addProject() {
             var title = document.getElementById('title').value;
             var des = document.getElementById('description').value;
