@@ -184,7 +184,12 @@
             const user = await netlifyIdentity.on('login', user => {
                 return user
             });
-            return user;
+
+            const loggedIn = async () => {
+                const a = await user;
+                return a;
+            }
+            return loggedIn;
         }
 
         console.log(getUser())
