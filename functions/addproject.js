@@ -16,7 +16,7 @@ const connectDB = async () => {
     }
 }
 
-exports.handler = async event => {
+exports.handler = async (event, context) => {
     try {
         //connectDB();
         
@@ -37,7 +37,7 @@ exports.handler = async event => {
         // const createdProject = await Project.create(project)
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: event }),
+            body: JSON.stringify({ message: event, context }),
             // // more keys you can return:
             // headers: { "headerName": "headerValue", ... },
             // isBase64Encoded: true,
