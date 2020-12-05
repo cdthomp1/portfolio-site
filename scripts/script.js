@@ -26,7 +26,7 @@ async function displayProjects() {
 				<div id="dot-3" class="browser-dot"></div>
 			</div>
 			<div class="post">
-				<img class="thumbnail" src="${project.image}" alt="image of NPM card">
+				<img class="thumbnail" src="${project.image}" alt="Image of Project">
 				<div class="post-preview">
 					<h6 class="post-title">${project.title}</h6>
 					<p class="post-intro">${project.description}</p>
@@ -70,7 +70,7 @@ async function displayArticles() {
 				<div id="dot-3" class="browser-dot"></div>
 			</div>
 			<div class="post">
-				<img class="thumbnail" src="${article.cover_image}" alt="image of NPM card">
+				<img class="thumbnail" src="${article.cover_image}" alt="Image of Article">
 				<div class="post-preview">
 					<h6 class="post-title">${article.title}</h6>
 					<p class="post-intro">${article.description}</p>
