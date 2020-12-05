@@ -180,7 +180,12 @@
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <script>
-        netlifyIdentity.on('login', user => console.log('login', user));
+        async function getUser() {
+            const user = await netlifyIdentity.on('login', user => user);
+            return user;
+        }
+
+        console.log(getUser())
         
         function addProject() {
             var title = document.getElementById('title').value;
@@ -193,6 +198,9 @@
 
             fetch(`/api/addproject`, {
                     method: 'POST',
+                    headers: {
+                        "Authorization": `Bearer ${user.token}`
+                    }
                     body: JSON.stringify({
                         title: title,
                         description: des,
