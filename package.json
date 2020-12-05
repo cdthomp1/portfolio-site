@@ -18,5 +18,8 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "mongoose": "^5.11.3"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }
