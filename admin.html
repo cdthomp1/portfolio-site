@@ -88,17 +88,23 @@
     <script src="prism.js"></script>
 
     <script>
+        displayProjects();
         
         netlifyIdentity.init();
         var thing = document.getElementById("login").childNodes;
         thing[0].remove()
         
             
-        var token = netlifyIdentity.currentUser().token.access_token; 
         
         netlifyIdentity.on('login', user => location.reload());
         netlifyIdentity.on('logout', () => token = null);
         function addProject() {
+            try {
+                var token = netlifyIdentity.currentUser().token.access_token; 
+            }catch (err) {
+                console.error("Can't get Token")
+            }
+            
             var title = document.getElementById('title').value;
             var des = document.getElementById('description').value;
             var image = document.getElementById('image').value;
@@ -125,7 +131,7 @@
                         console.log(json)
                     });
             } else {
-                console.error('No Token Set, please log in')
+                alert('Please Log In')
             }
 
         }
@@ -151,7 +157,6 @@
             });
         }
 
-        displayProjects();
     </script>
 </body>
 
