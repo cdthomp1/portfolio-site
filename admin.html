@@ -180,19 +180,18 @@
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <script>
-        async function getUser() {
-            const user = await netlifyIdentity.on('login', user => {
-                return user
-            });
+        const user = netlifyIdentity.on('login', user => {
+            return user
+        });
 
-            const loggedIn = async () => {
-                const a = await user;
-                return a;
-            }
-            return loggedIn;
+        const loggedIn = async () => {
+            const a = await user;
+            return a;
         }
 
-        console.log(getUser())
+
+
+        console.log(loggedIn)
 
         function addProject() {
             var title = document.getElementById('title').value;
