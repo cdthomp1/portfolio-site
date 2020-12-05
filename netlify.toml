@@ -4,6 +4,3 @@
     from = "/api/*"
     to = "/.netlify/functions/:splat"
     status = 200
-[[redirects]]
-    to = "/admin"
-    conditions = {Role = ["Admin"]}

@@ -18,7 +18,8 @@ const connectDB = async () => {
 
 exports.handler = async event => {
     try {
-        connectDB();
+        //connectDB();
+        
         const { title, description, image, repoLink, liveLink } = JSON.parse(event.body)
 
         console.log(event.body)
@@ -33,10 +34,10 @@ exports.handler = async event => {
 
         console.log(project)
 
-        const createdProject = await Project.create(project)
+        // const createdProject = await Project.create(project)
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: 'Project Added :)' }),
+            body: JSON.stringify({ message: event }),
             // // more keys you can return:
             // headers: { "headerName": "headerValue", ... },
             // isBase64Encoded: true,
