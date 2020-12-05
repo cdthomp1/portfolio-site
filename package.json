@@ -17,9 +17,13 @@
   "homepage": "https://github.com/cdthomp1/portfolio-site#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.0.0",
     "mongoose": "^5.11.3"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
   }
 }
