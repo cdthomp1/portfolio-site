@@ -1,21 +1,13 @@
 :root {
 	--mainColor: #15202B;
 	--secondaryColor: #192734;
-
 	--borderColor: #164D56;
-
 	--mainText: #fff;
 	--secondaryText: #eeeeee;
-
 	--themeDotBorder: #FFF;
-
 	--previewBg: rgb(25, 39, 52, 0.8);
 	--previewShadow: #111921;
-
-
 	--buttonColor: #17a2b8;
-
-
 }
 
 
@@ -50,7 +42,8 @@ span,
 label,
 input,
 textarea,
-small, table {
+small,
+table {
 	color: var(--secondaryText);
 	font-family: 'Roboto Mono', monospace;
 }
@@ -135,7 +128,13 @@ h6 {
 		'nav-wrapper nav-wrapper'
 		'left-column right-column'
 	;
+
+	background-image: url(../wave.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
+
 
 
 .nav-wrapper {
@@ -292,51 +291,15 @@ h6 {
 }
 
 
-#preview-shadow {
-	background-color: var(--previewShadow);
-	max-width: 300px;
-	height: 180px;
-	padding-left: 30px;
-	padding-top: 30px;
-}
-
 #preview {
+	color: black;
 	width: 300px;
-	border: 1.5px solid #17a2b8;
-	background-color: var(--previewBg);
 	padding: 15px;
 	position: relative;
-}
-
-.corner {
-	width: 7px;
-	height: 7px;
-	border-radius: 50%;
-	border: 1.5px solid #17a2b8;
-	background-color: #fff;
-	position: absolute;
-}
-
-#corner-tl {
-	top: -5px;
-	left: -5px
-}
-
-#corner-tr {
-	top: -5px;
-	right: -5px
-}
-
-
-#corner-br {
-	bottom: -5px;
-	right: -5px
-}
-
-
-#corner-bl {
-	bottom: -5px;
-	left: -5px
+	backdrop-filter: blur(10px);
+	box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.05);
+	background: inherit;
+	border-radius: 2px;
 }
 
 .about-wrapper {
@@ -345,13 +308,25 @@ h6 {
 	padding-bottom: 50px;
 	padding-top: 50px;
 	gap: 100px;
+
+	background-image: url(../wave-mirror.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 
 #skills {
 	display: flex;
-	justify-content: space-evenly;
-	background-color: var(--previewShadow);
+	flex-direction: column;
+	flex-wrap: wrap;
+	max-height: 130px;
+	max-width: 475px;
+	margin: 0%;
+}
+
+#skills p {
+	margin: 3px;
 }
 
 .social-links {
@@ -509,6 +484,16 @@ footer {
 	}
 }
 
+@media screen and (max-width: 850px) {
+	#skills {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		max-height: 150px;
+		justify-content: center;
+	}
+}
+
 @media screen and (max-width: 800px) {
 	.intro-wrapper {
 		grid-template-columns: 1fr;
@@ -534,29 +519,72 @@ footer {
 		max-width: 280px;
 	}
 
-	
+
+}
+
+@media screen and (max-width: 650px) {
+	#skills {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		max-height: 175px;
+		justify-content: center;
+		margin: auto;
+	}
+
+	#skills p {
+		text-align: center;
+	}
 }
 
 @media screen and (max-width: 500px) {
-	#skills ul{
-		padding-left: 30px;
+	#skills {
+		display: flex;
+		flex-direction: column;
 	}
 }
 
 
 @media screen and (max-width: 400px) {
-	#preview-shadow {
-		max-width: 280px;
-		height: 180px;
-		padding-left: 10px;
-		padding-top: 10px;
+
+	#skills {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 275px;
+		margin: auto;
+		max-width: 275px;
 	}
 
-	#preview {
-		width: 280px;
-
+	#skills p {
+		text-align: center;
 	}
 
-	
+
+
+}
+
+@media screen and (max-width: 320px) {
+
+	#skills {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		width: 275px;
+		min-height: 275px;
+		margin: auto;
+	}
+
+	.s2 {
+		margin: 5px;
+	}
+
+	.about-me {
+		margin: 5px;
+	}
+
+
+
+
 
 }
