@@ -129,10 +129,10 @@ h6 {
 		'left-column right-column'
 	;
 
-	background-image: url(../wave.png);
+	/* background-image: url(../wave.png);
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover; */
 }
 
 
@@ -309,10 +309,7 @@ h6 {
 	padding-top: 50px;
 	gap: 100px;
 
-	background-image: url(../wave-mirror.png);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	
 }
 
 
@@ -455,6 +452,7 @@ footer {
 .footerLinks {
 	display: flex;
 	justify-content: center;
+	padding-left: 0;
 }
 
 .footerLinks ul {
