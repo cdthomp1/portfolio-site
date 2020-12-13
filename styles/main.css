@@ -48,6 +48,10 @@ table {
 	font-family: 'Roboto Mono', monospace;
 }
 
+.honeypt {
+	display: none;
+}
+
 a {
 	font-family: 'Roboto Mono', monospace;
 	text-decoration: none;
@@ -309,7 +313,7 @@ h6 {
 	padding-top: 50px;
 	gap: 100px;
 
-	
+
 }
 
 
