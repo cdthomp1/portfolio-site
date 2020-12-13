@@ -4,6 +4,8 @@ html,
             margin: 0;
             scroll-behavior: smooth;
             background-color: var(--mainColor);
+            background-image: url('../images/admin-background.jpg');
+            background-size: cover;
         }
 
         body * {
@@ -60,7 +62,7 @@ html,
         .doc-item .icon {
             padding: 3px;
             backdrop-filter: blur(10px);
-            box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.3);
+            box-shadow: inset 0 0 0 200px rgba(122, 122, 122, 0.3);
             background: inherit;
             border-radius: 2px;
             color: white;
@@ -74,10 +76,9 @@ html,
 
 
         .doc-item:hover {
-            border: solid white 1px;
             border-radius: 2px;
             backdrop-filter: blur(10px);
-            box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.623);
+            box-shadow: inset 0 0 0 200px rgba(63, 63, 63, 0.623);
             background: inherit;
         }
 
