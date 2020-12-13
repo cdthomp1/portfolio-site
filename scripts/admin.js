@@ -11,7 +11,7 @@ netlifyIdentity.init();
         function closeModal() {
             const container = document.getElementById('modal-container');
             if (container.innerHTML) {
-                container.innerHTML = '';
+                container.innerHTML = `<h1>Admin Portal</h1>`;
             }
         }
 
@@ -140,7 +140,7 @@ netlifyIdentity.init();
             <div class="wrapper proj-table">
                         <div class="nav-wrapper">
                             <div class="dots-wrapper">
-                                <div id="dot-1" class="browser-dot"></div>
+                                <div id="dot-1" class="browser-dot" onclick="closeModal()"></div>
                                 <div id="dot-2" class="browser-dot"></div>
                                 <div id="dot-3" class="browser-dot"></div>
                             </div>
