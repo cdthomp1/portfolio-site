@@ -20,6 +20,10 @@ const projectSchema = mongoose.Schema({
     liveLink: {
         type: String,
         default: "na"
+    }, 
+    public: {
+        type: Boolean,
+        default: false
     }
 })
 
