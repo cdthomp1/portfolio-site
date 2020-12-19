@@ -21,9 +21,5 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.0.0",
     "mongoose": "^5.11.3"
-  },
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-uglify": "^3.0.2"
   }
 }
