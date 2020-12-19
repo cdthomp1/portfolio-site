@@ -3,8 +3,7 @@ function clickCopy() {
 	copyText.innerText;
 	document.execCommand("copy");
 	document.getElementById("copy-notice").innerText = "Copied!"
-	setTimeout(function(){ document.getElementById("copy-notice").innerText = "Click to Copy!"}, 3000);
-	
+	setTimeout(function () { document.getElementById("copy-notice").innerText = "Click to Copy!" }, 3000);
 }
 
 async function displayProjects() {
@@ -61,7 +60,7 @@ async function displayArticles() {
 	var articleDiv = document.getElementById('articles');
 
 	articles.forEach(article => {
-		console.log(article)
+		//console.log(article)
 		var articleHtml = `
 		<div class="wrapper">
 			<div class="dots-wrapper card-header">
@@ -81,7 +80,7 @@ async function displayArticles() {
 					</div>
 				</div>
 			</div>`
-		
+
 
 
 
