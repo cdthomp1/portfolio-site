@@ -30,7 +30,7 @@ const ContactScreen = () => {
                         <pre><code className="language-powershell" id="npx" >npx cameronthompson</code></pre>
                     </div>
 
-                    <form id="contact-form" name="contact" action="/formSuccess" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                    <form id="contact-form" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
                         <a name="contact"></a>
                         <label className="honeypt">Don't fill this out if you're human: <input className="honeypt" name="bot-field" /></label>
                         <label>Name</label>
