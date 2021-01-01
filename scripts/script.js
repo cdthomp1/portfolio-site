@@ -16,8 +16,8 @@ async function displayProjects() {
 	var tempDiv = document.getElementById('projects');
 
 	projects.forEach(project => {
-		// console.log(project)
-		var htmlStuff = `
+		if (project.public) {
+			var htmlStuff = `
 		<div class="wrapper">
 			<div class="dots-wrapper card-header">
 				<div id="dot-1" class="browser-dot"></div>
@@ -33,20 +33,18 @@ async function displayProjects() {
 						<a class="read-more" target="_blank"
 							href="${project.repoLink}">Repo
 							Link</a>`
-		if (project.liveLink) {
-			htmlStuff += `
+			if (project.liveLink) {
+				htmlStuff += `
 									<a class="read-more" target="_blank"
 									href="${project.liveLink}">Live Site</a>
 											</div>
 										</div>
 									</div>
 								</div>`
+			}
+
+			tempDiv.insertAdjacentHTML('beforeend', htmlStuff);
 		}
-
-
-
-		tempDiv.insertAdjacentHTML('beforeend', htmlStuff);;
-
 	})
 }
 
@@ -61,7 +59,8 @@ async function displayArticles() {
 
 	articles.forEach(article => {
 		//console.log(article)
-		var articleHtml = `
+		if (article.cover_image !== null) {
+			var articleHtml = `
 		<div class="wrapper">
 			<div class="dots-wrapper card-header">
 				<div id="dot-1" class="browser-dot"></div>
@@ -80,12 +79,8 @@ async function displayArticles() {
 					</div>
 				</div>
 			</div>`
-
-
-
-
-		articleDiv.insertAdjacentHTML('beforeend', articleHtml);
-
+			articleDiv.insertAdjacentHTML('beforeend', articleHtml);
+		}
 	})
 }
 
