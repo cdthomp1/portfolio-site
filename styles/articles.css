@@ -1,0 +1,46 @@
+:root {
+	--mainColor: #15202B;
+	--secondaryColor: #192734;
+	--borderColor: #164D56;
+	--mainText: #fff;
+	--secondaryText: #eeeeee;
+	--themeDotBorder: #FFF;
+	--previewBg: rgb(25, 39, 52, 0.8);
+	--previewShadow: #111921;
+	--buttonColor: #17a2b8;
+}
+
+body {
+    background-color: var(--mainColor);
+
+}
+
+.s1 {
+    border-bottom: none;
+}
+
+#success {
+    text-align: center;
+    padding: 5px;
+}
+
+.window-card {
+    background-color: var(--secondaryColor);
+    border: 1px solid var(--borderColor);
+    border-radius: 5px 5px 0 0;
+
+
+    -webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 46px 1fr;
+    grid-template-areas:
+        'nav-wrapper nav-wrapper'
+        'whole-span whole-span'
+    ;
+}
+
+.whole-span { grid-area: whole-span; }

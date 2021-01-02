@@ -13,9 +13,9 @@ async function displayProjects() {
 			return json
 		});
 
-	var tempDiv = document.getElementById('projects');
+	var projDiv = document.getElementById('projects');
 
-	projects.forEach(project => {
+	projects.slice(0,4).forEach(project => {
 		if (project.public) {
 			var htmlStuff = `
 		<div class="wrapper">
@@ -43,7 +43,7 @@ async function displayProjects() {
 								</div>`
 			}
 
-			tempDiv.insertAdjacentHTML('beforeend', htmlStuff);
+			projDiv.insertAdjacentHTML('beforeend', htmlStuff);
 		}
 	})
 }
@@ -57,7 +57,7 @@ async function displayArticles() {
 
 	var articleDiv = document.getElementById('articles');
 
-	articles.forEach(article => {
+	articles.slice(0,4).forEach(article => {
 		//console.log(article)
 		if (article.cover_image !== null) {
 			var articleHtml = `
