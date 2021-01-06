@@ -28,12 +28,15 @@ async function displayProjects() {
 			if (project.liveLink) {
 				htmlStuff += `
 									<a class="read-more" target="_blank"
-									href="${project.liveLink}">Live Site</a>
+									href="${project.liveLink}">Live Site</a>`
+			}
+			htmlStuff += `<a class="read-more" href="/project.html?id=`;
+			htmlStuff += `${project._id}">More</a>
 											</div>
 										</div>
 									</div>
 								</div>`
-			}
+
 
 			projDiv.insertAdjacentHTML('beforeend', htmlStuff);
 		}
