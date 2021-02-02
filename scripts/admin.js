@@ -21,13 +21,12 @@ function addProject() {
     } catch (err) {
         console.error("Can't get Token")
     }
-
+    
     var title = document.getElementById('title').value;
     var des = document.getElementById('description').value;
     var image = document.getElementById('image').value;
     var repoLink = document.getElementById('repo-link').value;
     var liveLink = document.getElementById('live-link').value;
-
 
     if (token) {
         fetch(`/api/addproject`, {
