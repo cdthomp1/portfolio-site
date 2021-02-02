@@ -1,2 +1,3 @@
 /getProjects /.netlify/functions/getProjects.js 200
 /addProject /.netlify/functions/addproject.js 200
+/getAssignments /.netlify/functions/getAssignments.js 200

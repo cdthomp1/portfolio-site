@@ -97,7 +97,6 @@ select {
     display: flex;
 }
 
-
 .wrapper {
     background-color: var(--secondaryColor);
     border: 1px solid var(--borderColor);
@@ -236,4 +235,82 @@ select {
 
 .project-edit {
     color: var(--mainColor)
+}
+
+.todo-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 300px;
+    justify-content: center;
+    padding: 5px;
+}
+
+.item-info p {
+    margin: 0;
+}
+
+.item-type,
+.item-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+
+@media only screen and (max-width: 430px) {
+
+    #easterEgg {
+        position: absolute;
+        visibility: hidden;
+        left: 0%;
+        width: 300px;
+    }
+    #easterEgg img {
+        width: 300px;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .doc {
+        color: black;
+        height: 90px;
+        width: 100vw;
+        backdrop-filter: blur(10px);
+        box-shadow: inset 0 0 0 200px rgba(255, 0, 0, 0.05);
+        background: inherit;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .wrapper {
+        margin: 50px 5px 5px 5px;
+    }
+
+    .todo-item {
+        max-width: 360px;
+        margin: 3px 0px;
+    }
+
+    .item-info {
+        display: flex;
+        flex-direction: column;
+        min-width: 270px;
+        max-width: 270px;
+        justify-content: center;
+        padding: 5px;
+    }
 }

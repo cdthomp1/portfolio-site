@@ -94,6 +94,42 @@ async function displayProjects() {
     });
 }
 
+async function displayTodos() {
+    // Get Assignments
+    const assignments = await fetch('/api/getAssignments')
+        .then(response => response.json())
+        .then(json => {
+            return json
+        });
+
+    // Get Todo's
+
+    // Add to main list
+    var todoList = assignments;//.sort((a, b) => {if (a.endDate < b.endDate) {return -1} if (a.endDate > b.endDate) {return 1}})
+
+    const list = document.getElementById("todo-list");
+    list.innerHTML = '';
+    todoList.forEach(item => {
+        if (item.type === "event") {
+            list.innerHTML += `<div class="todo-item"><div class="item-type"><i class="far fa-calendar-alt fa-4x"></i></div><div class="item-info">
+            <p><a href="${item.url}" target="_blank" class="project-listing">${item.title}</a></p>
+            <p><span>${new Date(item.endDate).toDateString()}</span></p>
+        </div>
+        <div class="item-status"><i class="far fa-square fa-2x"></i></div>
+        </div>`;
+
+        }
+        if (item.type === "assignment") {
+            list.innerHTML += `<div class="todo-item"><div class="item-type"><i class="fas fa-clipboard-list fa-4x"></i></div><div class="item-info">
+            <p><a href="${item.url}" target="_blank" class="project-listing">${item.title}</a></p>
+            <p><span>${new Date(item.endDate).toDateString()}</span></p>
+        </div>
+        <div class="item-status"><i class="far fa-square fa-2x"></i></div>
+        </div>`
+        }
+    });
+}
+
 function newProject() {
     const container = document.getElementById('modal-container');
     if (container.innerHTML) {
@@ -141,7 +177,7 @@ function projects() {
         container.innerHTML = '';
     }
     displayProjects();
-    var testHtml = `
+    var projectTable = `
             <div class="wrapper proj-table">
                         <div class="nav-wrapper">
                             <div class="dots-wrapper">
@@ -169,7 +205,7 @@ function projects() {
                         </div>
                     </div>
             `;
-    container.insertAdjacentHTML('beforeend', testHtml);
+    container.insertAdjacentHTML('beforeend', projectTable);
 }
 
 function todoList() {
@@ -177,8 +213,28 @@ function todoList() {
     if (container.innerHTML) {
         container.innerHTML = '';
     }
-    var testHtml = `<p>This is a test of todo list</p>`;
-    container.insertAdjacentHTML('beforeend', testHtml);
+
+    displayTodos();
+
+    var todoList = `
+            <div class="wrapper proj-table">
+            <div class="nav-wrapper">
+                <div class="dots-wrapper">
+                    <div id="dot-1" class="browser-dot" onclick="closeModal()"></div>
+                    <div id="dot-2" class="browser-dot"></div>
+                    <div id="dot-3" class="browser-dot"></div>
+                </div>
+
+                <ul id="navigation">
+                    <li>Todo's</li>
+                </ul>
+            </div>
+
+            <div class="todo-group" id="todo-list">
+                
+            </div>
+        </div>`;
+    container.insertAdjacentHTML('beforeend', todoList);
 }
 
 function savedLinks() {
