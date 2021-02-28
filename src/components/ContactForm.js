@@ -54,9 +54,9 @@ export default function ContactForm(props) {
                 }),
             });
             if (res.status === 200) {
-                const msg = props.successMsg || "Thanks for reaching out!";
-                dispatch({ type: SUBMIT_ACTIONS.SUCCESS, msg });
                 return <Redirect to='/success' />
+                // const msg = props.successMsg || "Thanks for reaching out!";
+                // dispatch({ type: SUBMIT_ACTIONS.SUCCESS, msg });
             } else {
                 const msg = "Ooops... something went wrong.";
                 dispatch({ type: SUBMIT_ACTIONS.ERROR, msg });
