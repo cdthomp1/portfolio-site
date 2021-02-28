@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import * as EmailValidator from "email-validator";
 import submitReducer, { SUBMIT_ACTIONS } from "../reducers/SubmitReducer";
+import { Redirect } from 'react-router-dom'
 
 const initialState = {
     errMsg: "",
@@ -42,7 +43,7 @@ export default function ContactForm(props) {
 
         try {
             dispatch({ type: SUBMIT_ACTIONS.SUBMITTING });
-            const res = await fetch("/success", {
+            const res = await fetch("/", {
                 method: "post",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: encode({
@@ -55,6 +56,7 @@ export default function ContactForm(props) {
             if (res.status === 200) {
                 const msg = props.successMsg || "Thanks for reaching out!";
                 dispatch({ type: SUBMIT_ACTIONS.SUCCESS, msg });
+                return <Redirect to='/success' />
             } else {
                 const msg = "Ooops... something went wrong.";
                 dispatch({ type: SUBMIT_ACTIONS.ERROR, msg });
