@@ -43,7 +43,7 @@ export default function ContactForm(props) {
 
         try {
             dispatch({ type: SUBMIT_ACTIONS.SUBMITTING });
-            const res = await fetch("/", {
+            const res = await fetch("/success", {
                 method: "post",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: encode({
@@ -54,9 +54,8 @@ export default function ContactForm(props) {
                 }),
             });
             if (res.status === 200) {
-                return <Redirect to='/success' />
-                // const msg = props.successMsg || "Thanks for reaching out!";
-                // dispatch({ type: SUBMIT_ACTIONS.SUCCESS, msg });
+                const msg = props.successMsg || "Thanks for reaching out!";
+                dispatch({ type: SUBMIT_ACTIONS.SUCCESS, msg });
             } else {
                 const msg = "Ooops... something went wrong.";
                 dispatch({ type: SUBMIT_ACTIONS.ERROR, msg });
