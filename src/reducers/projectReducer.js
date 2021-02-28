@@ -1,10 +1,10 @@
-import { 
-    PROJECT_LIST_REQUEST, 
-    PROJECT_LIST_SUCCESS, 
-    PROJECT_LIST_FAIL, 
-    PROJECT_DETAILS_REQUEST, 
-    PROJECT_DETAILS_SUCCESS, 
-    PROJECT_DETAILS_FAIL 
+import {
+    PROJECT_LIST_REQUEST,
+    PROJECT_LIST_SUCCESS,
+    PROJECT_LIST_FAIL,
+    PROJECT_DETAILS_REQUEST,
+    PROJECT_DETAILS_SUCCESS,
+    PROJECT_DETAILS_FAIL
 } from '../constants/projectConstants'
 
 export const projectListReducer = (state = { projects: [] }, action) => {
@@ -23,7 +23,7 @@ export const projectListReducer = (state = { projects: [] }, action) => {
 export const projectDetailsReducer = (state = { project: { reviews: [] } }, action) => {
     switch (action.type) {
         case PROJECT_DETAILS_REQUEST:
-            return { loading: true, ...state}
+            return { loading: true, ...state }
         case PROJECT_DETAILS_SUCCESS:
             return { loading: false, project: action.payload }
         case PROJECT_DETAILS_FAIL:

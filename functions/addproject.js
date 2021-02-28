@@ -56,6 +56,6 @@ exports.handler = async (event, context) => {
             return { statusCode: 500, body: error.toString() }
         }
     } else {
-        return { statusCode: 401, body: error.toString() }
+        return { statusCode: 401, body: "Something isn't right" }
     }
 }

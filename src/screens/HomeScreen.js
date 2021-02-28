@@ -7,7 +7,7 @@ import Card from "../components/Card.js";
 const HomeScreen = () => {
     const dispatch = useDispatch();
     const projectList = useSelector(state => state.projectList);
-    const { loading, error, projects } = projectList
+    const { /* loading, error, */ projects } = projectList
 
     useEffect(() => {
         dispatch(listProjects())
