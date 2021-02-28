@@ -2,6 +2,8 @@ import React from 'react';
 import Prism from "prismjs";
 import '../styles/prism.css';
 
+import ContactForm from "../components/ContactForm";
+
 const ContactScreen = () => {
     return (
         <>
@@ -30,23 +32,7 @@ const ContactScreen = () => {
                         <pre><code className="language-powershell" id="npx" >npx cameronthompson</code></pre>
                     </div>
 
-                    <form id="contact-form" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-                        <a name="contact"></a>
-                        <label className="honeypt">Don't fill this out if you're human: <input className="honeypt" name="bot-field" /></label>
-                        <label>Name</label>
-                        <input className="input-field" type="text" name="name" required />
-
-                        <label>Subject</label>
-                        <input className="input-field" type="text" name="subject" required />
-
-                        <label>Email</label>
-                        <input className="input-field" type="text" name="email" required />
-
-                        <label>Message</label>
-                        <textarea className="input-field" name="message" required></textarea>
-
-                        <input id="submit-btn" type="submit" value="Send" />
-                    </form>
+                    <ContactForm />
                 </div>
             </section>
         </>
