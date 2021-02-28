@@ -1,5 +1,5 @@
 import React from 'react';
-import Prism from "prismjs";
+// import Prism from "prismjs";
 import '../styles/prism.css';
 
 import ContactForm from "../components/ContactForm";
@@ -25,7 +25,6 @@ const ContactScreen = () => {
 
             <section className="s2">
                 <div className="main-container">
-                    <a href=""></a>
                     <h3 style={{ textAlign: "center" }}>Get In Touch</h3>
                     <h5 style={{ textAlign: "center" }}>Send me a message here or get my npm card!</h5>
                     <div className="npm-card">

@@ -1,4 +1,4 @@
-import React /* { useState, useEffect }  */from 'react'
+import React /* { useState, useEffect }  */ from 'react'
 /* import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux' */
 
@@ -25,10 +25,10 @@ const Card = ({ project }) => {
                         <h6 className="post-title">{project.title}</h6>
                         <p className="post-intro">{project.description}</p>
                         <div className="link-container">
-                            <a className="read-more" target="_blank"
+                            <a className="read-more" rel="noreferrer" target="_blank"
                                 href={project.repoLink}>Repo
 							Link</a>
-                            <a className="read-more" target="_blank"
+                            <a className="read-more" rel="noreferrer" target="_blank"
                                 href={project.liveLink}>Live Site</a>
                         </div>
                     </div>
