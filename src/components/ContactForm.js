@@ -42,7 +42,7 @@ export default function ContactForm(props) {
 
         try {
             dispatch({ type: SUBMIT_ACTIONS.SUBMITTING });
-            const res = await fetch("/", {
+            const res = await fetch("/success", {
                 method: "post",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: encode({
