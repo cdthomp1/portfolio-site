@@ -8,7 +8,6 @@ async function getUpcomingEvents() {
         var headers = {
             'Authorization': 'Bearer ' + process.env.CANVAS_API_TOKEN
         }
-        console.log(headers)
         const response = await axios.get('https://byui.instructure.com/api/v1/users/self/upcoming_events', { headers });
         return response.data;
     } catch (error) {
