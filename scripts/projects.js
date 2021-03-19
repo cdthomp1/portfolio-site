@@ -8,7 +8,7 @@ async function displayProjects() {
 	var projDiv = document.getElementById('projects');
 
 	projects.forEach(project => {
-		if (project.public) {
+		if (project.public && project.title !== `TEST PROJECT`) {
 			var htmlStuff = `
 		<div class="wrapper">
 			<div class="dots-wrapper card-header">
@@ -30,9 +30,9 @@ async function displayProjects() {
 									<a class="read-more" target="_blank"
 									href="${project.liveLink}">Live Site</a>`
 			}
-			htmlStuff += `<a class="read-more" href="/project.html?id=`;
-			htmlStuff += `${project._id}">More</a>
-											</div>
+			htmlStuff += /* `<a class="read-more" href="/project.html?id=`;
+			htmlStuff += `${project._id}">More</a> */
+											`</div>
 										</div>
 									</div>
 								</div>`
