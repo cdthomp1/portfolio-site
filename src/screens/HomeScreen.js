@@ -1,17 +1,29 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProjects } from '../actions/projectAction.js';
+import { listArticles } from '../actions/articleAction.js';
 
-import Card from "../components/Card.js";
+import ProjectCard from "../components/ProjectCard.js";
+import ArticleCard from "../components/ArticleCard.js"
+import Navigation from '../components/Navigation.js';
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
+    const articleDispatch = useDispatch();
     const projectList = useSelector(state => state.projectList);
-    const { /* loading, error, */ projects } = projectList
+    const { projects } = projectList;
+
+    const articleList = useSelector(state => state.articleList);
+    const { articles } = articleList;
+
 
     useEffect(() => {
-        dispatch(listProjects())
+        dispatch(listProjects());
     }, [dispatch]);
+
+    useEffect(() => {
+        articleDispatch(listArticles());
+    }, [articleDispatch])
     return (
         <div>
             <section className="s1">
@@ -20,20 +32,7 @@ const HomeScreen = () => {
                         <h1>Hi, I'm Cameron Thompson</h1>
                     </div>
                     <div className="intro-wrapper">
-                        <div className="nav-wrapper">
-                            <a href="/">
-                                <div className="dots-wrapper">
-                                    <div id="dot-1" className="browser-dot"></div>
-                                    <div id="dot-2" className="browser-dot"></div>
-                                    <div id="dot-3" className="browser-dot"></div>
-                                </div>
-                            </a>
-
-
-                            <ul id="navigation">
-                                <li><a href="/contact">Contact</a></li>
-                            </ul>
-                        </div>
+                        <Navigation />
 
                         <div className="left-column">
                             <img id="profile_pic" alt='Cameron Thompson' src="./images/thompsonCameron.jpg" />
@@ -87,16 +86,30 @@ const HomeScreen = () => {
                 <div className="main-container">
                     <h3 style={{ textAlign: "center" }}>Some of my latest projects</h3>
                     <div className="post-wrapper" id="projects">
-                        {projects.map(project =>
-                            <Card project={project} />
+                        {projects.slice(0, 3).map(project =>
+                            <ProjectCard key={project._id} project={project} />
                         )}
                     </div>
+                    <div class="more-button">
+                        <a href="/projects">See More</a>
+                    </div>
                 </div>
+
 
                 <div className="main-container">
                     <h3 style={{ textAlign: "center" }}>Some of my latest articles</h3>
                     <div className="post-wrapper" id="articles">
-
+                        {articles.slice(0, 4).map(article => {
+                            if (article.cover_image !== null) {
+                                return <ArticleCard key={article.id} article={article} />
+                            } else {
+                                return <></>
+                            }
+                        }
+                        )}
+                    </div>
+                    <div id="bottom-button" class="more-button">
+                        <a href="/articles">See More</a>
                     </div>
                 </div>
             </section>

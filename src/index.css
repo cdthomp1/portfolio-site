@@ -1,7 +1,7 @@
 :root {
 	--mainColor: #15202B;
 	--secondaryColor: #192734;
-	--borderColor: #164D56;
+	--borderColor: #BB4430;
 	--mainText: #fff;
 	--secondaryText: #eeeeee;
 	--themeDotBorder: #FFF;
@@ -64,6 +64,7 @@ ul {
 
 h1 {
 	font-size: 56px;
+	text-align: center;
 }
 
 h2 {
@@ -316,8 +317,6 @@ h6 {
 	padding-bottom: 50px;
 	padding-top: 50px;
 	gap: 100px;
-
-
 }
 
 
@@ -344,6 +343,18 @@ h6 {
 	width: 100%;
 }
 
+.more-button {
+	border: 1px solid var(--mainText);
+	border-radius: 2px;
+	padding: 6px;
+	width: 85px;
+	text-align: center;
+	margin: auto;
+}
+
+#bottom-button {
+	margin-bottom: 16px;
+}
 
 .post-wrapper {
 	display: grid;
