@@ -27,13 +27,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-<<<<<<< HEAD
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-=======
   "homepage": "https://github.com/cdthomp1/portfolio-site#readme",
   "dependencies": {
     "axios": "^0.21.1",
@@ -44,7 +37,6 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.0.0",
     "mongoose": "^5.11.3"
->>>>>>> e0c0d18f119db8442b557aaa43523d19cc7a154c
   },
   "browserslist": {
     "production": [
