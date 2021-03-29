@@ -4,6 +4,14 @@ import { useDispatch, useSelector } from 'react-redux' */
 
 
 const ProjectCard = ({ project }) => {
+    let liveLink;
+    if (project.liveLink) {
+        liveLink = <a className="read-more" rel="noreferrer" target="_blank"
+            href={project.liveLink}>Live Site</a>
+    } else {
+        liveLink = <></>
+    }
+
     return (
         <div>
             <div className="wrapper">
@@ -21,8 +29,7 @@ const ProjectCard = ({ project }) => {
                             <a className="read-more" rel="noreferrer" target="_blank"
                                 href={project.repoLink}>Repo
 							Link</a>
-                            <a className="read-more" rel="noreferrer" target="_blank"
-                                href={project.liveLink}>Live Site</a>
+                            {liveLink}
                         </div>
                     </div>
                 </div>
