@@ -1,28 +1,48 @@
 {
-  "name": "portfolio-site",
-  "version": "1.0.0",
-  "description": "A portfolio website to showcase my projects! This will help people get to know my and my skills! [![Netlify Status](https://api.netlify.com/api/v1/badges/b1f31e16-3f38-4f08-ace2-bea556d0d124/deploy-status)](https://app.netlify.com/sites/eager-nobel-7080b3/deploys)",
-  "scripts": {
-    "test": "jest --coverage"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cdthomp1/portfolio-site.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cdthomp1/portfolio-site/issues"
-  },
-  "homepage": "https://github.com/cdthomp1/portfolio-site#readme",
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "gulp-minify": "^3.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-terser": "^2.0.0",
-    "mongoose": "^5.11.3"
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
+    "axios": "^0.21.0",
+    "email-validator": "^2.0.4",
+    "mongoose": "^5.11.8",
+    "prismjs": "^1.22.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "web-vitals": "^0.2.4"
   },
-  "devDependencies": {
-    "jest": "^26.6.3"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
