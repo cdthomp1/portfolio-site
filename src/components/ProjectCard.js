@@ -3,14 +3,15 @@ import React /* { useState, useEffect }  */ from 'react'
 import { useDispatch, useSelector } from 'react-redux' */
 
 
-/* const project = {
-    title: "Test",
-    description: "ADSASJDAD ASDJASDJA SDJA JA:JD ASDJA",
-    repoLink: "https://cameronthompson.io",
-    liveLink: "https://cameronthompson.io"
-} */
+const ProjectCard = ({ project }) => {
+    let liveLink;
+    if (project.liveLink) {
+        liveLink = <a className="read-more" rel="noreferrer" target="_blank"
+            href={project.liveLink}>Live Site</a>
+    } else {
+        liveLink = <></>
+    }
 
-const Card = ({ project }) => {
     return (
         <div>
             <div className="wrapper">
@@ -20,7 +21,7 @@ const Card = ({ project }) => {
                     <div id="dot-3" className="browser-dot"></div>
                 </div>
                 <div className="post">
-                    <img className="thumbnail" src={project.image} alt="Project Cover" />
+                    <img className="thumbnail" src={project.image} alt="Cover" />
                     <div className="post-preview">
                         <h6 className="post-title">{project.title}</h6>
                         <p className="post-intro">{project.description}</p>
@@ -28,8 +29,7 @@ const Card = ({ project }) => {
                             <a className="read-more" rel="noreferrer" target="_blank"
                                 href={project.repoLink}>Repo
 							Link</a>
-                            <a className="read-more" rel="noreferrer" target="_blank"
-                                href={project.liveLink}>Live Site</a>
+                            {liveLink}
                         </div>
                     </div>
                 </div>
@@ -38,4 +38,4 @@ const Card = ({ project }) => {
     )
 }
 
-export default Card
+export default ProjectCard

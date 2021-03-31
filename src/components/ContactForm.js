@@ -1,7 +1,6 @@
 import React, { useReducer } from "react";
 import * as EmailValidator from "email-validator";
 import submitReducer, { SUBMIT_ACTIONS } from "../reducers/SubmitReducer";
-import { Redirect } from 'react-router-dom'
 
 const initialState = {
     errMsg: "",
@@ -14,11 +13,9 @@ const initialState = {
 
 export default function ContactForm(props) {
     const [state, dispatch] = useReducer(submitReducer, initialState);
-    const { errMsg, email, name, body, successMsg, loading } = state;
+    const { errMsg, email, name, subject, body, successMsg, loading } = state;
 
-    const bodyPlaceholder =
-        props.textareaPlaceholder ||
-        "Please include any relevant details with your request. Dates, times, location, etc.";
+ 
 
     const encode = (data) => {
         return Object.keys(data)
@@ -34,8 +31,11 @@ export default function ContactForm(props) {
             error = "Please include your name";
         } else if (!EmailValidator.validate(email)) {
             error = "Please enter a valid email";
-        } else if (!body) {
-            error = "Don't forget to share the deets!";
+        } else if (!subject) {
+            error = "What is this message about?"
+        }
+        else if (!body) {
+            error = "Don't forget to write a message!";
         }
         if (error) {
             return dispatch({ type: SUBMIT_ACTIONS.ERROR, msg: error });
@@ -50,6 +50,7 @@ export default function ContactForm(props) {
                     "form-name": "contact",
                     email,
                     name,
+                    subject,
                     body,
                 }),
             });
@@ -70,41 +71,41 @@ export default function ContactForm(props) {
         <>
             {successMsg && <h2 className="h2 text-center">{successMsg}</h2>}
             {!successMsg && (
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        placeholder="Name"
-                        onChange={e =>
-                            dispatch({
-                                type: SUBMIT_ACTIONS.FIELD,
-                                target: "name",
-                                value: e.target.value,
-                            })
-                        }
-                        value={name}
-                        className={errMsg && errMsg.includes("name") ? "error" : ""}
+                <form onSubmit={handleSubmit} id="contact-form">
+
+                    <label>Name</label>
+                    <input className="input-field" type="text" name="name" required onChange={e =>
+                        dispatch({
+                            type: SUBMIT_ACTIONS.FIELD,
+                            target: "name",
+                            value: e.target.value,
+                        })
+                    }
+                        value={name} />
+
+                    <label>Subject</label>
+                    <input className="input-field" type="text" name="subject" required onChange={e =>
+                        dispatch({
+                            type: SUBMIT_ACTIONS.FIELD,
+                            target: "subject",
+                            value: e.target.value,
+                        })
+                    }
+                        value={subject}
                     />
-                    <input
-                        type="text"
-                        name="email"
-                        id="email"
-                        placeholder="Email"
-                        onChange={e =>
-                            dispatch({
-                                type: SUBMIT_ACTIONS.FIELD,
-                                target: "email",
-                                value: e.target.value,
-                            })
-                        }
-                        value={email}
-                        className={errMsg && errMsg.includes("email") ? "error" : ""}
-                    />
-                    <textarea
-                        name="body"
-                        id="body"
-                        placeholder={bodyPlaceholder}
+
+                    <label>Email</label>
+                    <input className="input-field" type="text" name="email" required onChange={e =>
+                        dispatch({
+                            type: SUBMIT_ACTIONS.FIELD,
+                            target: "email",
+                            value: e.target.value,
+                        })
+                    }
+                        value={email} />
+
+                    <label>Message</label>
+                    <textarea className="input-field" name="message" required
                         onChange={e =>
                             dispatch({
                                 type: SUBMIT_ACTIONS.FIELD,
@@ -113,12 +114,12 @@ export default function ContactForm(props) {
                             })
                         }
                         value={body}
-                        rows="10"
-                        className={errMsg && errMsg.includes("deets") ? "error" : ""}
-                    />
-                    <button type="submit" className="btn">
+                    ></textarea>
+
+                    <button type="submit" className="btn" id="submit-btn">
                         {loading ? <div className="loader" /> : "Submit"}
                     </button>
+
                     {errMsg && (
                         <p className="error">
                             <small>{errMsg}</small>
