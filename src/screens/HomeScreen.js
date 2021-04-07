@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProjects } from '../actions/projectAction.js';
-import { listArticles } from '../actions/articleAction.js';
+import { listArticles } from '../actions/articlesAction.js';
 
 import ProjectCard from "../components/ProjectCard.js";
 import ArticleCard from "../components/ArticleCard.js"
@@ -13,8 +13,8 @@ const HomeScreen = () => {
     const projectList = useSelector(state => state.projectList);
     const { projects } = projectList;
 
-    const articleList = useSelector(state => state.articleList);
-    const { articles } = articleList;
+    const articlesList = useSelector(state => state.articlesList);
+    const { articles } = articlesList;
 
 
     useEffect(() => {
@@ -71,8 +71,6 @@ const HomeScreen = () => {
 
                                 <p>JAM Stack (Learning)</p>
                                 <p>Serverless (Learning)</p>
-                                <p></p>
-                                <p></p>
                             </div>
                         </div>
                         <div className="social-links">

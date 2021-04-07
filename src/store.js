@@ -2,12 +2,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { projectListReducer, projectDetailsReducer } from './reducers/projectReducer.js'
-import {articleListReducer} from './reducers/articleReducer.js'
+import {articlesListReducer} from './reducers/articlesReducer.js'
+import { articleReducer } from './reducers/articleReducer.js'
 
 const reducer = combineReducers({ 
     projectList: projectListReducer, 
     projectDetails: projectDetailsReducer,
-    articleList: articleListReducer
+    articlesList: articlesListReducer,
+    article: articleReducer
 });
 
 const middleware = [thunk];

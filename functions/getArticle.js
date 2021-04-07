@@ -16,8 +16,8 @@ const connectDB = async () => {
   }
 }
 
-const getArticle = async (id) => {
-    const article = await Article.findById(id)
+const getArticle = async (slug) => {
+  const article = await Article.findOne({ slug })
 
   return article;
 }
@@ -27,19 +27,14 @@ const getArticle = async (id) => {
 exports.handler = async event => {
   connectDB();
 
-  console.log(event.queryStringParameters.id);
+  //console.log(event.headers.slug);
 
-  // const article = {name: "test"}
-
-
-  const article = await getArticle(event.queryStringParameters.id)
-
-  console.log(article)
+  const article = await getArticle(event.headers.slug)
 
   try {
     return {
       statusCode: 200,
-      body: JSON.stringify(article),
+      body: JSON.stringify({article}),
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,

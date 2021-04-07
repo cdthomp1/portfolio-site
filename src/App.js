@@ -6,6 +6,7 @@ import HomeScreen from './screens/HomeScreen';
 import ContactScreen from './screens/ContactScreen';
 import SuccessScreen from './screens/SuccessScreen';
 import ArticlesScreen from './screens/ArticlesScreen';
+import ArticleScreen from './screens/ArticleScreen';
 import ProjectsScreen from './screens/ProjectsScreen';
 import Footer from './screens/FooterScreen';
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/contact' component={ContactScreen} />
         <Route path='/success' component={SuccessScreen} />
         <Route path='/articles' component={ArticlesScreen} />
+        <Route path='/:slug' component={ArticleScreen} />
         <Route path='/projects' component={ProjectsScreen} />
         <Route path='/' component={HomeScreen} exact />
       </main>

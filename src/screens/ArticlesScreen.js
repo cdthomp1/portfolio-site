@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listArticles } from '../actions/articleAction.js';
+import { listArticles } from '../actions/articlesAction.js';
 import ArticleCard from "../components/ArticleCard.js"
 import Navigation from '../components/Navigation';
 
