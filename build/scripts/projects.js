@@ -2,6 +2,7 @@ async function displayProjects() {
 	const projects = await fetch('/api/getProjects')
 		.then(response => response.json())
 		.then(json => {
+			
 			return json
 		});
 

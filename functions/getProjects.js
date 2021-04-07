@@ -18,7 +18,7 @@ const connectDB = async () => {
 
 const getProjects = async () => {
   const Projects = await Project.find({})
-
+  console.log(Projects)
   return Projects;
 }
 
@@ -27,7 +27,7 @@ const getProjects = async () => {
 exports.handler = async event => {
   connectDB();
   const projects = await getProjects()
-
+  // console.log(projects)
   try {
     return {
       statusCode: 200,
