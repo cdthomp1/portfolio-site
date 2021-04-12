@@ -69,22 +69,32 @@ h1 {
 
 h2 {
 	font-size: 36px;
+	text-align: center;
+
 }
 
 h3 {
 	font-size: 28px;
+	text-align: center;
+
 }
 
 h4 {
 	font-size: 24px;
+	text-align: center;
+
 }
 
 h5 {
 	font-size: 20px;
+	text-align: center;
+
 }
 
 h6 {
 	font-size: 16px;
+	text-align: center;
+
 }
 
 .text-center {
@@ -308,6 +318,75 @@ h6 {
 	padding-bottom: 50px;
 }
 
+.return-home {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 40vh;
+	animation: fadeIn 0s 5s;
+	-webkit-animation: fadeIn 5s;
+	-moz-animation: fadeIn 5s;
+	-o-animation: fadeIn 5s;
+	-ms-animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+
+.return-home a {
+	border: 1px solid var(--mainText);
+	border-radius: 2px;
+	padding: 6px;
+	text-align: center;
+	margin: auto;
+}
 
 #preview {
 	color: black;
