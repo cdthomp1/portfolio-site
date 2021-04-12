@@ -8,7 +8,7 @@ import { articleReducer } from './reducers/articleReducer.js'
 const reducer = combineReducers({ 
     projectList: projectListReducer, 
     projectDetails: projectDetailsReducer,
-    articlesList: articlesListReducer,
+    articleList: articlesListReducer,
     article: articleReducer
 });
 

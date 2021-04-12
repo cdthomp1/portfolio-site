@@ -13,7 +13,7 @@ const HomeScreen = () => {
     const projectList = useSelector(state => state.projectList);
     const { projects } = projectList;
 
-    const articlesList = useSelector(state => state.articlesList);
+    const articlesList = useSelector(state => state.articleList);
     const { articles } = articlesList;
 
 

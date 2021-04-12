@@ -229,6 +229,15 @@ h6 {
 	padding-bottom: 50px;
 }
 
+.article-body {
+	width: 65%;
+	margin: auto;
+}
+
+.load {
+	display: flex;
+	justify-content: center;
+}
 
 #profile_pic {
 	display: block;

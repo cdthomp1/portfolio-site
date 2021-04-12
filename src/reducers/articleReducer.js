@@ -4,10 +4,10 @@ import {
     ARTICLE_FAIL
 } from '../constants/articleConstants'
 
-export const articleReducer = (state = { articles: [] }, action) => {
+export const articleReducer = (state = { }, action) => {
     switch (action.type) {
         case ARTICLE_REQUEST:
-            return { loading: true, article: [] }
+            return { loading: true }
         case ARTICLE_SUCCESS:
             return { loading: false, article: action.payload }
         case ARTICLE_FAIL:
