@@ -15,11 +15,6 @@ const ProjectCard = ({ project }) => {
     return (
         <div>
             <div className="wrapper">
-                <div className="dots-wrapper card-header">
-                    <div id="dot-1" className="browser-dot"></div>
-                    <div id="dot-2" className="browser-dot"></div>
-                    <div id="dot-3" className="browser-dot"></div>
-                </div>
                 <div className="post">
                     <img className="thumbnail" src={project.image} alt="Cover" />
                     <div className="post-preview">

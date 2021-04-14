@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProjects } from '../actions/projectAction.js';
-import { listArticles } from '../actions/articleAction.js';
+import { listArticles } from '../actions/articlesAction.js';
 
 import ProjectCard from "../components/ProjectCard.js";
 import ArticleCard from "../components/ArticleCard.js"
-import Navigation from '../components/Navigation.js';
+
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
@@ -13,10 +13,10 @@ const HomeScreen = () => {
     const projectList = useSelector(state => state.projectList);
     const { projects } = projectList;
 
-    const articleList = useSelector(state => state.articleList);
-    const { articles } = articleList;
+    const articlesList = useSelector(state => state.articleList);
+    const { articles } = articlesList;
 
-
+    console.log(articles)
     useEffect(() => {
         dispatch(listProjects());
     }, [dispatch]);
@@ -32,7 +32,7 @@ const HomeScreen = () => {
                         <h1>Hi, I'm Cameron Thompson</h1>
                     </div>
                     <div className="intro-wrapper">
-                        <Navigation />
+                        
 
                         <div className="left-column">
                             <img id="profile_pic" alt='Cameron Thompson' src="./images/thompsonCameron.jpg" />
@@ -71,8 +71,6 @@ const HomeScreen = () => {
 
                                 <p>JAM Stack (Learning)</p>
                                 <p>Serverless (Learning)</p>
-                                <p></p>
-                                <p></p>
                             </div>
                         </div>
                         <div className="social-links">
@@ -86,11 +84,13 @@ const HomeScreen = () => {
                 <div className="main-container">
                     <h3 style={{ textAlign: "center" }}>Some of my latest projects</h3>
                     <div className="post-wrapper" id="projects">
-                        {projects.slice(0, 3).map(project =>
-                            <ProjectCard key={project._id} project={project} />
+                        {projects.slice(0, 3).map(project => {
+                            console.log(project._id);
+                            return <ProjectCard key={project._id} project={project} />
+                        }
                         )}
                     </div>
-                    <div class="more-button">
+                    <div className="more-button">
                         <a href="/projects">See More</a>
                     </div>
                 </div>
@@ -99,16 +99,16 @@ const HomeScreen = () => {
                 <div className="main-container">
                     <h3 style={{ textAlign: "center" }}>Some of my latest articles</h3>
                     <div className="post-wrapper" id="articles">
-                        {articles.slice(0, 4).map(article => {
+                        {articles.slice(0, 3).map(article => {
                             if (article.cover_image !== null) {
-                                return <ArticleCard key={article.id} article={article} />
+                                return <ArticleCard key={article._id} article={article} />
                             } else {
                                 return <></>
                             }
                         }
                         )}
                     </div>
-                    <div id="bottom-button" class="more-button">
+                    <div id="bottom-button" className="more-button">
                         <a href="/articles">See More</a>
                     </div>
                 </div>

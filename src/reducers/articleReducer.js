@@ -1,16 +1,16 @@
 import {
-    ARTICLE_LIST_REQUEST,
-    ARTICLE_LIST_SUCCESS,
-    ARTICLE_LIST_FAIL
+    ARTICLE_REQUEST,
+    ARTICLE_SUCCESS,
+    ARTICLE_FAIL
 } from '../constants/articleConstants'
 
-export const articleListReducer = (state = { articles: [] }, action) => {
+export const articleReducer = (state = { }, action) => {
     switch (action.type) {
-        case ARTICLE_LIST_REQUEST:
-            return { loading: true, articles: [] }
-        case ARTICLE_LIST_SUCCESS:
-            return { loading: false, articles: action.payload }
-        case ARTICLE_LIST_FAIL:
+        case ARTICLE_REQUEST:
+            return { loading: true }
+        case ARTICLE_SUCCESS:
+            return { loading: false, article: action.payload }
+        case ARTICLE_FAIL:
             return { loading: false, error: action.payload }
         default:
             return state

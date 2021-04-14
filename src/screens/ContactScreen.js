@@ -3,7 +3,7 @@ import Prism from "prismjs";
 import '../styles/prism.css';
 
 import ContactForm from "../components/ContactForm";
-import Navigation from '../components/Navigation';
+
 
 
 const ContactScreen = () => {
@@ -19,7 +19,7 @@ const ContactScreen = () => {
 
     return (
         <>
-            <Navigation />
+            
             <section className="s2">
                 <div className="main-container">
                     <h3 style={{ textAlign: "center" }}>Get In Touch</h3>

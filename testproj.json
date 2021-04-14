@@ -1,0 +1,41 @@
+{
+    "_id": {
+      "$oid": "602b78581d86cf3378af37c9"
+    },
+    "mainImage": "https://raw.githubusercontent.com/cdthomp1/portfolio-site/master/images/coming-soon.png",
+    "liveLink": "https://example-expense-tracker.herokuapp.com/",
+    "technologies": [
+      "HTML",
+      " CSS",
+      " JavaScript"
+    ],
+    "public": true,
+    "title": "TEST PROJECT",
+    "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim, sapien in rhoncus fringilla, velit sapien sagittis urna, eget hendrerit est mauris ac ligula. ",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim, sapien in rhoncus fringilla, velit sapien sagittis urna, eget hendrerit est mauris ac ligula. Etiam mattis, libero at varius dignissim, sapien orci imperdiet libero, et rhoncus orci risus eu justo. In hac habitasse platea dictumst.",
+    "repoLink": "https://github.com/cdthomp1/portfolio-site/tree/master/images",
+    "supplementalImages": [
+      {
+        "_id": {
+          "$oid": "602b78581d86cf3378af37ca"
+        },
+        "image": "https://raw.githubusercontent.com/cdthomp1/portfolio-site/master/images/expense-tracker.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim, sapien in rhoncus fringilla, velit sapien sagittis urna, eget hendrerit est mauris ac ligula. Etiam mattis, libero at varius dignissim, sapien orci imperdiet libero, et rhoncus orci risus eu justo. In hac habitasse platea dictumst."
+      },
+      {
+        "_id": {
+          "$oid": "602b78581d86cf3378af37cb"
+        },
+        "image": "https://raw.githubusercontent.com/cdthomp1/portfolio-site/master/images/expense-tracker.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim, sapien in rhoncus fringilla, velit sapien sagittis urna, eget hendrerit est mauris ac ligula. Etiam mattis, libero at varius dignissim, sapien orci imperdiet libero, et rhoncus orci risus eu justo. In hac habitasse platea dictumst."
+      },
+      {
+        "_id": {
+          "$oid": "602b78581d86cf3378af37cc"
+        },
+        "image": "https://raw.githubusercontent.com/cdthomp1/portfolio-site/master/images/expense-tracker.png",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim, sapien in rhoncus fringilla, velit sapien sagittis urna, eget hendrerit est mauris ac ligula. Etiam mattis, libero at varius dignissim, sapien orci imperdiet libero, et rhoncus orci risus eu justo. In hac habitasse platea dictumst."
+      }
+    ],
+    "__v": 0
+  }

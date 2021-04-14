@@ -1,13 +1,16 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomeScreen from './screens/HomeScreen';
 import ContactScreen from './screens/ContactScreen';
 import SuccessScreen from './screens/SuccessScreen';
 import ArticlesScreen from './screens/ArticlesScreen';
+import ArticleView from './screens/ArticleView';
 import ProjectsScreen from './screens/ProjectsScreen';
-import Footer from './screens/FooterScreen';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+import UhOh from './screens/Uh-Oh';
 
 
 
@@ -16,12 +19,17 @@ function App() {
 
   return (
     <Router>
+      <Navigation />
       <main>
-        <Route path='/contact' component={ContactScreen} />
-        <Route path='/success' component={SuccessScreen} />
-        <Route path='/articles' component={ArticlesScreen} />
-        <Route path='/projects' component={ProjectsScreen} />
-        <Route path='/' component={HomeScreen} exact />
+        <Switch>
+          <Route path='/contact' component={ContactScreen} />
+          <Route path='/success' component={SuccessScreen} />
+          <Route path='/articles' component={ArticlesScreen} />
+          <Route path='/projects' component={ProjectsScreen} />
+          <Route path='/article/:slug' component={ArticleView} />
+          <Route path='/' component={HomeScreen} exact />
+          <Route component={UhOh} />
+        </Switch>
       </main>
       <Footer />
     </Router>
