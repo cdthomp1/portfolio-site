@@ -11,19 +11,19 @@ import Prism from "prismjs";
 import '../styles/prism.css';
 
 const ArticleView = () => {
+    Prism.highlightAll();
+
     const dispatch = useDispatch();
     let { slug } = useParams();
 
     const articleObj = useSelector(state => state.article);
-    console.log(articleObj)
+    
     useEffect(() => {
         dispatch(getArticle(slug));
     }, [dispatch, slug]);
 
 
     const { loading, article, error } = articleObj;
-
-    console.log(error)
 
     if (loading) {
         
