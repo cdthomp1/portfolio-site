@@ -16,7 +16,7 @@ const ArticlesScreen = () => {
 
     return (
         <>
-            <Navigation />
+            
             <h1>Articles</h1>
             <div class="post-wrapper" id="articles">
                 {articles.map(article => {

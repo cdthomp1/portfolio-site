@@ -6,37 +6,44 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getArticle } from '../actions/articleAction.js';
 import Loader from '../components/Loader.js';
 import parse from 'html-react-parser';
-import Navigation from '../components/Navigation';
+import UhOh from './Uh-Oh.js';
+import Prism from "prismjs";
+import '../styles/prism.css';
 
 const ArticleView = () => {
     const dispatch = useDispatch();
     let { slug } = useParams();
 
     const articleObj = useSelector(state => state.article);
-
+    console.log(articleObj)
     useEffect(() => {
         dispatch(getArticle(slug));
     }, [dispatch, slug]);
 
 
-    const { loading, article } = articleObj;
+    const { loading, article, error } = articleObj;
+
+    console.log(error)
 
     if (loading) {
-        console.log("LOADING");
-    } else if (loading === false) {
-        console.log(article)
+        
+    } else if (loading === false && !error) {
+        //var test = '<pre class="language-javascript"><code>var test = 2</code></pre>';
+        var title = article.title
         var body = parse(article.sanitizedHtml);
-        console.log(body)
+        
     }
 
     return (
         <>
-            <Navigation />
+            
             { loading ? (
             <Loader />
-            ) : loading === false ? (
+            ): error ? (
+                <UhOh variant='danger'>{error}</UhOh>
+              )  : loading === false && article !== null ? (
                 <div>
-                    <h1>{article.title}</h1>
+                    <h1>{title}</h1>
                     <div className="article-body">{body}</div>
                 </div>
             ) : (<></>)}

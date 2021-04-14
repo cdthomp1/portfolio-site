@@ -8,6 +8,7 @@ import SuccessScreen from './screens/SuccessScreen';
 import ArticlesScreen from './screens/ArticlesScreen';
 import ArticleView from './screens/ArticleView';
 import ProjectsScreen from './screens/ProjectsScreen';
+import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import UhOh from './screens/Uh-Oh';
 
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <Router>
+      <Navigation />
       <main>
         <Switch>
           <Route path='/contact' component={ContactScreen} />

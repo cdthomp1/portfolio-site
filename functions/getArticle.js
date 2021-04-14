@@ -18,20 +18,23 @@ const connectDB = async () => {
 
 const getArticle = async (slug) => {
   const article = await Article.findOne({ slug })
-
-  return article;
+  if (article) {
+    return article;
+  } else {
+    throw new Error('No Article Found');
+  } 
 }
 
 
 
 exports.handler = async event => {
-  connectDB();
-
+  
   //console.log(event.headers.slug);
-
-  const article = await getArticle(event.headers.slug)
-
+  
+  
   try {
+    connectDB();
+    const article = await getArticle(event.headers.slug)
     return {
       statusCode: 200,
       body: JSON.stringify({article}),

@@ -4,7 +4,7 @@ import Navigation from '../components/Navigation'
 const UhOh = () => {
     return (
         <div>
-            <Navigation />
+            
             <h1>Uh Oh!</h1>
             <h2>There is Nothing Here!</h2>
             <div className="return-home">

@@ -32,7 +32,7 @@ const HomeScreen = () => {
                         <h1>Hi, I'm Cameron Thompson</h1>
                     </div>
                     <div className="intro-wrapper">
-                        <Navigation />
+                        
 
                         <div className="left-column">
                             <img id="profile_pic" alt='Cameron Thompson' src="./images/thompsonCameron.jpg" />

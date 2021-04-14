@@ -19,7 +19,7 @@ const ContactScreen = () => {
 
     return (
         <>
-            <Navigation />
+            
             <section className="s2">
                 <div className="main-container">
                     <h3 style={{ textAlign: "center" }}>Get In Touch</h3>
