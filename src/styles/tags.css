@@ -1,0 +1,41 @@
+:root {
+	--mainColor: #15202B;
+	--secondaryColor: #192734;
+	--borderColor: #164D56;
+	--mainText: #fff;
+	--secondaryText: #eeeeee;
+	--themeDotBorder: #FFF;
+	--previewBg: rgb(25, 39, 52, 0.8);
+	--previewShadow: #111921;
+	--buttonColor: #17a2b8;
+}
+
+
+.tags {
+    display: flex;
+    flex-direction: row;
+}
+
+.tag {
+    padding: 4px;
+    background-color: var(--secondaryColor);
+    border: 1px solid var(--borderColor);
+    border-radius: 2px;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    margin: 2px;
+}
+
+.javascript {   
+    background-color: #efd81d;
+    color: black;
+}
+
+.npm {
+    background-color: #cc3534;
+}
+
+.node {
+    background-color: #84cf24;
+    color: black;
+}

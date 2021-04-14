@@ -16,7 +16,7 @@ const HomeScreen = () => {
     const articlesList = useSelector(state => state.articleList);
     const { articles } = articlesList;
 
-
+    console.log(articles)
     useEffect(() => {
         dispatch(listProjects());
     }, [dispatch]);
@@ -99,9 +99,9 @@ const HomeScreen = () => {
                 <div className="main-container">
                     <h3 style={{ textAlign: "center" }}>Some of my latest articles</h3>
                     <div className="post-wrapper" id="articles">
-                        {articles.slice(0, 4).map(article => {
+                        {articles.slice(0, 3).map(article => {
                             if (article.cover_image !== null) {
-                                return <ArticleCard key={article.id} article={article} />
+                                return <ArticleCard key={article._id} article={article} />
                             } else {
                                 return <></>
                             }

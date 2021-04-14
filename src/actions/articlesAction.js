@@ -5,9 +5,9 @@ export const listArticles = () => async (dispatch) => {
     try {
         dispatch({ type:ARTICLES_LIST_REQUEST })
 
-        const { data } = await axios.get('https://dev.to/api/articles?username=cdthomp1');
+        const { data } = await axios.get('/api/getArticles');
 
-        dispatch({ type: ARTICLES_LIST_SUCCESS, payload: data })
+        dispatch({ type: ARTICLES_LIST_SUCCESS, payload: data.articles })
     } catch (error) {
         dispatch({ type: ARTICLES_LIST_FAIL, payload: error.response && error.response.data.message ? error.response.data.message : error.message })
     }

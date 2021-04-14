@@ -16,10 +16,10 @@ const connectDB = async () => {
   }
 }
 
-const getArticle = async (slug) => {
-  const article = await Article.findOne({ slug })
-  if (article) {
-    return article;
+const getArticles = async () => {
+  const articles = await Article.find({})
+  if (articles) {
+    return articles;
   } else {
     throw new Error('No Article Found');
   } 
@@ -28,10 +28,10 @@ const getArticle = async (slug) => {
 exports.handler = async event => {
   try {
     connectDB();
-    const article = await getArticle(event.headers.slug)
+    const articles = await getArticles()
     return {
       statusCode: 200,
-      body: JSON.stringify({article}),
+      body: JSON.stringify({articles}),
     }
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
