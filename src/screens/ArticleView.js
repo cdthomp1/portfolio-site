@@ -11,37 +11,35 @@ import Prism from "prismjs";
 import '../styles/prism.css';
 
 const ArticleView = () => {
-    Prism.highlightAll();
 
+    useEffect(() => {
+        Prism.highlightAll()
+    }) 
+        
     const dispatch = useDispatch();
     let { slug } = useParams();
 
     const articleObj = useSelector(state => state.article);
-    
     useEffect(() => {
         dispatch(getArticle(slug));
     }, [dispatch, slug]);
-
-
+    
+    
     const { loading, article, error } = articleObj;
 
-    if (loading) {
-        
-    } else if (loading === false && !error) {
-        //var test = '<pre class="language-javascript"><code>var test = 2</code></pre>';
+    if (loading === false && !error) {
         var title = article.title
         var body = parse(article.sanitizedHtml);
-        
+
     }
 
     return (
         <>
-            
             { loading ? (
-            <Loader />
-            ): error ? (
+                <Loader />
+            ) : error ? (
                 <UhOh variant='danger'>{error}</UhOh>
-              )  : loading === false && article !== null ? (
+            ) : loading === false && article !== null ? (
                 <div>
                     <h1>{title}</h1>
                     <div className="article-body">{body}</div>

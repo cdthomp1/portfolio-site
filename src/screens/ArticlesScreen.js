@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listArticles } from '../actions/articlesAction.js';
 import ArticleCard from "../components/ArticleCard.js"
-import Navigation from '../components/Navigation';
+import Loader from "../components/Loader.js";
+import UhOh from "../screens/Uh-Oh"
 
 const ArticlesScreen = () => {
     const articleDispatch = useDispatch();
     const articleList = useSelector(state => state.articleList);
-    const { articles } = articleList;
+    const { articles, loading, error } = articleList;
 
 
     useEffect(() => {
@@ -16,20 +17,20 @@ const ArticlesScreen = () => {
 
     return (
         <>
-            
             <h1>Articles</h1>
-            <div class="post-wrapper" id="articles">
-                {articles.map(article => {
+            <div class="post-wrapper" id="articles">{ loading ? (
+                <Loader />
+            ) : error ? (
+                <UhOh variant='danger'>{error}</UhOh>
+            ) : loading === false && articles !== null ? (articles.map(article => {
                     if (article.cover_image !== null) {
                         return <ArticleCard key={article.id} article={article} />
                     } else {
                         return <></>
                     }
                 }
-                )}
+                )) : (<></>)}
             </div>
-
-
         </>
     )
 }

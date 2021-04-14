@@ -21,6 +21,10 @@ const articleSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  tags: {
+    type: Array,
+    required: true
+  },
   slug: {
     type: String,
     required: true,
