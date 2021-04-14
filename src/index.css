@@ -36,6 +36,10 @@ strong {
 	font-weight: 500;
 }
 
+code{
+	background-color: var(--secondaryColor);
+}
+
 p,
 li,
 span,
@@ -618,6 +622,19 @@ footer p {
 }
 
 @media screen and (max-width: 850px) {
+	.logo {
+		margin-left: 13px;
+	}
+
+	.article {
+		width: 80%;
+	}
+
+	.article img {
+		height: auto;
+		max-width: 100%;
+	}
+
 	#skills {
 		display: flex;
 		flex-direction: column;
@@ -698,6 +715,31 @@ footer p {
 }
 
 @media screen and (max-width: 320px) {
+
+	.logo {
+		width: 50px;
+	}
+
+	#navigation{
+		width: 275px;
+	}
+	#navigation a {
+		font-size: 13px;
+	}
+
+	.cover {
+		height: 100px;
+	}
+
+	h1 {
+		font-size: 30px;
+	}
+
+	.article {
+		max-width: 300px;
+		font-size: 13px;
+		overflow-wrap: break-word;
+	}
 
 	#skills {
 		display: flex;
