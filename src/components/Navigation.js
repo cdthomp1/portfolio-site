@@ -1,21 +1,25 @@
 import React from 'react'
+import '../styles/nav.css'
 
 const Navigation = () => {
     return (
-        <nav>
-            <div className="nav-wrapper">
-                <div>
-                    <a href="/"><img className="logo" src="/images/Dev.png" alt="Logo" /></a>
-                </div>
 
-                <div id="navigation">
-                    <a href="/">Home</a>
-                    <a href="/projects">Projects</a>
-                    <a href="/articles">Articles</a>
-                    <a href="/contact">Contact</a>
-                </div>
+        <div className="header">
+            <div className="navbar">
+                <div className="logo"><img src="/images/Dev.png" alt="Logo"/></div>
+                <input type="checkbox" id="navbar-toggle" />
+                <label for="navbar-toggle"><i></i></label>
+                <nav className="menu">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/articles">Articles</a></li>
+                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-        </nav>
+        </div>
+
     )
 }
 
