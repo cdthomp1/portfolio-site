@@ -59,18 +59,16 @@ const HomeScreen = () => {
                             <p>Fullstack developer with primary focus on Node + React: <a target="_blank"
                                 href="./assets/resume.pdf">Download Resume</a></p>
                             <div id="skills">
-                                <p>JavaScript</p>
-                                <p>Node.js</p>
-                                <p>React</p>
-                                <p>MongoDB</p>
-
-                                <p>Express.js</p>
-                                <p>Heroku</p>
-                                <p>Netlify</p>
-                                <p>HTML/CSS</p>
-
-                                <p>JAM Stack (Learning)</p>
-                                <p>Serverless (Learning)</p>
+                                <div>JavaScript</div>
+                                <div>Node.js</div>
+                                <div>React</div>
+                                <div>MongoDB</div>
+                                <div>Express.js</div>
+                                <div>Heroku</div>
+                                <div>Netlify</div>
+                                <div>HTML/CSS</div>
+                                <div>JAM Stack (Learning)</div>
+                                <div>Serverless (Learning)</div>
                             </div>
                         </div>
                         <div className="social-links">
