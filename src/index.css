@@ -353,11 +353,7 @@ h6 {
 }
 
 .about-wrapper {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-	padding-bottom: 50px;
-	padding-top: 50px;
-	gap: 100px;
+
 }
 
 
@@ -833,11 +829,6 @@ footer p {
 	.s2 {
 		margin: 5px;
 	}
-
-	.about-me {
-		margin: 5px;
-	}
-
 
 
 	.footerLinks a {

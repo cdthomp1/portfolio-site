@@ -72,8 +72,8 @@ const HomeScreen = () => {
                             </div>
                         </div>
                         <div className="social-links">
-                            <img id="social_img" alt="MERN Stack" src="./images/mern.jpg" />
                             <h3>My Main Focus: <br />The MERN Stack</h3>
+                            <img id="social_img" alt="MERN Stack" src="./images/mern.jpg" />
                         </div>
                     </div>
                 </div>
