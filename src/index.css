@@ -708,6 +708,7 @@ footer p {
 	#skills p {
 		text-align: center;
 	}
+
 	.cover {
 		height: 200px;
 	}
@@ -755,6 +756,14 @@ footer p {
 	#skills {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
+		min-height: 275px;
+		margin: auto;
+		max-width: 275px;
+	}
+
+	#skills p {
+		text-align: center;
 	}
 
 	.cover {
@@ -861,20 +870,6 @@ footer p {
 }
 
 @media screen and (max-width: 320px) {
-
-	/* .logo {
-		display: none;
-	}
-
-	.nav-wrapper {
-		width: 100%;
-	}
-
-
-	#navigation a {
-		font-size: 16px;
-		padding: 10px 3px;
-	} */
 
 	.cover {
 		height: 200px;
