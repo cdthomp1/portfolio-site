@@ -687,7 +687,7 @@ footer p {
 		flex-direction: column;
 		text-align: center;
 		width: 275px;
-		min-height: 275px;
+		min-height: 300px;
 		margin: auto;
 	}
 
@@ -747,9 +747,7 @@ footer p {
 	#skills {
 		display: flex;
 		flex-direction: column;
-		text-align: center;
-		width: 275px;
-		min-height: 275px;
+
 	}
 
 	.footerLinks a {
