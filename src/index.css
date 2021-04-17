@@ -116,7 +116,8 @@ h6 {
 .s2 {
 	background-color: var(--secondaryColor);
 	border-bottom: 1px solid var(--borderColor);
-	overflow:auto;
+	overflow: auto;
+
 }
 
 
@@ -353,7 +354,15 @@ h6 {
 }
 
 .about-wrapper {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 10px;
+	width: 100%;
+}
 
+.about-me,
+.skill-image-container {
+	max-width: 45%;
 }
 
 
@@ -372,13 +381,8 @@ h6 {
 	color: white;
 }
 
-.social-links {
-	display: grid;
-	align-content: center;
-	text-align: center;
-}
 
-#social_img {
+#skill-image {
 	width: 100%;
 }
 
@@ -620,13 +624,10 @@ footer p {
 		font-size: 24px;
 	}
 
-	#skills {
+	.skill-image-container{
 		display: flex;
 		flex-direction: column;
-		text-align: center;
-		width: 275px;
-		min-height: 275px;
-		margin: auto;
+		justify-content: center;
 	}
 
 	.footerLinks a {
@@ -665,6 +666,21 @@ footer p {
 
 	.article h2 {
 		font-size: 24px;
+	}
+
+	.about-wrapper {
+		flex-direction: column;
+		padding: 0;
+	}
+
+	.about-me,
+	.skill-image-container {
+		max-width: 100%;
+	}
+
+	.skill-image-container {
+		display: flex;
+		flex-direction: column-reverse;
 	}
 
 	#skills {
@@ -714,6 +730,21 @@ footer p {
 		font-size: 24px;
 	}
 
+	.about-wrapper {
+		flex-direction: column;
+		padding: 0;
+	}
+
+	.about-me,
+	.skill-image-container {
+		max-width: 100%;
+	}
+
+	.skill-image-container {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
 	#skills {
 		display: flex;
 		flex-direction: column;
@@ -731,13 +762,6 @@ footer p {
 
 @media screen and (max-width: 400px) {
 
-	#skills {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		min-height: 275px;
-		max-width: 275px;
-	}
 
 	#skills p {
 		text-align: center;
@@ -771,6 +795,21 @@ footer p {
 		font-size: 24px;
 	}
 
+	.about-wrapper {
+		flex-direction: column;
+		padding: 0;
+	}
+
+	.about-me,
+	.skill-image-container {
+		max-width: 100%;
+	}
+
+	.skill-image-container {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
 	#skills {
 		display: flex;
 		flex-direction: column;
@@ -795,6 +834,11 @@ footer p {
 
 	h1 {
 		font-size: 30px;
+	}
+
+	#preview {
+		width: 300px;
+		padding: 5px;
 	}
 
 
@@ -828,6 +872,21 @@ footer p {
 
 	.s2 {
 		margin: 5px;
+	}
+
+	.about-wrapper {
+		flex-direction: column;
+		padding: 0;
+	}
+
+	.about-me,
+	.skill-image-container {
+		max-width: 100%;
+	}
+
+	.skill-image-container {
+		display: flex;
+		flex-direction: column-reverse;
 	}
 
 

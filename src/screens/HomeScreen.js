@@ -16,7 +16,6 @@ const HomeScreen = () => {
     const articlesList = useSelector(state => state.articleList);
     const { articles } = articlesList;
 
-    console.log(articles)
     useEffect(() => {
         dispatch(listProjects());
     }, [dispatch]);
@@ -48,7 +47,7 @@ const HomeScreen = () => {
                 </div>
             </section>
 
-            <section className="s2">
+            <div className="s2">
                 <div className="main-container">
                     <div className="about-wrapper">
                         <div className="about-me">
@@ -71,13 +70,13 @@ const HomeScreen = () => {
                                 <div>Serverless (Learning)</div>
                             </div>
                         </div>
-                        <div className="social-links">
+                        <div className="skill-image-container">
+                            <img id="skill-image" alt="MERN Stack" src="./images/mern.jpg" />
                             <h3>My Main Focus: <br />The MERN Stack</h3>
-                            <img id="social_img" alt="MERN Stack" src="./images/mern.jpg" />
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
             <section className="s1">
                 <div className="main-container">
                     <h3 style={{ textAlign: "center" }}>Some of my latest projects</h3>
