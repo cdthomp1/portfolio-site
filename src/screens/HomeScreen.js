@@ -16,7 +16,6 @@ const HomeScreen = () => {
     const articlesList = useSelector(state => state.articleList);
     const { articles } = articlesList;
 
-    console.log(articles)
     useEffect(() => {
         dispatch(listProjects());
     }, [dispatch]);
@@ -48,7 +47,7 @@ const HomeScreen = () => {
                 </div>
             </section>
 
-            <section className="s2">
+            <div className="s2">
                 <div className="main-container">
                     <div className="about-wrapper">
                         <div className="about-me">
@@ -59,33 +58,30 @@ const HomeScreen = () => {
                             <p>Fullstack developer with primary focus on Node + React: <a target="_blank"
                                 href="./assets/resume.pdf">Download Resume</a></p>
                             <div id="skills">
-                                <p>JavaScript</p>
-                                <p>Node.js</p>
-                                <p>React</p>
-                                <p>MongoDB</p>
-
-                                <p>Express.js</p>
-                                <p>Heroku</p>
-                                <p>Netlify</p>
-                                <p>HTML/CSS</p>
-
-                                <p>JAM Stack (Learning)</p>
-                                <p>Serverless (Learning)</p>
+                                <div>JavaScript</div>
+                                <div>Node.js</div>
+                                <div>React</div>
+                                <div>MongoDB</div>
+                                <div>Express.js</div>
+                                <div>Heroku</div>
+                                <div>Netlify</div>
+                                <div>HTML/CSS</div>
+                                <div>JAM Stack (Learning)</div>
+                                <div>Serverless (Learning)</div>
                             </div>
                         </div>
-                        <div className="social-links">
-                            <img id="social_img" alt="MERN Stack" src="./images/mern.jpg" />
+                        <div className="skill-image-container">
+                            <img id="skill-image" alt="MERN Stack" src="./images/mern.jpg" />
                             <h3>My Main Focus: <br />The MERN Stack</h3>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
             <section className="s1">
                 <div className="main-container">
                     <h3 style={{ textAlign: "center" }}>Some of my latest projects</h3>
                     <div className="post-wrapper" id="projects">
                         {projects.slice(0, 3).map(project => {
-                            console.log(project._id);
                             return <ProjectCard key={project._id} project={project} />
                         }
                         )}

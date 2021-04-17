@@ -16,7 +16,7 @@
     flex-direction: row;
 }
 
-.tag {
+.article-tag {
     padding: 4px;
     background-color: var(--secondaryColor);
     border: 1px solid var(--borderColor);
@@ -38,4 +38,12 @@
 .node {
     background-color: #84cf24;
     color: black;
+}
+
+@media screen and (max-width: 320px) {
+
+    .tags {
+        flex-wrap: wrap;
+    }
+
 }

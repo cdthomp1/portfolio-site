@@ -37,7 +37,7 @@ const ArticleView = () => {
     }
 
     return (
-        <>
+        <div className="article-container">
             { loading ? (
                 <Loader />
             ) : error ? (
@@ -49,14 +49,14 @@ const ArticleView = () => {
                         <h1>{title}</h1>
                     <div className="tags">
                         {tags.map(tag => {
-                            var tagClass = `tag ${tag}`;
-                            return <div className={tagClass}>{tag}</div>
+                            var tagClass = `article-tag ${tag}`;
+                            return <div key={tag} className={tagClass}>{tag}</div>
                         })}
                     </div>
                     <div className="article-body">{body}</div>
                 </div>
             ) : (<></>)}
-        </>
+        </div>
     )
 }
 

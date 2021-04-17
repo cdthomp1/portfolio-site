@@ -19,7 +19,7 @@ const ProjectsScreen = () => {
         <>
             
             <h1>Projects</h1>
-            <div class="post-wrapper" id="projects">
+            <div className="post-wrapper" id="projects">
             { loading ? (
                 <Loader />
             ) : error ? (
