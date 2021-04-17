@@ -8,7 +8,7 @@ const Navigation = () => {
             <div className="navbar">
                 <div className="logo"><img src="/images/Dev.png" alt="Logo"/></div>
                 <input type="checkbox" id="navbar-toggle" />
-                <label for="navbar-toggle"><i></i></label>
+                <label htmlFor="navbar-toggle"><i></i></label>
                 <nav className="menu">
                     <ul>
                         <li><a href="/">Home</a></li>

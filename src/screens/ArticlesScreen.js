@@ -18,7 +18,7 @@ const ArticlesScreen = () => {
     return (
         <>
             <h1>Articles</h1>
-            <div class="post-wrapper" id="articles">{ loading ? (
+            <div className="post-wrapper" id="articles">{ loading ? (
                 <Loader />
             ) : error ? (
                 <UhOh variant='danger'>{error}</UhOh>

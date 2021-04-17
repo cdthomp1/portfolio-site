@@ -82,7 +82,6 @@ const HomeScreen = () => {
                     <h3 style={{ textAlign: "center" }}>Some of my latest projects</h3>
                     <div className="post-wrapper" id="projects">
                         {projects.slice(0, 3).map(project => {
-                            console.log(project._id);
                             return <ProjectCard key={project._id} project={project} />
                         }
                         )}
