@@ -460,7 +460,6 @@ h6 {
 	display: block;
 	max-width: 600px;
 	margin: 0 auto;
-	border: 1px solid var(--borderColor);
 	padding: 15px;
 	border-radius: 5px;
 	background-color: var(--mainColor);
@@ -469,7 +468,11 @@ h6 {
 }
 
 #contact-form label {
-	line-height: 2.7em;
+	line-height: 1.2em;
+}
+
+.input-field {
+	margin-bottom: 25px;
 }
 
 #contact-form textarea {
@@ -488,12 +491,20 @@ h6 {
 	font-size: 14px;
 }
 
+.copy {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.copy-notice {
+	font-size: 15px;
+}
+
 
 #submit-btn {
-	margin-top: 10px;
-	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 10px 20px;
+	font-size: 16px;
 	color: #fff;
 	background-color: var(--buttonColor);
 	border: none;
@@ -623,7 +634,7 @@ footer p {
 		font-size: 24px;
 	}
 
-	.skill-image-container{
+	.skill-image-container {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

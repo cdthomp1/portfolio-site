@@ -25,10 +25,8 @@ const ContactScreen = () => {
                     <h3 style={{ textAlign: "center" }}>Get In Touch</h3>
                     <h5 style={{ textAlign: "center" }}>Send me a message here or get my npm card!</h5>
                     <div className="npm-card" onClick={copyClick}>
-                        <pre><code className="language-powershell" id="npx" >npx cameronthompson</code></pre>
-                        <p className="copy-notice" id="copy-notice">Click to Copy!</p>
+                        <pre className="language-powershell copy"><code className="language-powershell" id="npx" >npx cameronthompson</code><span className="copy-notice" id="copy-notice">Click to Copy!</span></pre>
                     </div>
-
                     <ContactForm />
                 </div>
             </section>
