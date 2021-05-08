@@ -23,7 +23,7 @@ const ArticlesScreen = () => {
             ) : error ? (
                 <UhOh variant='danger'>{error}</UhOh>
             ) : loading === false && articles !== null ? (articles.map(article => {
-                    if (article.cover_image !== null) {
+                    if (article.cover_image !== null && article.draft === false) {
                         return <ArticleCard key={article.id} article={article} />
                     } else {
                         return <></>

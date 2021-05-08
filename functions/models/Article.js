@@ -36,10 +36,17 @@ const articleSchema = new mongoose.Schema({
   sanitizedHtml: {
     type: String,
     required: true
+  },
+  seriesId: {
+    type: Number
+  },
+  draft: {
+    type: Boolean,
+    default: true
   }
 })
 
-articleSchema.pre('validate', function(next) {
+articleSchema.pre('validate', function (next) {
   if (this.title) {
     this.slug = slugify(this.title, { lower: true, strict: true })
   }
