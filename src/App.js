@@ -11,6 +11,7 @@ import ProjectsScreen from './screens/ProjectsScreen';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import UhOh from './screens/Uh-Oh';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -19,6 +20,24 @@ function App() {
 
   return (
     <Router>
+      <Helmet>
+        {/* main */}
+        <title>Cameron Thompson - Student Software Engineer Building the Web </title>
+        <meta property="og:title" content="Cameron Thompson - Student Software Engineer Building the Web" />
+        <meta property="og:type" content="website" />
+        <meta name="og:description"
+          content="" />
+        <meta property="og:url" content="https://cameronthompson.io" />
+        <meta property="og:image" content="" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://cameronthompson.io" />
+        <meta property="twitter:title" content="Cameron Thompson - Student Software Engineer Building the Web" />
+        <meta property="twitter:description"
+          content="" />
+        <meta property="twitter:image" content="" />
+      </Helmet>
       <Navigation />
       <main>
         <Switch>
