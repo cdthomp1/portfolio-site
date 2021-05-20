@@ -1,0 +1,12 @@
+#skills {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	max-height: 130px;
+	max-width: 475px;
+	margin: 0%;
+}
+
+#skills p {
+	margin: 3px;
+}
