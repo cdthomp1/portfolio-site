@@ -18,7 +18,6 @@ const connectDB = async () => {
 
 const getProjects = async () => {
   const Projects = await Project.find({})
-  console.log(Projects)
   return Projects;
 }
 
