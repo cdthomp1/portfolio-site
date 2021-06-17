@@ -95,7 +95,7 @@ const HomeScreen = () => {
                 <div className="main-container">
                     <h3 style={{ textAlign: "center" }}>Some of my latest articles</h3>
                     <div className="post-wrapper" id="articles">
-                        {articles.slice(0, 3).map(article => {
+                        {articles.filter(a => a.seriesId !== '60cae780f6b9d504c24bdc2e').slice(0, 3).map(article => {
                             if (article.cover_image !== null) {
                                 return <ArticleCard key={article._id} article={article} />
                             } else {
