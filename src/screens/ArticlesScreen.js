@@ -22,7 +22,7 @@ const ArticlesScreen = () => {
                 <Loader />
             ) : error ? (
                 <UhOh variant='danger'>{error}</UhOh>
-            ) : loading === false && articles !== null ? (articles.map(article => {
+            ) : loading === false && articles !== null ? (articles.filter(a => a.seriesId !== '60cae780f6b9d504c24bdc2e').map(article => {
                     if (article.cover_image !== null && article.draft === false) {
                         return <><ArticleCard key={article.id} article={article} /></>
                     } else {

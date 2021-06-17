@@ -10,6 +10,9 @@ import UhOh from './Uh-Oh.js';
 import Prism from "prismjs";
 import '../styles/prism.css';
 import '../styles/tags.css'
+import { listArticles } from '../actions/articlesAction.js';
+import ArticleListItem from "../components/ArticleListItem"
+
 import { Helmet } from 'react-helmet';
 
 
@@ -21,7 +24,7 @@ const HundredDaysScreen = () => {
     })
 
     const dispatch = useDispatch();
-    let  slug  = "100-days-of-code-nextjs";
+    let slug = "100-days-of-code-nextjs";
 
     console.log(slug)
 
@@ -30,6 +33,14 @@ const HundredDaysScreen = () => {
     useEffect(() => {
         dispatch(getArticle(slug));
     }, [dispatch, slug]);
+
+    const articleDispatch = useDispatch();
+    const articlesList = useSelector(state => state.articleList);
+    const { articles } = articlesList;
+
+    useEffect(() => {
+        articleDispatch(listArticles());
+    }, [articleDispatch])
 
 
     const { loading, article, error } = articleObj;
@@ -81,6 +92,22 @@ const HundredDaysScreen = () => {
                             })}
                         </div>
                         <div className="article-body">{body}</div>
+                    </div>
+                    <div>
+                        <div className="main-container">
+                            <h3 style={{ textAlign: "center" }}>List of 100 Days of Code Articles</h3>
+                            <h4>None Yet!</h4>
+                            <div className="hundred-wrapper">
+                                {articles.filter(a => a.seriesId === '60cae780f6b9d504c24bdc2e' && a.draft).slice(1, 3).map(article => {
+                                    if (article.cover_image !== null) {
+                                        return <ArticleListItem key={article._id} article={article} />
+                                    } else {
+                                        return <></>
+                                    }
+                                }
+                                )}
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <h3>Follow Me on Twitter</h3>
