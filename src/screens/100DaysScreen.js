@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react';
-import {
-    useParams
-} from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getArticle } from '../actions/articleAction.js';
 import Loader from '../components/Loader.js';
@@ -25,8 +22,6 @@ const HundredDaysScreen = () => {
 
     const dispatch = useDispatch();
     let slug = "100-days-of-code-nextjs";
-
-    console.log(slug)
 
 
     const articleObj = useSelector(state => state.article);
