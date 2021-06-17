@@ -9,6 +9,10 @@
     margin: 13px;
 }
 
+.menu {
+    width: 100%;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
