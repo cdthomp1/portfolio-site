@@ -8,6 +8,7 @@ import SuccessScreen from './screens/SuccessScreen';
 import ArticlesScreen from './screens/ArticlesScreen';
 import ArticleView from './screens/ArticleView';
 import ProjectsScreen from './screens/ProjectsScreen';
+import HundredDaysScreen from './screens/100DaysScreen';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import UhOh from './screens/Uh-Oh';
@@ -46,6 +47,7 @@ function App() {
           <Route path='/articles' component={ArticlesScreen} />
           <Route path='/projects' component={ProjectsScreen} />
           <Route path='/article/:slug' component={ArticleView} />
+          <Route path='/100Days' component={HundredDaysScreen} />
           <Route path='/' component={HomeScreen} exact />
           <Route component={UhOh} />
         </Switch>
