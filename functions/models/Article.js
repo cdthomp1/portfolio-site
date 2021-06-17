@@ -38,7 +38,7 @@ const articleSchema = new mongoose.Schema({
     required: true
   },
   seriesId: {
-    type: Number
+    type: String
   },
   draft: {
     type: Boolean,
