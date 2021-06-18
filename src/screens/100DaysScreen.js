@@ -93,7 +93,7 @@ const HundredDaysScreen = () => {
                             <h3 style={{ textAlign: "center" }}>List of 100 Days of Code Articles</h3>
                             <h4>None Yet!</h4>
                             <div className="hundred-wrapper">
-                                {articles.filter(a => a.seriesId === '60cae780f6b9d504c24bdc2e' && a.draft).slice(1, 3).map(article => {
+                                {articles.filter(a => a.seriesId === '60cae780f6b9d504c24bdc2e' && !a.draft).slice(1).map(article => {
                                     if (article.cover_image !== null) {
                                         return <ArticleListItem key={article._id} article={article} />
                                     } else {
