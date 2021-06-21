@@ -1,0 +1,107 @@
+<mxfile>
+    <diagram id="VWCt5vp502t2dc2YrGs3" name="Requirements">
+        <mxGraphModel dx="1016" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="Requirements&lt;br&gt;-------------------------&lt;br&gt;- Get all Articles&lt;br&gt;- Get all Projects&lt;br&gt;- Post a Project&lt;br&gt;- Post an Article&lt;br&gt;- Edit a Project&lt;br&gt;- Edit an Article&lt;br&gt;-Delete a Project&lt;br&gt;-Delete an Article&lt;br&gt;- Auto Tweet&lt;br&gt;- Get Interest Data (WIP)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="335" y="435" width="180" height="230" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="zor-0K1dYH962Sz_vCZt" name="Article Model">
+        <mxGraphModel dx="1016" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="YIp_0kNSoKO3uwfjEHBj-0"/>
+                <mxCell id="YIp_0kNSoKO3uwfjEHBj-1" parent="YIp_0kNSoKO3uwfjEHBj-0"/>
+                <mxCell id="YIp_0kNSoKO3uwfjEHBj-2" value="&lt;font&gt;&lt;span style=&quot;font-size: 24px&quot;&gt;Article&lt;/span&gt;&lt;br&gt;&lt;font size=&quot;3&quot;&gt;----------------&lt;br&gt;&lt;/font&gt;+ Title&lt;br&gt;+ Slug&lt;br&gt;+ Tags&lt;br&gt;+ CoverImage&lt;br&gt;+Description&lt;br&gt;+ Markdown&lt;br&gt;+ SanitizedHtml&lt;br&gt;+ CreatedAt&lt;br&gt;+ LastEdit&lt;br&gt;+ SeriesId&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;" vertex="1" parent="YIp_0kNSoKO3uwfjEHBj-1">
+                    <mxGeometry x="290" y="450" width="270" height="200" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="IV8oRdLvZ8K8DeZaeOwz" name="Project Model">
+        <mxGraphModel dx="1016" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="KnWmRahYInAnriGUPZE5-0"/>
+                <mxCell id="KnWmRahYInAnriGUPZE5-1" parent="KnWmRahYInAnriGUPZE5-0"/>
+                <mxCell id="WjTY8LxSg3DHC6FlifiF-0" value="&lt;font&gt;&lt;span style=&quot;font-size: 24px&quot;&gt;Project&lt;/span&gt;&lt;br&gt;&lt;font size=&quot;3&quot;&gt;----------------&lt;br&gt;&lt;/font&gt;+ Title&lt;br&gt;+ Slug&lt;br&gt;+ Tags&lt;br&gt;+ CoverImage&lt;br&gt;+Description&lt;br&gt;+ Markdown&lt;br&gt;+ SanitizedHtml&lt;br&gt;+ CreatedAt&lt;br&gt;+ LastEdit&lt;br&gt;+ RepoLink&lt;br&gt;+ LiveLink&lt;br&gt;+Public&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;" vertex="1" parent="KnWmRahYInAnriGUPZE5-1">
+                    <mxGeometry x="290" y="450" width="270" height="270" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="xA50ryzm2eePDbL55ooX" name="Article Methods">
+        <mxGraphModel dx="1195" dy="799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="qtp-r2b7WOv4o8jB7Se9-0"/>
+                <mxCell id="qtp-r2b7WOv4o8jB7Se9-1" parent="qtp-r2b7WOv4o8jB7Se9-0"/>
+                <mxCell id="qtp-r2b7WOv4o8jB7Se9-59" value="GetArticles" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="qtp-r2b7WOv4o8jB7Se9-1">
+                    <mxGeometry x="25" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="qtp-r2b7WOv4o8jB7Se9-62" value="PutArticle" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="qtp-r2b7WOv4o8jB7Se9-1">
+                    <mxGeometry x="535" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="qtp-r2b7WOv4o8jB7Se9-63" value="GetArticle" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="qtp-r2b7WOv4o8jB7Se9-1">
+                    <mxGeometry x="195" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="qtp-r2b7WOv4o8jB7Se9-64" value="DeleteArticle" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="qtp-r2b7WOv4o8jB7Se9-1">
+                    <mxGeometry x="705" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="qtp-r2b7WOv4o8jB7Se9-67" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="qtp-r2b7WOv4o8jB7Se9-1" source="qtp-r2b7WOv4o8jB7Se9-65" target="qtp-r2b7WOv4o8jB7Se9-66">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="qtp-r2b7WOv4o8jB7Se9-65" value="PostArticle" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="qtp-r2b7WOv4o8jB7Se9-1">
+                    <mxGeometry x="365" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="qtp-r2b7WOv4o8jB7Se9-66" value="TwitterHandler" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="qtp-r2b7WOv4o8jB7Se9-1">
+                    <mxGeometry x="365" y="670" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="4WyKmS_QCFukZHzkJZJe" name="Project Methods">
+        <mxGraphModel dx="1016" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="eBLUWdCq2CwRtnu32uSC-0"/>
+                <mxCell id="eBLUWdCq2CwRtnu32uSC-1" parent="eBLUWdCq2CwRtnu32uSC-0"/>
+                <mxCell id="eBLUWdCq2CwRtnu32uSC-2" value="GetProjects" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eBLUWdCq2CwRtnu32uSC-1">
+                    <mxGeometry x="25" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="eBLUWdCq2CwRtnu32uSC-3" value="PutArticle" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eBLUWdCq2CwRtnu32uSC-1">
+                    <mxGeometry x="535" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="eBLUWdCq2CwRtnu32uSC-4" value="GetProject" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eBLUWdCq2CwRtnu32uSC-1">
+                    <mxGeometry x="195" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="eBLUWdCq2CwRtnu32uSC-5" value="DeleteArticle" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eBLUWdCq2CwRtnu32uSC-1">
+                    <mxGeometry x="705" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="eBLUWdCq2CwRtnu32uSC-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="eBLUWdCq2CwRtnu32uSC-1" source="eBLUWdCq2CwRtnu32uSC-7" target="eBLUWdCq2CwRtnu32uSC-8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eBLUWdCq2CwRtnu32uSC-7" value="PostProject" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eBLUWdCq2CwRtnu32uSC-1">
+                    <mxGeometry x="365" y="520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="eBLUWdCq2CwRtnu32uSC-8" value="TwitterHandler" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="eBLUWdCq2CwRtnu32uSC-1">
+                    <mxGeometry x="365" y="670" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="wSpAk0aNUjs83fuF4JWA" name="Twitter Handler">
+        <mxGraphModel dx="1016" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="9CVb1trR_FJ2-32K7_Hl-0"/>
+                <mxCell id="9CVb1trR_FJ2-32K7_Hl-1" parent="9CVb1trR_FJ2-32K7_Hl-0"/>
+                <mxCell id="9CVb1trR_FJ2-32K7_Hl-2" value="Requirements&lt;br&gt;---------------------&lt;br&gt;Post to Twitter when a new project/article is posted" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="9CVb1trR_FJ2-32K7_Hl-1">
+                    <mxGeometry x="60" y="80" width="120" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="yiWYU4N7vbzVPV7zF0mF-1" value="Methods&lt;br&gt;-------------&lt;br&gt;PostTweet(link, msg)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="9CVb1trR_FJ2-32K7_Hl-1">
+                    <mxGeometry x="200" y="80" width="120" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
