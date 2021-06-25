@@ -4,7 +4,7 @@ const Article = require('./models/Article.js')
 const connectDB = async () => {
     try {
 
-        const conn = await mongoose.connect(process.env.MONGO_URI, {
+        const conn = await mongoose.connect(process.env.mongo_api_key, {
             useUnifiedTopology: true,
             useNewUrlParser: true,
             useCreateIndex: true
@@ -28,7 +28,7 @@ const getArticles = async () => {
 
 
 export default async (req, res) => {
-    const CONSTRING = process.env.NAME;
+    const CONSTRING = process.env.mongo_api_key;
     console.log(CONSTRING)
 
     connectDB();
