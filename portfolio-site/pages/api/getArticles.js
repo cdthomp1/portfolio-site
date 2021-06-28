@@ -33,5 +33,5 @@ export default async (req, res) => {
 
     connectDB();
     const articles = await getArticles()
-    res.status(200).json(articles)
+    res.status(200).end(JSON.stringify({articles}))
 }
