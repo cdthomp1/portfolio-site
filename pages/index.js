@@ -69,10 +69,10 @@ export default function Home({ articles, projects }) {
           <div className="main-container">
             <h3 style={{ textAlign: "center" }}>Some of my latest projects</h3>
             <div className="post-wrapper" id="projects">
-              {projects.slice(0, 3).map(project => {
+              {/* {projects.slice(0, 3).map(project => {
                 return <ProjectCard key={project._id} project={project} />
               }
-              )}
+              )} */}
             </div>
             <div className="more-button">
               <a href="/projects">See More</a>
@@ -83,14 +83,14 @@ export default function Home({ articles, projects }) {
           <div className="main-container">
             <h3 style={{ textAlign: "center" }}>Some of my latest articles</h3>
             <div className="post-wrapper" id="articles">
-              {articles.filter(a => a.seriesId !== '60cae780f6b9d504c24bdc2e').slice(0, 3).map(article => {
+              {/* {articles.filter(a => a.seriesId !== '60cae780f6b9d504c24bdc2e').slice(0, 3).map(article => {
                 if (article.cover_image !== null) {
                   return <ArticleCard key={article._id} article={article} />
                 } else {
                   return <></>
                 }
               }
-              )}
+              )} */}
             </div>
             <div id="bottom-button" className="more-button">
               <a href="/articles">See More</a>
@@ -103,11 +103,10 @@ export default function Home({ articles, projects }) {
   )
 }
 
-export async function getStaticProps() {
+/* export async function getStaticProps() {
   const data = await fetch('http://localhost:3000/api/getArticles')
   const { articles } = await data.json()
   const projData = await fetch('http://localhost:3000/api/getProjects')
   const { projects } = await projData.json()
 
-  return { props: { articles, projects } }
-}
+  return { props: { articles, projects } }} */
