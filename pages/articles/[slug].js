@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import marked from 'marked'
 import Link from 'next/link'
 import Head from 'next/head'
-import Prism from "Prismjs";
+// import Prism from "Prismjs";
 import React, { useEffect } from 'react';
 import styles from '../../styles/Article.module.css'
 
@@ -14,9 +14,9 @@ export default function PostPage({
     slug,
     content,
 }) {
-    useEffect(() => {
+    /* useEffect(() => {
         Prism.highlightAll();
-    }, []);
+    }, []); */
     return (
         <>
             <Head>
