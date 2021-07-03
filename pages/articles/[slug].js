@@ -10,7 +10,7 @@ import styles from '../../styles/Article.module.css'
 
 
 export default function PostPage({
-    frontmatter: { title, date, cover_image },
+    frontmatter: { title, date, cover_image, excerpt },
     slug,
     content,
 }) {
@@ -23,7 +23,7 @@ export default function PostPage({
                 <title>{title}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta property="og:title" content={title} />
-                <meta property="og:description" content="Get from SEO newbie to SEO pro in 8 simple steps." />
+                <meta property="og:description" content={excerpt} />
                 <meta property="og:image" content="https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png" />
             </Head>
             <div className={styles.article}>
@@ -65,7 +65,7 @@ export async function getStaticProps({ params: { slug } }) {
         props: {
             frontmatter,
             slug,
-            content,
+            content
         },
     }
 }
