@@ -7,6 +7,7 @@ import Head from 'next/head'
 import Prism from "prismjs";
 import React, { useEffect } from 'react';
 import styles from '../../styles/Article.module.css'
+import SEO from '../../components/SEO'
 
 
 export default function PostPage({
@@ -14,18 +15,13 @@ export default function PostPage({
     slug,
     content,
 }) {
+    const seo = {title, date: date, cover_image: cover_image, excerpt: excerpt, url: `https://cameronthompson.io/articles/${slug}`}
     useEffect(() => {
         Prism.highlightAll();
     }, []);
     return (
         <>
-            <Head>
-                <title>{title}</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <meta property="og:title" content={title} />
-                <meta property="og:description" content={excerpt} />
-                <meta property="og:image" content="https://ahrefs.com/blog/wp-content/uploads/2019/12/fb-how-to-become-an-seo-expert.png" />
-            </Head>
+            <SEO seo={{seo}}/>
             <div className={styles.article}>
                 <h1>{title}</h1>
                 <div><h4>Posted on {date}</h4></div>
