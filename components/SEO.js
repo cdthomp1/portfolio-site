@@ -10,6 +10,7 @@ const SEO = ({ seo }) => {
             <meta property="og:description" content={excerpt} />
             <meta property="og:url" content={url} />
             <meta property="og:image" content={cover_image} />
+            <meta property="og:date" content={date} />
             <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:url" content={url} />
             <meta property="twitter:title" content={title} />

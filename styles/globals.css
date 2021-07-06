@@ -63,6 +63,7 @@ ul {
 
 h1 {
   font-size: 56px;
+  text-align: center;
 }
 
 h2 {
@@ -395,7 +396,11 @@ footer p {
 
 }
 
-
+.article-card {
+  min-width: 320px;
+  max-width: 320px;
+  margin: 5px;
+}
 
 
 .card-header {
@@ -405,19 +410,6 @@ footer p {
 
   background-color: var(--mainColor);
 }
-
-.wrapper {
-  background-color: var(--secondaryColor);
-  border: 1px solid var(--borderColor);
-  border-radius: 5px 5px 0 0;
-
-
-  -webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
-  padding: 2px;
-}
-
 
 .browser-dot {
   background-color: black;
@@ -443,12 +435,8 @@ footer p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 }
-
-.article {
-  width: 800px;
-}
-
 
 .cover {
   width: 100%;
@@ -639,11 +627,11 @@ footer p {
 }
 
 .post-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 320px);
-  gap: 20px;
-  justify-content: center;
-  padding-bottom: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
 }
 
 .post {

@@ -2,8 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import marked from 'marked'
-import Link from 'next/link'
-import Head from 'next/head'
 import Prism from "prismjs";
 import React, { useEffect } from 'react';
 import styles from '../../styles/Article.module.css'
@@ -24,8 +22,8 @@ export default function PostPage({
             <SEO seo={{seo}}/>
             <div className={styles.article}>
                 <h1>{title}</h1>
-                <div><h4>Posted on {date}</h4></div>
                 <img src={cover_image} alt='' />
+                <div><h4>Posted on {date}</h4></div>
                 <div className='post-body'>
                     <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
                 </div>
