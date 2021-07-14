@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -7,9 +8,30 @@ import path from 'path'
 import matter from 'gray-matter';
 import { sortByDate } from '../utils'
 import Ticker from '../components/Ticker'
-import { Fade, JackInTheBox } from "react-awesome-reveal";
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from 'react-intersection-observer';
 
 export default function Home({ articles, projects }) {
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+    if (!inView) {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
+
+
+  const carVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  }
   return (
     <>
       <Head>
@@ -22,10 +44,14 @@ export default function Home({ articles, projects }) {
         <div className="hero">
           <div id="profile_pic"></div>
           <div className="heroInfo">
-            <h1>Hi, I'm Cameron Thompson 👋🏻</h1>
+            <motion.div initial={{x: -1000 }} animate={{x: 0}}  transition={{ type: "spring", bounce: 1 }} className="heroTitle">
+              <h1>Hi, I'm Cameron Thompson&nbsp;</h1>
+              <motion.h1 initial="hidden" animate={{ rotate: 20 }}
+                transition={{ repeat: Infinity, duration: 1 }}>👋🏻</motion.h1>
+            </motion.div>
             <h2>I am a student of Software Engineering with an emphasis in Web Development!</h2>
             <div className="heroLinkContainer">
-              <div className="heroLink"><Link href="/about" >About Me &gt;</Link></div>
+              <motion.div className="heroLink"><Link href="/about" >About Me &gt;</Link></motion.div>
             </div>
           </div>
         </div>
@@ -51,8 +77,6 @@ export default function Home({ articles, projects }) {
           </div>
         </div>
 
-
-
         <div>
           <h3 style={{ textAlign: "center" }}>What I am working on!</h3>
           <div className="post-wrapper" id="projects">
@@ -68,9 +92,11 @@ export default function Home({ articles, projects }) {
 
         <div>
           <h3 style={{ textAlign: "center" }}>What I am writing about!</h3>
-          <div className="cardContainer">
+          <div
+
+            className="cardContainer">
             {articles.slice(0, 3).map((article, index) => {
-              return (<Card key={index} document={article} />)
+              return (<motion.div initial="hidden" animate={controls} ref={ref} variants={carVariants}><Card key={index} document={article} /></motion.div>)
             }
             )}
           </div>

@@ -146,6 +146,10 @@ h6 {
   margin-bottom: 0;
 }
 
+.heroTitle h1{
+  display: inline-block;
+}
+
 .heroInfo h2 {
   font-size: 1.75rem;
 }
