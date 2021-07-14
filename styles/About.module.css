@@ -1,5 +1,16 @@
-.interests, .bio {
+.interests,
+.bio {
     text-align: center;
+
+}
+
+.bio {
+    width: 45em;
+    margin: auto;
+}
+
+.interests {
+    margin-bottom: 1.6rem;
 }
 
 .spaceXCard {
@@ -27,7 +38,7 @@
     padding: 6px;
     cursor: pointer;
     margin: 5px;
-    
+
     /* box-shadow: 10px 10px #9DA2AB; */
     /* box-shadow: 10px 10px #F4F2F3; */
     /* box-shadow: 10px 10px #9E643C; */
@@ -36,7 +47,7 @@
 .interest:hover {
     box-shadow: 10px 10px 10px 1px;
     transform: scale(1.05);
-  }
+}
 
 .interest a {
     color: black;

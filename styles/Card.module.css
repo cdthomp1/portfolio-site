@@ -1,0 +1,51 @@
+.card {
+    width: 15.625em;
+    height: 18.75em;
+    background-color: white;
+    filter: drop-shadow(5px 5px 0px #1FAF7B);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.card h2 {
+    color: black;
+    font-size: 1.5625rem;
+}
+
+.cardHeader {
+    width: 100%;
+    border-radius: 3px;
+    background-color: darkgrey;
+}
+
+.cardLink {
+    background: #1FAF7B;
+    box-shadow: 5px 5px 0px #000000;
+    border-radius: 5px;
+    width: 118px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardLink:hover {
+    box-shadow: -5px -5px 0px #000000;
+}
+
+.cardLink a {
+    font-family: 'Roboto Mono', monospace;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 22px;
+    color: #FFFFFF;
+    text-decoration: none;
+}

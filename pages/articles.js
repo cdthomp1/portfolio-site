@@ -3,9 +3,9 @@ import fs from 'fs';
 import path from 'path'
 import matter from 'gray-matter';
 import { sortByDate } from '../utils'
-import ArticleCard from '../components/ArticleCard';
 import SEO from '../components/SEO';
 import styles from '../styles/Articles.module.css'
+import Card from '../components/Card';
 
 const articles = ({ articles }) => {
     const seo = { title: "Cameron Thompson: Articles", date: Date.now(), cover_image: "", excerpt: "All of my articles are on this page", url: `https://cameronthompson.io/articles` }
@@ -15,7 +15,7 @@ const articles = ({ articles }) => {
             <h1>Articles</h1>
             <div className={styles.postWrapper} id="articles">
                 {articles.map((article, index) => (
-                    <ArticleCard key={index} article={article} />
+                    <Card key={index} document={article} />
                 ))}
             </div>
         </>

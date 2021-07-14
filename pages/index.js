@@ -3,10 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ArticleCard from '../components/ArticleCard'
 import ProjectCard from '../components/ProjectCard'
+import Card from '../components/Card'
 import fs from 'fs';
 import path from 'path'
 import matter from 'gray-matter';
 import { sortByDate } from '../utils'
+import Ticker from '../components/Ticker'
 
 export default function Home({ articles, projects }) {
   return (
@@ -16,91 +18,68 @@ export default function Home({ articles, projects }) {
         <meta name="description" content="Cameron Thompson's portfolio site" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <section className="s1">
-          <div className="main-container">
-            <div className="greeting-wrapper">
-              <h1>Hi, I'm Cameron Thompson</h1>
-            </div>
-            <div className="intro-wrapper">
 
-
-              <div className="left-column">
-                <img id="profile_pic" alt='Cameron Thompson' src="./images/thompsonCameron.jpg" />
-              </div>
-
-              <div className="right-column">
-                <div id="preview">
-                  <h3>What I Do</h3>
-                  <p>I am a student of Software Engineering with an emphasis in Web Development! </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="s2">
-          <div className="main-container">
-            <div className="about-wrapper">
-              <div className="about-me">
-                <h4>More about me</h4>
-                <p>I work hard to learn new technologies but I found a few to stick to!</p>
-                <hr />
-                <h4>Top Technologies</h4>
-                <p>Fullstack developer with primary focus on Node + React: <a target="_blank"
-                  href="./assets/resume.pdf">Download Resume</a></p>
-                <div id="skills">
-                  <div>JavaScript</div>
-                  <div>Node.js</div>
-                  <div>React</div>
-                  <div>MongoDB</div>
-                  <div>Express.js</div>
-                  <div>Heroku</div>
-                  <div>Netlify</div>
-                  <div>HTML/CSS</div>
-                  <div>JAM Stack (Learning)</div>
-                  <div>Serverless (Learning)</div>
-                </div>
-              </div>
-              <div className="skill-image-container">
-                <img id="skill-image" alt="MERN Stack" src="./images/mern.jpg" />
-                <h3>My Main Focus: <br />The MERN Stack</h3>
-              </div>
+      <div className="content">
+        <div className="hero">
+          <div id="profile_pic"></div>
+          <div className="heroInfo">
+            <h1>Hi, I'm Cameron Thompson 👋🏻</h1>
+            <h2>I am a student of Software Engineering with an emphasis in Web Development!</h2>
+            <div className="heroLinkContainer">
+              <div className="heroLink"><Link href="/about" >About Me &gt;</Link></div>
             </div>
           </div>
         </div>
-        <section className="s1">
-          <div className="main-container">
-            <h3 style={{ textAlign: "center" }}>Some of my latest projects</h3>
-            <div className="post-wrapper" id="projects">
-              {/* {projects.slice(0, 3).map(project => {
-                return <ProjectCard key={project._id} project={project} />
-              }
-              )} */}
-            </div>
-            <div className="more-button">
-              <a href="/projects">See More</a>
+
+        <hr />
+        <div className="about-wrapper">
+          <div className="about-me">
+            <h4>Top Technologies</h4>
+            <p>Fullstack developer with primary focus on the JAM Stack!</p>
+            <div id="skills">
+              <div>JavaScript</div>
+              <div>Node.js</div>
+              <div>React</div>
+              <div>MongoDB</div>
+              <div>Express.js</div>
+              <div>HTML/CSS</div>
+              <div>JAM Stack</div>
+              <div>Serverless</div>
             </div>
           </div>
+          <div className="skill-image-container">
+            <img id="skill-image" alt="JAM Stack" src="./images/jam.png" />
+          </div>
+        </div>
 
 
-          <div className="main-container">
-            <h3 style={{ textAlign: "center" }}>Some of my latest articles</h3>
-            <div className="post-wrapper" id="articles">
-              {articles.slice(0, 3).map((article, index) => {
-                if (article.cover_image !== null) {
-                  return <ArticleCard key={index} article={article} />
-                } else {
-                  return <></>
-                }
+
+        <div>
+          <h3 style={{ textAlign: "center" }}>What I am working on!</h3>
+          <div className="post-wrapper" id="projects">
+            {projects.slice(0, 3).map((project, index) => {
+                return <Card key={index} document={project} />
               }
               )}
-            </div>
-            <div id="bottom-button" className="more-button">
-              <a href="/articles">See More</a>
-            </div>
           </div>
-        </section>
+          <div className="more-button">
+            <a href="/projects">See More</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 style={{ textAlign: "center" }}>What I am writing about!</h3>
+          <div className="cardContainer">
+            {articles.slice(0, 3).map((article, index) => {
+              return (<Card key={index} document={article} />)
+            }
+            )}
+          </div>
+          <div id="bottom-button" className="more-button">
+            <a href="/articles">See More</a>
+          </div>
+        </div>
+
       </div>
 
     </>
@@ -110,6 +89,8 @@ export default function Home({ articles, projects }) {
 export async function getStaticProps() {
   // Get files from the articles dir
   const files = fs.readdirSync(path.join('articles'))
+
+  const projectFiles = fs.readdirSync(path.join('projects'))
 
   // Get slug and frontmatter from articles
   const articles = files.map((filename) => {
@@ -129,9 +110,29 @@ export async function getStaticProps() {
       frontmatter,
     }
   })
+
+  const projects = projectFiles.map((filename) => {
+    // Create slug
+    const slug = filename.replace('.md', '')
+
+    // Get frontmatter
+    const markdownWithMeta = fs.readFileSync(
+      path.join('projects', filename),
+      'utf-8'
+    )
+
+    const { data: frontmatter } = matter(markdownWithMeta)
+
+    return {
+      slug,
+      frontmatter,
+    }
+  })
+
   return {
     props: {
       articles: articles.sort(sortByDate),
+      projects: projects.sort(sortByDate)
     },
   }
 }
