@@ -44,7 +44,7 @@ export default function Home({ articles, projects }) {
         <div className="hero">
           <div id="profile_pic"></div>
           <div className="heroInfo">
-            <motion.div initial={{x: -1000 }} animate={{x: 0}}  transition={{ type: "spring", bounce: 1 }} className="heroTitle">
+            <motion.div initial={{opacity: 0 }} animate={{opacity: 1}}  transition={{ type: "easeIn", duration: 0.75}} className="heroTitle">
               <h1>Hi, I'm Cameron Thompson&nbsp;</h1>
               <motion.h1 initial="hidden" animate={{ rotate: 20 }}
                 transition={{ repeat: Infinity, duration: 1 }}>👋🏻</motion.h1>
