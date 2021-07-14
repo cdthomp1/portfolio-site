@@ -1,14 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import ArticleCard from '../components/ArticleCard'
-import ProjectCard from '../components/ProjectCard'
 import Card from '../components/Card'
 import fs from 'fs';
 import path from 'path'
 import matter from 'gray-matter';
 import { sortByDate } from '../utils'
 import Ticker from '../components/Ticker'
+import { Fade, JackInTheBox } from "react-awesome-reveal";
 
 export default function Home({ articles, projects }) {
   return (
@@ -58,9 +57,9 @@ export default function Home({ articles, projects }) {
           <h3 style={{ textAlign: "center" }}>What I am working on!</h3>
           <div className="post-wrapper" id="projects">
             {projects.slice(0, 3).map((project, index) => {
-                return <Card key={index} document={project} />
-              }
-              )}
+              return <Card key={index} document={project} />
+            }
+            )}
           </div>
           <div className="more-button">
             <a href="/projects">See More</a>
