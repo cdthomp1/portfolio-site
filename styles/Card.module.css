@@ -20,9 +20,13 @@
 }
 
 .cardHeader {
-    width: 100%;
+    width: 10em;
     border-radius: 3px;
     background-color: darkgrey;
+}
+
+.cardHeader img {
+    max-width: 10em;
 }
 
 .cardLink {
@@ -49,3 +53,4 @@
     color: #FFFFFF;
     text-decoration: none;
 }
+

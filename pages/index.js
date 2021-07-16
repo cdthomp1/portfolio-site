@@ -47,7 +47,7 @@ export default function Home({ articles, projects }) {
             <motion.div initial={{opacity: 0 }} animate={{opacity: 1}}  transition={{ type: "easeIn", duration: 0.75}} className="heroTitle">
               <h1>Hi, I'm Cameron Thompson&nbsp;</h1>
               <motion.h1 initial="hidden" animate={{ rotate: 20 }}
-                transition={{ repeat: Infinity, duration: 1 }}>👋🏻</motion.h1>
+                transition={{ repeat: 10, duration: 1 }}>👋🏻</motion.h1>
             </motion.div>
             <h2>I am a student of Software Engineering with an emphasis in Web Development!</h2>
             <div className="heroLinkContainer">
