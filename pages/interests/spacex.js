@@ -29,7 +29,7 @@ const spacex = ({ launches, upcomingLaunches }) => {
                         <img src={launches.links.patch.small} />
                     </div>
                     <div className={styles.images}>
-                        <RanImage images={launches.links.flickr.original} />
+                        0
                     </div>
                     <div className={styles.launchInfo}>
                         <h3 className={styles.title}>Launch Date: </h3>
