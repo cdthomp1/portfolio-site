@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 
-const SEO = ({ seo }) => {
+const Seo = ({ seo }) => {
     const { title, date, cover_image, excerpt, url } = seo.seo
     return (
         <Head>
@@ -21,4 +21,4 @@ const SEO = ({ seo }) => {
     )
 }
 
-export default SEO
+export default Seo

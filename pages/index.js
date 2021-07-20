@@ -10,7 +10,7 @@ import { sortByDate } from '../utils'
 import Ticker from '../components/Ticker'
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
-import SEO from '../components/SEO'
+import Seo from '../components/Seo'
 
 export default function Home({ articles, projects }) {
   const controls = useAnimation();
@@ -46,7 +46,7 @@ export default function Home({ articles, projects }) {
   }
   return (
     <>
-      <SEO seo={seo} />
+      <Seo seo={seo} />
 
       <div className="content">
         <div className="hero">
