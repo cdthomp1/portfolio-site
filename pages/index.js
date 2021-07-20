@@ -39,7 +39,7 @@ export default function Home({ articles, projects }) {
       title: "Cameron Thompson",
       excerpt: "Cameron Thompson's portfolio site",
       url: "",
-      cover_image: "./images/home-og-image.png",
+      cover_image: "https://res.cloudinary.com/cameron-projects/image/upload/v1626762649/faqao1ne2ij2iuufnvpu.png",
       date: Date.now()
 
     }
