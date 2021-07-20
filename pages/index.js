@@ -10,6 +10,7 @@ import { sortByDate } from '../utils'
 import Ticker from '../components/Ticker'
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
+import SEO from '../components/SEO'
 
 export default function Home({ articles, projects }) {
   const controls = useAnimation();
@@ -31,20 +32,27 @@ export default function Home({ articles, projects }) {
       y: 0,
       opacity: 1
     }
+
+  }
+  const seo = {
+    seo: {
+      title: "Cameron Thompson",
+      excerpt: "Cameron Thompson's portfolio site",
+      url: "",
+      cover_image: "./images/home-og-image.png",
+      date: Date.now()
+
+    }
   }
   return (
     <>
-      <Head>
-        <title>Cameron Thompson</title>
-        <meta name="description" content="Cameron Thompson's portfolio site" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO seo={seo} />
 
       <div className="content">
         <div className="hero">
           <div id="profile_pic"></div>
           <div className="heroInfo">
-            <motion.div initial={{opacity: 0 }} animate={{opacity: 1}}  transition={{ type: "easeIn", duration: 0.75}} className="heroTitle">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ type: "easeIn", duration: 0.75 }} className="heroTitle">
               <h1>Hi, I'm Cameron Thompson&nbsp;</h1>
               <motion.h1 initial="hidden" animate={{ rotate: 20 }}
                 transition={{ repeat: 10, duration: 1 }}>👋🏻</motion.h1>
