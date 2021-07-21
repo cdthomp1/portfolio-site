@@ -2,7 +2,7 @@ import React from 'react'
 
 const Astronaut = ({ astronaut }) => {
     return (
-        <div className="m-2 w-96 bg-white flex flex-col items-center">
+        <div className="m-2 lg:w-96 md:w-72 ms:w-40 bg-white flex flex-col items-center">
             <h3 className="text-black text-3xl"><a href={astronaut.wikipedia} target="_blank" rel="noreferrer noopener">{astronaut.name}</a></h3>
             <div className="w-56">
                 <img className="" src={astronaut.image} />

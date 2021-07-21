@@ -10,13 +10,12 @@ const LaunchInfo = ({ launch, astronauts }) => {
     return (
         <div className="flex flex-col items-center w-9/12 mx-auto my-5">
             <h2 className="block text-4xl my-5">SpaceX Launch Info</h2>
-            <h3 className="text-4xl my-5">{launch.name}</h3>
+            <h3 className="text-4xl my-5"><a href={wiki} target="_blank" rel="noreferrer noopener">{launch.name}</a></h3>
             <img className="w-80" src={launch.links.patch.small} />
-            <p className="w-8/12 mx-auto my-5">{details}</p>
-            <p><a href={wiki} target="_blank" rel="noreferrer noopener">{wiki}</a></p>
-            {astronauts.length > 0 ? 
+            <p className="xl:w-5/12 xl:w-6/12 lg:w-8/12 md:w-10/12 sm:w-10/12 mx-auto my-5">{details}</p>
+            {astronauts.length > 0 ?
                 (<div className="flex flex-col items-center my-5">
-                    <h3 className="text-4xl">Let's Meet the Astronauts!</h3>
+                    <h3 className="lg:4xl md:text-3xl  sm:text-xl">Let's Meet the Astronauts!</h3>
                     <div>
                         {astronauts.map((a, index) => { return (<Astronaut key={index} astronaut={a} />) })}
                     </div>
