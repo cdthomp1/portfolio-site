@@ -10,7 +10,7 @@ import { sortByDate } from '../utils'
 import Ticker from '../components/Ticker'
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
-import Seo from '../components/Seo'
+import Seo from '../components/SEO'
 
 export default function Home({ articles, projects }) {
   const controls = useAnimation();
@@ -24,7 +24,6 @@ export default function Home({ articles, projects }) {
       controls.start('hidden');
     }
   }, [controls, inView]);
-
 
   const carVariants = {
     hidden: { y: 20, opacity: 0 },
