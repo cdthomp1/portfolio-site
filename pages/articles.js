@@ -8,15 +8,21 @@ import styles from '../styles/Articles.module.css'
 import Card from '../components/Card';
 
 const articles = ({ articles }) => {
-    const seo = { title: "Cameron Thompson: Articles", date: Date.now(), cover_image: "", excerpt: "All of my articles are on this page", url: `https://cameronthompson.io/articles` }
+    const seo = { title: "Cameron Thompson: Articles", date: Date.now(), cover_image: "https://res.cloudinary.com/cameron-projects/image/upload/v1626762649/faqao1ne2ij2iuufnvpu.png", excerpt: "All of my articles are on this page", url: `https://cameronthompson.io/articles` }
     return (
         <>
             <SEO seo={{ seo }} />
-            <h1>Articles</h1>
+            <h1 className="text-6xl">Articles</h1>
             <div className={styles.postWrapper} id="articles">
-                {articles.map((article, index) => (
-                    <Card key={index} document={article} />
-                ))}
+                {articles.map((article, index) => {
+                    var document = {
+                        cover_image: article.frontmatter.cover_image,
+                        title: article.frontmatter.title,
+                        link: `/articles/${article.slug}`
+                    }
+                    return (<Card key={index} document={document} />)
+                }
+                )}
             </div>
         </>
     )

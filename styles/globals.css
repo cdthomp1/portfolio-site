@@ -167,7 +167,7 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 1em;
+  margin: 1.75em;
 }
 
 .heroLink:hover {
@@ -258,10 +258,10 @@ footer p {
 .cardContainer {
   display: flex;
   flex-direction: row;
-  margin: auto;
   justify-content: space-evenly;
   align-items: center;
   width: 50em;
+  margin: 1.5em;
 }
 
 .right-column {
@@ -482,8 +482,27 @@ footer p {
 
   .hero {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding: 0.5em;
     width: 100%;
+  }
+
+  .heroTitle {
+    text-align: center;
+  }
+
+  .heroInfo h1 {
+    font-size: 1.75rem;
+    margin: 0.75em 0;
+  }
+
+  .heroInfo h2 {
+    font-size: 1.1rem;
+    padding: 0.1rem;
+  }
+
+  .hand {
+    display: none;
   }
 
   .heroInfo {
@@ -497,9 +516,27 @@ footer p {
 
   .about-wrapper {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 0%;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding: 0.5em;
+  }
+
+  .about-me,
+  .skill-image-container {
+    max-width: 75%;
+  }
+
+  .about-me h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-me {
+    margin: 1em 0;
+  }
+
+  #skills {
+    margin: 1em 0;
   }
 
   .post-wrapper {
@@ -530,8 +567,27 @@ footer p {
 
   .hero {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding: 0.5em;
     width: 100%;
+  }
+
+  .heroTitle {
+    text-align: center;
+  }
+
+  .heroInfo h1 {
+    font-size: 1.75rem;
+    margin: 0.75em 0;
+  }
+
+  .heroInfo h2 {
+    font-size: 1.1rem;
+    padding: 0.1rem;
+  }
+
+  .hand {
+    display: none;
   }
 
   .heroInfo {
@@ -546,8 +602,25 @@ footer p {
   .about-wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 0%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-me,
+  .skill-image-container {
+    max-width: 90%;
+  }
+
+  .about-me h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-me {
+    margin: 1em 0;
+  }
+
+  #skills {
+    margin: 1em 0;
   }
 
   .post-wrapper {
@@ -574,8 +647,27 @@ footer p {
 
   .hero {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+
     width: 100%;
+  }
+
+  .heroTitle {
+    text-align: center;
+  }
+
+  .heroInfo h1 {
+    font-size: 2.7rem;
+    margin: 0.75em 0;
+  }
+
+  .heroInfo h2 {
+    font-size: 1.9rem;
+    padding: 0.1rem;
+  }
+
+  .hand {
+    display: none;
   }
 
   .heroInfo {
@@ -590,8 +682,25 @@ footer p {
   .about-wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 0%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-me,
+  .skill-image-container {
+    max-width: 90%;
+  }
+
+  .about-me h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-me {
+    margin: 1em 0;
+  }
+
+  #skills {
+    margin: 1em 0;
   }
 
   .post-wrapper {
@@ -626,8 +735,27 @@ footer p {
 
   .hero {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+
     width: 100%;
+  }
+
+  .heroTitle {
+    text-align: center;
+  }
+
+  .heroInfo h1 {
+    font-size: 2.25rem;
+    margin: 0.75em 0;
+  }
+
+  .heroInfo h2 {
+    font-size: 1.9rem;
+    padding: 0.1rem;
+  }
+
+  .hand {
+    display: none;
   }
 
   .heroInfo {
@@ -642,8 +770,25 @@ footer p {
   .about-wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 0%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-me,
+  .skill-image-container {
+    max-width: 90%;
+  }
+
+  .about-me h3 {
+    font-size: 1.8rem;
+  }
+
+  .about-me {
+    margin: 1em 0;
+  }
+
+  #skills {
+    margin: 1em 0;
   }
 
   .post-wrapper {
@@ -676,8 +821,27 @@ footer p {
 
   .hero {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+
     width: 100%;
+  }
+
+  .heroTitle {
+    text-align: center;
+  }
+
+  .heroInfo h1 {
+    font-size: 1.8rem;
+    margin: 0.75em 0;
+  }
+
+  .heroInfo h2 {
+    font-size: 1.4rem;
+    padding: 0.1rem;
+  }
+
+  .hand {
+    display: none;
   }
 
   .heroInfo {
@@ -692,8 +856,25 @@ footer p {
   .about-wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 0%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-me,
+  .skill-image-container {
+    max-width: 90%;
+  }
+
+  .about-me h3 {
+    font-size: 1.8rem;
+  }
+
+  .about-me {
+    margin: 1em 0;
+  }
+
+  #skills {
+    margin: 1em 0;
   }
 
   .post-wrapper {
@@ -728,8 +909,27 @@ footer p {
 
   .hero {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+
     width: 100%;
+  }
+
+  .heroTitle {
+    text-align: center;
+  }
+
+  .heroInfo h1 {
+    font-size: 1.75rem;
+    margin: 0.75em 0;
+  }
+
+  .heroInfo h2 {
+    font-size: 1.1rem;
+    padding: 0.1rem;
+  }
+
+  .hand {
+    display: none;
   }
 
   .heroInfo {
@@ -744,8 +944,25 @@ footer p {
   .about-wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 0%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-me,
+  .skill-image-container {
+    max-width: 90%;
+  }
+
+  .about-me h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-me {
+    margin: 1em 0;
+  }
+
+  #skills {
+    margin: 1em 0;
   }
 
   .post-wrapper {
@@ -773,14 +990,34 @@ footer p {
 
 @media screen and (max-width: 320px) {
 
+
+
   .content {
     width: 100%
   }
 
   .hero {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+
     width: 100%;
+  }
+
+  .heroTitle {
+    text-align: center;
+  }
+
+  .heroInfo h1 {
+    font-size: 1.35rem;
+    margin: 0.75em 0;
+  }
+
+  .heroInfo h2 {
+    font-size: 1rem;
+  }
+
+  .hand {
+    display: none;
   }
 
   .heroInfo {
@@ -795,8 +1032,25 @@ footer p {
   .about-wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 0%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-me,
+  .skill-image-container {
+    max-width: 90%;
+  }
+
+  .about-me h3 {
+    font-size: 1.5rem;
+  }
+
+  .about-me {
+    margin: 1em 0;
+  }
+
+  #skills {
+    margin: 1em 0;
   }
 
   .post-wrapper {
@@ -824,7 +1078,9 @@ footer p {
 
 
 
-
+/*
+NAV BAR STYLES
+*/
 
 .nav {
   width: 100%;
@@ -852,18 +1108,16 @@ footer p {
 }
 
 .logoContainer p {
-  margin-left: 10px;
-  margin-top: 6px;
+  margin-left: 0.8rem;
+  margin-top: 0.4rem;
   font-size: 1.2rem;
 }
 
 .menu {
-  width: 100%;
+  width: 75%;
 }
 
 .menuItem {
-  display: block;
-  padding: 0 8px;
   font-size: 2rem;
   line-height: 60px;
   color: #fff;
@@ -989,14 +1243,6 @@ footer p {
     transition: all 0.3s ease-out;
   }
 
-  .navbar nav li:hover {
-    background: #212121;
-  }
-
-  .navbar nav li:hover a {
-    color: #fff;
-    transition: all 0.3s ease-out;
-  }
 
   .navbar nav li a {
     color: #212121;
@@ -1005,7 +1251,7 @@ footer p {
 
 @media (min-width: 768px) {
   .logo img {
-    width: 50px;
+    width: 3em;
   }
 
   .navbar nav ul {
@@ -1028,14 +1274,6 @@ footer p {
     line-height: 60px;
     color: #fff;
     text-decoration: none;
-  }
-
-  .navbar nav li.active {
-    background: #555;
-  }
-
-  .navbar nav li:hover {
-    background: #333;
   }
 
   .navbar label {

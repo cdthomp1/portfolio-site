@@ -1,39 +1,17 @@
 import React, { useEffect } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import Card from '../components/Card'
 import fs from 'fs';
 import path from 'path'
 import matter from 'gray-matter';
 import { sortByDate } from '../utils'
-import Ticker from '../components/Ticker'
-import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import Seo from '../components/SEO'
+import 'tailwindcss/tailwind.css'
+
 
 export default function Home({ articles, projects }) {
-  const controls = useAnimation();
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-    if (!inView) {
-      controls.start('hidden');
-    }
-  }, [controls, inView]);
-
-  const carVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-
-  }
-  const seo = {
+    const seo = {
     seo: {
       title: "Cameron Thompson",
       excerpt: "Cameron Thompson's portfolio site",
@@ -51,14 +29,12 @@ export default function Home({ articles, projects }) {
         <div className="hero">
           <div id="profile_pic"></div>
           <div className="heroInfo">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ type: "easeIn", duration: 0.75 }} className="heroTitle">
-              <h1>Hi, I'm Cameron Thompson&nbsp;</h1>
-              <motion.h1 initial="hidden" animate={{ rotate: 20 }}
-                transition={{ repeat: 10, duration: 1 }}>👋🏻</motion.h1>
-            </motion.div>
+            <div className="heroTitle">
+              <h1>Hi, I'm Cameron Thompson <span className="hand">👋🏻</span></h1>
+            </div>
             <h2>I am a student of Software Engineering with an emphasis in Web Development!</h2>
             <div className="heroLinkContainer">
-              <motion.div className="heroLink"><Link href="/about" >About Me &gt;</Link></motion.div>
+              <div className="heroLink"><Link href="/about" >About Me &gt;</Link></div>
             </div>
           </div>
         </div>
@@ -66,7 +42,7 @@ export default function Home({ articles, projects }) {
         <hr />
         <div className="about-wrapper">
           <div className="about-me">
-            <h4>Top Technologies</h4>
+            <h3>Top Technologies</h3>
             <p>Fullstack developer with primary focus on the JAM Stack!</p>
             <div id="skills">
               <div>JavaScript</div>
@@ -84,32 +60,42 @@ export default function Home({ articles, projects }) {
           </div>
         </div>
 
-        <div>
-          <h3 style={{ textAlign: "center" }}>What I am working on!</h3>
+        <div className="flex flex-col items-center">
+          <h3 className="text-3xl m-6 text-center">What I am working on!</h3>
           <div className="post-wrapper" id="projects">
             {projects.slice(0, 3).map((project, index) => {
-              return <Card key={index} document={project} />
+              var document = {
+                cover_image: project.frontmatter.cover_image,
+                title: project.frontmatter.title,
+                link: `/projects/${project.slug}`
+              }
+              return <Card key={index} document={document} />
             }
             )}
           </div>
-          <div className="more-button">
-            <a href="/projects">See More</a>
+          <div className="heroLink">
+            <Link href="/projects">See More</Link>
           </div>
         </div>
 
-        <div>
-          <h3 style={{ textAlign: "center" }}>What I am writing about!</h3>
-          <div
-
-            className="cardContainer">
+        <div className="flex flex-col items-center">
+          <h3 className="text-3xl m-6 text-center">What I am writing about!</h3>
+          <div className="cardContainer">
             {articles.slice(0, 3).map((article, index) => {
-              return (<motion.div initial="hidden" animate={controls} ref={ref} variants={carVariants}><Card key={index} document={article} /></motion.div>)
+              var document = {
+                cover_image: article.frontmatter.cover_image,
+                title: article.frontmatter.title,
+                link: `/articles/${article.slug}`
+              }
+              return (<Card key={index} document={document} />)
             }
             )}
           </div>
-          <div id="bottom-button" className="more-button">
-            <a href="/articles">See More</a>
+
+          <div className="heroLink">
+            <Link href="/articles">See More</Link>
           </div>
+
         </div>
 
       </div>

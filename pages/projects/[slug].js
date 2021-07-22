@@ -9,11 +9,11 @@ import SEO from '../../components/SEO'
 
 
 export default function PostPage({
-    frontmatter: { title, date, cover_image, excerpt },
+    frontmatter: { title, date, cover_image, excerpt, repo_link, live_link },
     slug,
     content,
 }) {
-    const seo = {title, date: date, cover_image: cover_image, excerpt: excerpt, url: `https://cameronthompson.io/articles/${slug}`}
+    const seo = {title, date: date, cover_image: cover_image, excerpt: excerpt, url: `https://cameronthompson.io/projects/${slug}`}
     useEffect(() => {
         Prism.highlightAll();
     }, []);
@@ -23,6 +23,9 @@ export default function PostPage({
             <div className={styles.article}>
                 <h1>{title}</h1>
                 <img src={cover_image} alt='' />
+                <div><h4>Posted on {date}</h4></div>
+                <div><a href={repo_link} >Repo</a></div>
+                <div><a href={live_link} >Live</a></div>
                 <div className='post-body'>
                     <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
                 </div>
@@ -32,7 +35,7 @@ export default function PostPage({
 }
 
 export async function getStaticPaths() {
-    const files = fs.readdirSync(path.join('articles'))
+    const files = fs.readdirSync(path.join('projects'))
 
     const paths = files.map((filename) => ({
         params: {
@@ -48,7 +51,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
     const markdownWithMeta = fs.readFileSync(
-        path.join('articles', slug + '.md'),
+        path.join('projects', slug + '.md'),
         'utf-8'
     )
 

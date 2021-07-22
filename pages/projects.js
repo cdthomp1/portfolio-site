@@ -14,9 +14,15 @@ const projects = ({ projects }) => {
             <SEO seo={{ seo }} />
             <h1>Projects</h1>
             <div className={styles.postWrapper} id="articles">
-                {projects.map((project, index) => (
-                    <Card key={index} document={project} />
-                ))}
+                {projects.map((project, index) => {
+                    var document = {
+                        cover_image: project.frontmatter.cover_image,
+                        title: project.frontmatter.title,
+                        link: `/projects/${project.slug}`
+                    }
+                    return <Card key={index} document={document} />
+                }
+                )}
             </div>
         </>
     )
