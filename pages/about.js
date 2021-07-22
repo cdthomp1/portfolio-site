@@ -1,40 +1,43 @@
 import React from 'react'
-import styles from '../styles/About.module.css'
 import Link from 'next/link'
+
 
 const about = () => {
 
     return (
         <>
-            <h1>About Me</h1>
-            <div className={styles.bio}>
-                <h2>Bio</h2>
-                <p>Cameron Thompson is currently a Software Engineering Student at Brigham Young University Idaho. Cameron also works at the University in the Information Technology department as a Student Software Developer working in the Microsoft Stack in the .NetCore and ASP.Net technologies. Cameron is proficient in Node.js, React, MongoDb, and is currently working on learning the JAM Stack.</p>
-                <p>Cameron grew up in Arizona before heading to college in Idaho. Cameron enjoys many recreational activities such as golf, ultimate frisbee, and shooting skeet. Cameron also has several interests in SpaceX, Arduino, and 3D Printing.</p>
+            <h1 className="text-5xl m-3">About Me</h1>
+            <h2 className="text-3xl m-3">Biography</h2>
+            <div className="text-white sm:w-96 m-3 md:w-7/12 l:w-7/12 xl:w-7/12 1xl:w-6/12 2xl:w-3/12 mx-auto">
+                <p className="m-3">Cameron Thompson is currently a Software Engineering Student at Brigham Young University Idaho. Cameron also works at the University in the Information Technology department as a Student Software Developer working in the Microsoft Stack in the .NET Core and ASP.NET Core technologies. Cameron is proficient in Node.js, React, MongoDb, and is currently working on learning the JAM Stack.</p>
+                <p className="m-3">Cameron grew up in Arizona before heading to college in Idaho. Cameron enjoys many recreational activities such as golf, ultimate frisbee, fishing, and shooting skeet. Cameron also has several interests in SpaceX, Arduino, and 3D Printing.</p>
             </div>
-            <div className={styles.interests}>
-                <h2>Interests</h2>
-                <h3>Click to learn more!</h3>
-                <div className={styles.interestContainer}>
-                    <Link href="/construction">
-                        <div className={styles.interest}>
-                            <div className={styles.interestImageSpaceX}></div>
-                            <h3>SpaceX</h3>
+            <h2 className="text-2xl">Click to learn more!</h2>
+            <div className="w-4/12 mx-auto flex lg:flex-row flex-col items-center justify-around">
+                <Link href="/interests/spacex">
+                    <div className="cursor-pointer w-60 h-72 flex flex-col items-center justify-around bg-white m-5 rounded-md filter drop-shadow-greenDrop">
+                        <div className="w-32 h-28 mx-auto p-1">
+                            <img className=" inline object-scale-down" src="https://pbs.twimg.com/profile_images/1082744382585856001/rH_k3PtQ_400x400.jpg" />
                         </div>
-                    </Link>
-                    <Link href="/construction">
-                        <div className={styles.interest}>
-                            <div className={styles.interestImageArduino}></div>
-                            <h3>Arduino</h3>
+                        <h2 className="mx-auto font-bold text-black text-3xl">SpaceX</h2>
+                    </div>
+                </Link>
+                <Link href="/construction">
+                    <div className="cursor-pointer w-60 h-72 flex flex-col items-center justify-around bg-white m-5 rounded-md filter drop-shadow-greenDrop">
+                        <div className="w-32 h-28 mx-auto my-auto p-1">
+                            <img className="inline object-scale-down" src="./images/arduino.png" />
                         </div>
-                    </Link>
-                    <Link href="/construction">
-                        <div className={styles.interest}>
-                            <div className={styles.interestImagePrinting}></div>
-                            <h3>3D Printing</h3>
+                        <h2 className="mx-auto font-bold text-black text-3xl">Arduino</h2>
+                    </div>
+                </Link>
+                <Link href="/construction">
+                    <div className="cursor-pointer w-60 h-72 flex flex-col items-center justify-around bg-white m-5 rounded-md filter drop-shadow-greenDrop">
+                        <div className="w-32 h-28 mx-auto p-1">
+                            <img className="inline object-scale-down" src="./images/3dprinter.png" />
                         </div>
-                    </Link>
-                </div>
+                        <h2 className="mx-auto font-bold text-black text-3xl">3D Printing</h2>
+                    </div>
+                </Link>
             </div>
         </>
     )
