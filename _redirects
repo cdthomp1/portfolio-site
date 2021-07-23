@@ -1,5 +1,0 @@
-/getProjects /.netlify/functions/getProjects.js 200
-/addProject /.netlify/functions/addproject.js 200
-/getAssignments /.netlify/functions/getAssignments.js 200
-/getArticle /.netlify/functions/getArticle.js 200
-/getArticles /.netlify/functions/getArticles.js 200

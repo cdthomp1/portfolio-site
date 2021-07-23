@@ -1,0 +1,103 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.latest {
+    height: auto;
+    width: 100em;
+}
+
+.latest h3 {
+    text-align: center;
+}
+
+.latestInner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.patch {
+    filter: drop-shadow(0 0 10px #1FAF7B);
+}
+
+.launchInfo {
+    margin: 3px;
+    width: 20em;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    width: 50em;
+    height: 34em;
+}
+
+.images img {
+    filter: drop-shadow(0 0 10px #1FAF7B);
+    max-width: 50em;
+    max-height: 34em;
+}
+
+.upcoming {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: auto;
+    margin-top: 2em;
+    width: 100em;
+}
+
+.upcoming div {
+    margin: 5px;
+}
+
+@media (max-width: 640px) {
+    .latest {
+        width: 100%;
+    }
+
+    .images {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+    }
+
+    .images img {
+        filter: drop-shadow(0 0 10px #1FAF7B);
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .latestInner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .patch {
+        margin: 2rem;
+    }
+
+    .launchInfo h3 {
+        margin: 1rem;
+    }
+
+    .upcoming {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        height: auto;
+        margin-top: 2em;
+        width: 100%;
+    }
+}

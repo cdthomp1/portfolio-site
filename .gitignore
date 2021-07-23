@@ -1,11 +1,4 @@
+./node_modules
 .DS_Store
-design.drawio
 node_modules
-.env
-.netlify/state.json
-
-# Local Netlify folder
-.netlify
-.DS_Store
-.vscode/launch.json
-.eslintcache
+.next
