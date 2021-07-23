@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from '../styles/Card.module.css'
+import 'tailwindcss/tailwind.css'
 
 const Card = ({ document }) => {
     const launchLink = `/interests/spacex/${document.id}`
