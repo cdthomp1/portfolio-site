@@ -23,7 +23,7 @@ const about = () => {
                         <h2 className="mx-auto font-bold text-black text-3xl">SpaceX</h2>
                     </div>
                 </Link>
-                <Link href="/construction">
+                <Link href="/interests/arduino">
                     <div className="cursor-pointer w-60 h-72 flex flex-col items-center justify-around bg-white m-5 rounded-md filter drop-shadow-greenDrop">
                         <div className="w-32 h-28 mx-auto my-auto p-1">
                             <img className="inline object-scale-down" src="./images/arduino.png" />

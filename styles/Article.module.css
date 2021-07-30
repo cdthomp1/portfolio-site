@@ -3,9 +3,13 @@
     margin: auto;
 }
 
-.s1 {
-    border-bottom: none;
+.article img {
+    width: 100%;
+    filter: drop-shadow(5px 5px 0px #1FAF7B);
+    border-radius: 3px;
 }
+
+
 
 #success {
     text-align: center;
