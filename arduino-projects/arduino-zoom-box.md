@@ -1,8 +1,8 @@
 ---
 title: 'Arduino Zoom Box'
 date: 'July 30, 2021'
-excerpt: 'A small Arduino project that allows me to control Zoom and other programs with an Arduino!.'
-cover_image: '../../images/Arduino_Zoom_Box.jpeg'
+excerpt: 'A small Arduino project that allows me to control Zoom and other programs with an Arduino!'
+cover_image: 'https://res.cloudinary.com/cameron-projects/image/upload/v1627673836/dnfrzk8wfpujaxak91ut.jpg'
 ---
 
 In January of this year (2021) I had been working remotely for about 9 months, with hundreds of Zoom meetings. Zoom is powerful, with the ability to have global shortcuts to mute/un-mute and to turn your camera on and off. But I am lazy, and pressing the keyboard shortcut to do these actions was too much 😅 The Arduino Zoom Box was born.
@@ -30,7 +30,7 @@ There were three main things I wanted my box to do; send a key combo based on a 
 Here is my design:
 
 ![Project Design](../../images/C8F6746D-A4F0-495A-A866-5748E388148A.jpeg)
-You can see that each of the numbers on the buttons corresponds with a pin. I would have used a program like TinkerCad to create the design, but they don't have the Pro Micro board. 
+You can see that each of the numbers on the buttons corresponds with a pin. I would have used a program like TinkerCad to create the design, but they don't have the Pro Micro board.
 
 Here it is fully assembled:
 
