@@ -62,7 +62,7 @@ export default function Home({ articles, projects }) {
 
         <div className="flex flex-col items-center">
           <h3 className="text-3xl m-6 text-center">What I am working on!</h3>
-          <div className="post-wrapper" id="projects">
+          <div className="cardContainer">
             {projects.slice(0, 3).map((project, index) => {
               var document = {
                 cover_image: project.frontmatter.cover_image,
