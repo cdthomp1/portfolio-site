@@ -9,7 +9,6 @@
     "export": "next export"
   },
   "dependencies": {
-    "@sentry/nextjs": "^6.10.0",
     "dompurify": "^2.2.9",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",

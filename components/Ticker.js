@@ -8,8 +8,7 @@ const Ticker = () => {
         <div>
             <div className={styles.tickerWrap}>
                 <div className={styles.ticker}>
-                    <div className={styles.ticker__item}>Currently Watching: {video}</div>
-                    <div className={styles.ticker__item}>Join me here: <a a href={link}>{link}</a> </div>
+                    <div className={styles.ticker__item}>Hey this site is under live construction, you may notice changes!</div>
                 </div>
             </div>
         </div>
