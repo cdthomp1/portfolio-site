@@ -8,7 +8,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Navigation />
-      <Ticker />
       <Component {...pageProps} />
       <Footer />
     </>
