@@ -1,5 +1,6 @@
 import Footer from '../components/Footer'
 import Navigation from '../components/Navigation'
+import Ticker from '../components/Ticker';
 import '../styles/globals.css'
 import "../styles/prism.css";
 
