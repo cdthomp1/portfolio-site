@@ -27,6 +27,9 @@ module.exports = {
         'bgMain': '#aaa9a9'
       })
     },
+    textColor: {
+      'link': '#17a2b8'
+    },
     variants: {
       extend: {},
     },

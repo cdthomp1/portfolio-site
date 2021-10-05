@@ -3,13 +3,15 @@
     margin: auto;
 }
 
-.article img {
-    width: 100%;
+.articleImg {
+    width: 50%;
     filter: drop-shadow(5px 5px 0px #1FAF7B);
     border-radius: 3px;
 }
 
-
+.link {
+    color: '#17a2b8';
+}
 
 #success {
     text-align: center;
