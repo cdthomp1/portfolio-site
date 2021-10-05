@@ -42,7 +42,7 @@ export default function Home({ articles, projects }) {
         <hr />
         <div className="about-wrapper">
           <div className="about-me">
-            <h3>Top Technologies</h3>
+            <h3 className="text-3xl" >Top Technologies</h3>
             <p>Fullstack developer with primary focus on the JAM Stack!</p>
             <div id="skills">
               <div>JavaScript</div>
