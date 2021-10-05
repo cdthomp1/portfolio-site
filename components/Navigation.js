@@ -22,7 +22,7 @@ const Navigation = () => {
                         <li className="menuItem"><Link href="/about">About Me</Link></li>
                         <li className="menuItem"><Link href="/articles">Articles</Link></li>
                         <li className="menuItem"><Link href="/projects">Projects</Link></li>
-                        <li className="menuItem"><Link href="/construction">Contact</Link></li>
+                        <li className="menuItem"><Link href="/contact">Contact</Link></li>
                     </ul>
                 </nav>
             </div>
