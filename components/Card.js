@@ -6,7 +6,7 @@ import 'tailwindcss/tailwind.css'
 
 const Card = ({ document }) => {
     return (
-        <div className="w-60 h-72 flex flex-col items-center justify-around mx-auto bg-white rounded-md filter drop-shadow-greenDrop my-5">
+        <div className="w-60 h-72 flex flex-col items-center justify-around mx-auto bg-white rounded-md filter drop-shadow-greenDrop my-5 text-black">
             <div className="h-28 mx-auto p-1">
                 <img className="object-contain" src={document.cover_image} />
             </div>
