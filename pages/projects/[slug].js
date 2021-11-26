@@ -1,3 +1,4 @@
+import 'tailwindcss/tailwind.css'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -8,27 +9,31 @@ import styles from '../../styles/Article.module.css'
 import SEO from '../../components/SEO'
 
 
+
 export default function PostPage({
     frontmatter: { title, date, cover_image, excerpt, repo_link, live_link },
     slug,
     content,
 }) {
-    const seo = {title, date: date, cover_image: cover_image, excerpt: excerpt, url: `https://cameronthompson.io/projects/${slug}`}
+
+    const seo = { title, date: date, cover_image: cover_image, excerpt: excerpt, url: `https://cameronthompson.io/projects/${slug}` }
     useEffect(() => {
         Prism.highlightAll();
     }, []);
     return (
         <>
-            <SEO seo={{seo}}/>
-            <div className={styles.article}>
-                <h1>{title}</h1>
-                <img src={cover_image} alt='' />
-                <div><h4>Posted on {date}</h4></div>
-                <div><a href={repo_link} >Repo</a></div>
-                <div><a href={live_link} >Live</a></div>
-                <div className='post-body'>
-                    <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+            <SEO seo={{ seo }} />
+            <div className="flex flex-col items-center justify-evenly h-screen">
+                <h1 className="text-7xl">{title}</h1>
+                <img className={styles.articleImg} src={cover_image} alt='' />
+                <div><h4 className="text-4xl">Posted on {date}</h4></div>
+                <div className="flex justify-evenly w-96">
+                    <div><a className="text-link text-xl" href={repo_link} >Repo</a></div>
+                    {live_link ? <div><a className="text-link text-xl" href={live_link} >Live</a></div> : <div></div>}
                 </div>
+                {/*  <div className={styles.postBody}>
+                    <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+                </div> */}
             </div>
         </>
     )
