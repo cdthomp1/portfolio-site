@@ -6,6 +6,8 @@ import Prism from "prismjs";
 import React, { useEffect } from 'react';
 import styles from '../../../styles/Article.module.css'
 import SEO from '../../../components/SEO'
+import ReactMarkdown from 'react-markdown'
+
 
 
 export default function ArduinoArticle({
@@ -13,18 +15,20 @@ export default function ArduinoArticle({
     slug,
     content,
 }) {
-    const seo = {title, date: date, cover_image: cover_image, excerpt: excerpt, url: `https://cameronthompson.io/interests/arduino/arduino-zoom-box`}
+    const seo = { title, date: date, cover_image: cover_image, excerpt: excerpt, url: `https://cameronthompson.io/interests/arduino/arduino-zoom-box` }
     useEffect(() => {
         Prism.highlightAll();
     }, []);
     return (
         <>
-            <SEO seo={{seo}}/>
+            <SEO seo={{ seo }} />
             <div className={styles.article}>
                 <h1>{title}</h1>
-                <img src={cover_image} alt='' />
-                <div className='post-body'>
-                    <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+                <img className={styles.articleImg} src={cover_image} alt='' />
+
+                <div className={styles.postBody}>
+                    <ReactMarkdown children={content} />
+
                 </div>
             </div>
         </>

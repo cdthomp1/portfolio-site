@@ -1,10 +1,10 @@
 .article {
-	width: 50%;
+    width: 50%;
     margin: auto;
 }
 
 .articleImg {
-    width: 50%;
+    width: 100%;
     filter: drop-shadow(5px 5px 0px #1FAF7B);
     border-radius: 3px;
 }
@@ -37,8 +37,14 @@
     ;
 }
 
-.whole-span { grid-area: whole-span; }
+.whole-span {
+    grid-area: whole-span;
+}
 
-.post-body h2{
+.postBody h2 {
     font-size: 2rem;
+}
+
+.postBody img {
+    width: 100%;
 }
