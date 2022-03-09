@@ -12,7 +12,7 @@ const projects = ({ projects }) => {
     return (
         <>
             <SEO seo={{ seo }} />
-            <h1>Projects</h1>
+            <h1 className="text-5xl">Projects</h1>
             <div className={styles.postWrapper} id="articles">
                 {projects.map((project, index) => {
                     var document = {

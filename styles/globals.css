@@ -264,6 +264,14 @@ footer p {
   margin: 1.5em;
 }
 
+.card-head {
+  color: #000000;
+}
+
+.card-link {
+  color: white;
+}
+
 .right-column {
   grid-area: right-column;
   display: grid;

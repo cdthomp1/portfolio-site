@@ -15,28 +15,31 @@ const about = () => {
             </div>
             <h2 className="text-2xl m-6">Click to learn more!</h2>
             <div className="xl:w-7/12 lg:w-10/12 sm:w-10/12  mx-auto flex lg:flex-row flex-col items-center justify-around">
+
                 <Link href="/interests/spacex">
                     <div className="cursor-pointer w-60 h-72 flex flex-col items-center justify-around bg-white m-5 rounded-md filter drop-shadow-greenDrop">
                         <div className="w-32 h-28 mx-auto p-1">
                             <img className=" inline object-scale-down" src="https://pbs.twimg.com/profile_images/1082744382585856001/rH_k3PtQ_400x400.jpg" />
                         </div>
-                        <h2 className="mx-auto font-bold text-black text-3xl">SpaceX</h2>
+                        <h2 className="mx-auto font-bold text-black text-3xl card-head">SpaceX</h2>
                     </div>
                 </Link>
+
                 <Link href="/interests/arduino">
-                    <div className="cursor-pointer w-60 h-72 flex flex-col items-center justify-around bg-white m-5 rounded-md filter drop-shadow-greenDrop">
+                    <div className="cursor-pointer w-60 h-72 flex flex-col items-center justify-around bg-white m-5 rounded-md filter drop-shadow-greenDrop text-black">
                         <div className="w-32 h-28 mx-auto p-1">
                             <img className="inline object-scale-down" src="./images/arduino.png" />
                         </div>
-                        <h2 className="mx-auto font-bold text-black text-3xl">Arduino</h2>
+                        <h2 className="mx-auto font-bold text-black text-3xl card-head">Arduino</h2>
                     </div>
                 </Link>
+
                 <Link href="/construction">
                     <div className="cursor-pointer w-60 h-72 flex flex-col items-center justify-around bg-white m-5 rounded-md filter drop-shadow-greenDrop">
                         <div className="w-32 h-28 mx-auto p-1">
                             <img className="inline object-scale-down" src="./images/3dprinter.png" />
                         </div>
-                        <h2 className="mx-auto font-bold text-black text-3xl">3D Printing</h2>
+                        <h2 className="mx-auto font-bold text-black text-3xl card-head">3D Printing</h2>
                     </div>
                 </Link>
             </div>
